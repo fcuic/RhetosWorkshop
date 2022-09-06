@@ -9382,6 +9382,10 @@
             {
               "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\Books.rhe",
               "InPackagePath": "DslScripts\\Books.rhe"
+            },
+            {
+              "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\BooksFlat.rhe",
+              "InPackagePath": "DslScripts\\BooksFlat.rhe"
             }
           ]
         }

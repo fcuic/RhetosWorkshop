@@ -388,3 +388,272 @@
 2022-09-06 13:44:37.2940|INFO|ApplicationInitialization|Initialization ClaimGenerator.
 2022-09-06 13:44:37.7163|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
 2022-09-06 13:44:37.7293|INFO|Rhetos DbUpdate|Done.
+2022-09-12 09:20:05.2409|INFO|Rhetos DbUpdate base|Started 'dotnet' process 14848.
+2022-09-12 09:20:06.0750|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 09:20:06.5706|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 09:20:09.7650|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 09:20:10.7163|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 09:20:10.9504|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 09:20:10.9917|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 09:20:11.0025|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 09:20:11.0025|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 09:20:11.0218|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 09:20:11.0218|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 09:20:11.0218|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 09:20:11.3598|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 09:20:11.3783|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-12 09:20:11.3783|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 09:20:11.3954|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 09:20:11.3954|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 09:20:11.7579|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 09:20:12.8436|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 09:20:13.6245|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 09:20:13.6245|INFO|Rhetos DbUpdate|Done.
+2022-09-12 10:11:14.2831|INFO|Rhetos DbUpdate base|Started 'dotnet' process 3216.
+2022-09-12 10:11:14.8669|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 10:11:15.3357|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 10:11:18.4531|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 10:11:18.6227|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 10:11:18.9605|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 10:11:19.0263|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 10:11:19.0313|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 10:11:19.0465|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 10:11:19.0719|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 10:11:19.0719|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 10:11:19.0719|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 10:11:19.3007|TRACE|DatabaseGeneratorChanges|Changed concept application: EntityLoggingInfo Bookstore.Book/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition
+Old: ...\n    Description = CASE WHEN inserted.ID IS NOT NULL AND deleted.ID IS NULL\r\n        THEN ''\t--When inserting, Description is not available (there is no previous state)\r\n        ELSE N'<PREVIOUS'\r\n\t\t\t/*EntityLoggingInfo LogProperty Bookstore.Book*/\r\n            + ' />'\r\n    END/*EntityLoggingInfo TempColumnSelect Bookstore.Book*/\r\nFROM\r\n    inserted\r\n    FULL OUTER JOIN deleted ON inserted.ID = de...
+New: ...\n    Description = CASE WHEN inserted.ID IS NOT NULL AND deleted.ID IS NULL\r\n        THEN ''\t--When inserting, Description is not available (there is no previous state)\r\n        ELSE N'<PREVIOUS'\r\n\t\t\t+ CASE WHEN inserted.Changed <> deleted.Changed\r\n                    OR inserted.Changed IS NULL AND deleted.Changed IS NOT NULL\r\n                    OR inserted.Changed IS NOT NULL AND deleted.Change...
+2022-09-12 10:11:19.3007|TRACE|DatabaseGeneratorChanges|Removing EntityLoggingInfo Bookstore.Book/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=7EE2DEBD-C16B-4A89-82D2-053B12447176.
+2022-09-12 10:11:19.3007|INFO|DatabaseGenerator|Removing 1 database objects.
+2022-09-12 10:11:19.3122|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo Bookstore.TestDeactivatable/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=32A10BAD-0184-4AD1-851E-7103023882FC.
+2022-09-12 10:11:19.3122|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo Bookstore.Book.Changed/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=A8B7F4F9-273C-44B0-8BF6-050CFC08053C.
+2022-09-12 10:11:19.3122|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo Bookstore.Book.Inserted/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=1FB9D3C8-6371-4ECA-9BB8-0CA0B5B78094.
+2022-09-12 10:11:19.3122|TRACE|DatabaseGeneratorChanges|Creating EntityLoggingInfo Bookstore.Employee/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=E781B304-160B-407B-8EE9-CF3D9D4049BF.
+2022-09-12 10:11:19.3122|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo Bookstore.Manager.Benefits/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=26C0B5A8-F83C-4C53-9569-1EEEECC238DB.
+2022-09-12 10:11:19.3122|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo Bookstore.TestDeactivatable.Active/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=3352267E-F919-4DD0-A158-724F77664011.
+2022-09-12 10:11:19.3122|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo Bookstore.TestDeactivatable.Name/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=9CED896B-C919-4BE2-A87B-08A52B3F0206.
+2022-09-12 10:11:19.3122|TRACE|DatabaseGeneratorChanges|Creating EntityLoggingInfo Bookstore.Book/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=7EE2DEBD-C16B-4A89-82D2-053B12447176.
+2022-09-12 10:11:19.3122|INFO|DatabaseGenerator|Creating 8 database objects.
+2022-09-12 10:11:19.4258|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 10:11:19.4389|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 10:11:19.4389|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 10:11:19.7832|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 10:11:20.8654|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 10:11:21.4538|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 10:11:21.4685|INFO|Rhetos DbUpdate|Done.
+2022-09-12 10:22:47.1913|INFO|Rhetos DbUpdate base|Started 'dotnet' process 25628.
+2022-09-12 10:22:47.4174|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 10:22:47.4544|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 10:22:47.9928|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 10:22:48.1221|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 10:22:48.4147|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 10:22:48.4826|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 10:22:48.4887|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 10:22:48.4887|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 10:22:48.5114|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 10:22:48.5114|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 10:22:48.5114|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 10:22:48.5622|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 10:22:48.5622|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-12 10:22:48.5622|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 10:22:48.5856|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 10:22:48.5856|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 10:22:48.6236|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 10:22:49.1575|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 10:22:49.6588|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 10:22:49.6716|INFO|Rhetos DbUpdate|Done.
+2022-09-12 11:19:37.3647|INFO|Rhetos DbUpdate base|Started 'dotnet' process 8996.
+2022-09-12 11:19:37.6502|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 11:19:37.6861|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 11:19:38.2586|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 11:19:38.3782|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 11:19:38.6694|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 11:19:38.7384|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 11:19:38.7384|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 11:19:38.7627|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 11:19:38.7828|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 11:19:38.7828|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 11:19:38.7828|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 11:19:38.8189|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 11:19:38.8189|TRACE|DatabaseGeneratorChanges|Creating ModuleInfo Queries/Rhetos.DatabaseGenerator.DefaultConcepts.ModuleDatabaseDefinition, ID=D01E783B-C74B-4593-A3E0-E6849C21F618.
+2022-09-12 11:19:38.8189|TRACE|DatabaseGeneratorChanges|Creating SqlObjectInfo Queries.SchemaAuthorization/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=DAD034C8-20D0-405C-A87F-1ABBF54D33E1.
+2022-09-12 11:19:38.8344|INFO|DatabaseGenerator|Creating 2 database objects.
+2022-09-12 11:19:38.8521|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 11:19:38.8738|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 11:19:38.8738|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 11:19:38.9262|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 11:19:39.5024|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 11:19:39.9967|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 11:19:40.0122|INFO|Rhetos DbUpdate|Done.
+2022-09-12 11:28:11.3774|INFO|Rhetos DbUpdate base|Started 'dotnet' process 2232.
+2022-09-12 11:28:11.8663|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 11:28:12.2874|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 11:28:15.1889|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 11:28:15.3635|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 11:28:15.6229|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 11:28:15.6740|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 11:28:15.6740|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 11:28:15.6740|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 11:28:15.6740|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 11:28:15.6740|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 11:28:15.6740|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 11:28:15.9177|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 11:28:15.9177|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-12 11:28:15.9177|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 11:28:15.9428|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 11:28:15.9428|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 11:28:16.1913|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 11:28:17.0068|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 11:28:17.4821|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 11:28:17.4821|INFO|Rhetos DbUpdate|Done.
+2022-09-12 11:55:18.1305|INFO|Rhetos DbUpdate base|Started 'dotnet' process 12144.
+2022-09-12 11:55:18.3899|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 11:55:18.4210|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 11:55:18.9797|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 11:55:19.1070|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 11:55:19.3807|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 11:55:19.4518|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 11:55:19.4573|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 11:55:19.4573|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 11:55:19.4573|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 11:55:19.4734|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 11:55:19.4734|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 11:55:19.5388|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 11:55:19.5388|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo Bookstore.BookInfo/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=565F1613-3903-4961-9C6C-4EE6FC5D50AB.
+2022-09-12 11:55:19.5388|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo Queries.BookInfoThroughExternalFile/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=D7AED503-53A1-48CB-A830-78545FD81A9B.
+2022-09-12 11:55:19.5513|INFO|DatabaseGenerator|Creating 2 database objects.
+2022-09-12 11:55:19.5703|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 11:55:19.6443|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 11:55:19.6443|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 11:55:19.6613|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 11:55:20.5414|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 11:55:21.0819|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 11:55:21.0944|INFO|Rhetos DbUpdate|Done.
+2022-09-12 11:56:17.5975|INFO|Rhetos DbUpdate base|Started 'dotnet' process 27396.
+2022-09-12 11:56:17.8125|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 11:56:17.8385|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 11:56:18.2472|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 11:56:18.3691|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 11:56:18.6581|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 11:56:18.7292|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 11:56:18.7356|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 11:56:18.7356|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 11:56:18.7615|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 11:56:18.7615|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 11:56:18.7615|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 11:56:18.8146|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 11:56:18.8288|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-12 11:56:18.8288|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 11:56:18.8523|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 11:56:18.8523|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 11:56:18.8882|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 11:56:19.4957|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 11:56:19.9296|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 11:56:19.9436|INFO|Rhetos DbUpdate|Done.
+2022-09-12 12:05:46.4722|INFO|Rhetos DbUpdate base|Started 'dotnet' process 9944.
+2022-09-12 12:05:46.6999|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 12:05:46.7235|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 12:05:47.2473|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 12:05:47.3821|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 12:05:47.6255|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 12:05:47.6876|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 12:05:47.6876|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 12:05:47.6876|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 12:05:47.7130|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 12:05:47.7130|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 12:05:47.7158|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 12:05:47.7688|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 12:05:47.7688|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-12 12:05:47.7816|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 12:05:47.7816|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 12:05:47.8122|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 12:05:47.8246|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 12:05:48.4123|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 12:05:48.8964|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 12:05:48.8964|INFO|Rhetos DbUpdate|Done.
+2022-09-12 12:12:32.5801|INFO|Rhetos DbUpdate base|Started 'dotnet' process 11072.
+2022-09-12 12:12:33.0576|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 12:12:33.4535|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 12:12:36.1181|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 12:12:36.2754|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 12:12:36.4527|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 12:12:36.4837|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 12:12:36.4837|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 12:12:36.4837|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 12:12:36.5004|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 12:12:36.5004|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 12:12:36.5004|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 12:12:36.7285|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 12:12:36.7285|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-12 12:12:36.7285|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 12:12:36.7747|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 12:12:36.7747|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 12:12:37.0635|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 12:12:37.8991|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 12:12:38.4561|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 12:12:38.4704|INFO|Rhetos DbUpdate|Done.
+2022-09-12 13:17:52.5943|INFO|Rhetos DbUpdate base|Started 'dotnet' process 26896.
+2022-09-12 13:17:52.8116|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 13:17:52.8376|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 13:17:53.3645|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 13:17:53.4894|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 13:17:53.7591|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 13:17:53.8237|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 13:17:53.8237|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 13:17:53.8409|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 13:17:53.8671|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 13:17:53.8671|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 13:17:53.8671|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 13:17:53.9132|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 13:17:53.9132|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo Bookstore.NumberOfTopicsCalculation/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=5C1A0210-C247-4C6A-9596-FFDD67044850.
+2022-09-12 13:17:53.9245|INFO|DatabaseGenerator|Creating 1 database objects.
+2022-09-12 13:17:53.9430|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 13:17:53.9430|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 13:17:53.9430|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 13:17:53.9869|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 13:17:54.7882|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 13:17:55.3386|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 13:17:55.3492|INFO|Rhetos DbUpdate|Done.
+2022-09-12 13:33:35.0954|INFO|Rhetos DbUpdate base|Started 'dotnet' process 11980.
+2022-09-12 13:33:35.3129|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 13:33:35.3369|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 13:33:35.9039|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 13:33:36.0216|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 13:33:36.3032|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 13:33:36.3762|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 13:33:36.3762|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 13:33:36.3762|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 13:33:36.3762|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 13:33:36.3975|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 13:33:36.3975|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 13:33:36.4363|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 13:33:36.4500|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-12 13:33:36.4500|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 13:33:36.4748|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 13:33:36.4748|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 13:33:36.5101|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 13:33:37.0799|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 13:33:37.6312|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 13:33:37.6312|INFO|Rhetos DbUpdate|Done.
+2022-09-12 14:02:44.1152|INFO|Rhetos DbUpdate base|Started 'dotnet' process 24620.
+2022-09-12 14:02:44.7289|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-12 14:02:45.1858|INFO|DatabaseUpdate|Loading plugins.
+2022-09-12 14:02:48.3012|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-12 14:02:48.4803|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-12 14:02:48.8146|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-12 14:02:48.8849|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 14:02:48.8849|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-12 14:02:48.9000|INFO|ConceptDataMigration|Executing 0 before-data-migration scripts.
+2022-09-12 14:02:48.9156|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-12 14:02:48.9156|INFO|ConceptDataMigration|Executing 0 after-data-migration scripts.
+2022-09-12 14:02:48.9156|INFO|DatabaseDeployment|Upgrading database.
+2022-09-12 14:02:52.5779|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-12 14:02:52.5779|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-12 14:02:52.5942|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-12 14:02:52.6666|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-12 14:02:52.6748|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-12 14:02:52.9923|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-12 14:02:53.9001|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-12 14:02:54.4096|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-12 14:02:54.4337|INFO|Rhetos DbUpdate|Done.

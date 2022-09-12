@@ -23,8 +23,12 @@ namespace Bookstore
     /*DataStructureInfo ClassAttributes Bookstore.Book*/
     public class Book : EntityBase<Bookstore.Book>/*Next DataStructureInfo ClassInterace Bookstore.Book*/
     {
+        /*PropertyInfo Attribute Bookstore.Book.Changed*/
+        public DateTime? Changed { get; set; }
         /*PropertyInfo Attribute Bookstore.Book.Code*/
         public string Code { get; set; }
+        /*PropertyInfo Attribute Bookstore.Book.Inserted*/
+        public DateTime? Inserted { get; set; }
         /*PropertyInfo Attribute Bookstore.Book.NumberOfPages*/
         public int? NumberOfPages { get; set; }
         /*PropertyInfo Attribute Bookstore.Book.Title*/
@@ -32,6 +36,14 @@ namespace Bookstore
         /*PropertyInfo Attribute Bookstore.Book.AuthorID*/
         public Guid? AuthorID { get; set; }
         /*DataStructureInfo ClassBody Bookstore.Book*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.BookInfo*/
+    public class BookInfo : EntityBase<Bookstore.BookInfo>/*Next DataStructureInfo ClassInterace Bookstore.BookInfo*/
+    {
+        /*PropertyInfo Attribute Bookstore.BookInfo.NumberOfComments*/
+        public int? NumberOfComments { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.BookInfo*/
     }
 
     /*DataStructureInfo ClassAttributes Bookstore.BookTopic*/
@@ -68,6 +80,12 @@ namespace Bookstore
     public class CommonMisspelling/*DataStructureInfo ClassInterace Bookstore.CommonMisspelling*/
     {
         /*DataStructureInfo ClassBody Bookstore.CommonMisspelling*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.ContainsLockConstraint*/
+    public class ContainsLockConstraint/*DataStructureInfo ClassInterace Bookstore.ContainsLockConstraint*/
+    {
+        /*DataStructureInfo ClassBody Bookstore.ContainsLockConstraint*/
     }
 
     /*DataStructureInfo ClassAttributes Bookstore.Department*/
@@ -112,6 +130,22 @@ namespace Bookstore
         /*DataStructureInfo ClassBody Bookstore.EmployeeDepartments*/
     }
 
+    /*DataStructureInfo ClassAttributes Bookstore.ExpectedBookRating*/
+    public class ExpectedBookRating : EntityBase<Bookstore.ExpectedBookRating>/*Next DataStructureInfo ClassInterace Bookstore.ExpectedBookRating*/
+    {
+        /*PropertyInfo Attribute Bookstore.ExpectedBookRating.Rating*/
+        public decimal? Rating { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.ExpectedBookRating*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.ExternalCustomer*/
+    public class ExternalCustomer : EntityBase<Bookstore.ExternalCustomer>/*Next DataStructureInfo ClassInterace Bookstore.ExternalCustomer*/
+    {
+        /*PropertyInfo Attribute Bookstore.ExternalCustomer.Name*/
+        public string Name { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.ExternalCustomer*/
+    }
+
     /*DataStructureInfo ClassAttributes Bookstore.ForeignBook*/
     public class ForeignBook : EntityBase<Bookstore.ForeignBook>/*Next DataStructureInfo ClassInterace Bookstore.ForeignBook*/
     {
@@ -125,9 +159,19 @@ namespace Bookstore
     /*DataStructureInfo ClassAttributes Bookstore.Manager*/
     public class Manager : EntityBase<Bookstore.Manager>/*Next DataStructureInfo ClassInterace Bookstore.Manager*/
     {
+        /*PropertyInfo Attribute Bookstore.Manager.Benefits*/
+        public string Benefits { get; set; }
         /*PropertyInfo Attribute Bookstore.Manager.Bonuses*/
         public string Bonuses { get; set; }
         /*DataStructureInfo ClassBody Bookstore.Manager*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.NumberOfTopicsCalculation*/
+    public class NumberOfTopicsCalculation : EntityBase<Bookstore.NumberOfTopicsCalculation>/*Next DataStructureInfo ClassInterace Bookstore.NumberOfTopicsCalculation*/
+    {
+        /*PropertyInfo Attribute Bookstore.NumberOfTopicsCalculation.NumberOfTopics*/
+        public int? NumberOfTopics { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.NumberOfTopicsCalculation*/
     }
 
     /*DataStructureInfo ClassAttributes Bookstore.Person*/
@@ -136,6 +180,12 @@ namespace Bookstore
         /*PropertyInfo Attribute Bookstore.Person.Name*/
         public string Name { get; set; }
         /*DataStructureInfo ClassBody Bookstore.Person*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.SystemRequiredActive*/
+    public class SystemRequiredActive/*DataStructureInfo ClassInterace Bookstore.SystemRequiredActive*/
+    {
+        /*DataStructureInfo ClassBody Bookstore.SystemRequiredActive*/
     }
 
     /*DataStructureInfo ClassAttributes Bookstore.SystemRequiredBook*/
@@ -150,12 +200,34 @@ namespace Bookstore
         /*DataStructureInfo ClassBody Bookstore.SystemRequiredCode*/
     }
 
+    /*DataStructureInfo ClassAttributes Bookstore.TestDeactivatable*/
+    public class TestDeactivatable : EntityBase<Bookstore.TestDeactivatable>, Rhetos.Dom.DefaultConcepts.IDeactivatable/*Next DataStructureInfo ClassInterace Bookstore.TestDeactivatable*/
+    {
+        /*PropertyInfo Attribute Bookstore.TestDeactivatable.Active*/
+        public bool? Active { get; set; }
+        /*PropertyInfo Attribute Bookstore.TestDeactivatable.Name*/
+        public string Name { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.TestDeactivatable*/
+    }
+
     /*DataStructureInfo ClassAttributes Bookstore.Topic*/
     public class Topic : EntityBase<Bookstore.Topic>/*Next DataStructureInfo ClassInterace Bookstore.Topic*/
     {
         /*PropertyInfo Attribute Bookstore.Topic.Name*/
         public string Name { get; set; }
         /*DataStructureInfo ClassBody Bookstore.Topic*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.BooksAuthorsAndTopicsGrid*/
+    public class BooksAuthorsAndTopicsGrid : EntityBase<Bookstore.BooksAuthorsAndTopicsGrid>/*Next DataStructureInfo ClassInterace Bookstore.BooksAuthorsAndTopicsGrid*/
+    {
+        /*PropertyInfo Attribute Bookstore.BooksAuthorsAndTopicsGrid.AuthorName*/
+        public string AuthorName { get; set; }
+        /*PropertyInfo Attribute Bookstore.BooksAuthorsAndTopicsGrid.BookName*/
+        public string BookName { get; set; }
+        /*PropertyInfo Attribute Bookstore.BooksAuthorsAndTopicsGrid.Extension_NumberOfTopicsCalculationNumberOfTopics*/
+        public int? Extension_NumberOfTopicsCalculationNumberOfTopics { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.BooksAuthorsAndTopicsGrid*/
     }
 
     /*ModuleInfo Body Bookstore*/
@@ -179,14 +251,32 @@ namespace Common.Queryable
     /*DataStructureInfo QueryableClassAttributes Bookstore.Book*/
     public class Bookstore_Book : global::Bookstore.Book, IQueryableEntity<Bookstore.Book>, System.IEquatable<Bookstore_Book>/*DataStructureInfo QueryableClassInterace Bookstore.Book*/
     {
+        /*DataStructureQueryable PropertyAttribute Bookstore.Book.Extension_BookInfo*/
+        public virtual Common.Queryable.Bookstore_BookInfo Extension_BookInfo { get; init; }
+
         /*DataStructureQueryable PropertyAttribute Bookstore.Book.Extension_ChildrensBook*/
         public virtual Common.Queryable.Bookstore_ChildrensBook Extension_ChildrensBook { get; init; }
+
+        /*DataStructureQueryable PropertyAttribute Bookstore.Book.Extension_ExpectedBookRating*/
+        public virtual Common.Queryable.Bookstore_ExpectedBookRating Extension_ExpectedBookRating { get; init; }
 
         /*DataStructureQueryable PropertyAttribute Bookstore.Book.Extension_ForeignBook*/
         public virtual Common.Queryable.Bookstore_ForeignBook Extension_ForeignBook { get; init; }
 
+        /*DataStructureQueryable PropertyAttribute Bookstore.Book.Extension_NumberOfTopicsCalculation*/
+        public virtual Common.Queryable.Bookstore_NumberOfTopicsCalculation Extension_NumberOfTopicsCalculation { get; init; }
+
         /*DataStructureQueryable PropertyAttribute Bookstore.Book.Author*/
         public virtual Common.Queryable.Bookstore_Person Author { get; init; }
+
+        /*DataStructureQueryable PropertyAttribute Bookstore.Book.Extension_Queries_BookInfoThroughExternalFile*/
+        public virtual Common.Queryable.Queries_BookInfoThroughExternalFile Extension_Queries_BookInfoThroughExternalFile { get; init; }
+
+        /*DataStructureQueryable PropertyAttribute Bookstore.Book.Extension_BooksAuthorsAndTopicsGrid*/
+        public virtual Common.Queryable.Bookstore_BooksAuthorsAndTopicsGrid Extension_BooksAuthorsAndTopicsGrid { get; init; }
+
+        /*DataStructureQueryable PropertyAttribute Bookstore.Book.Extension_Queries_BookGrid*/
+        public virtual Common.Queryable.Queries_BookGrid Extension_Queries_BookGrid { get; init; }
 
         /*DataStructureInfo QueryableClassMembers Bookstore.Book*/
 
@@ -202,10 +292,37 @@ namespace Common.Queryable
             return new Bookstore.Book
             {
                 ID = item.ID,
+                Changed = item.Changed,
                 Code = item.Code,
+                Inserted = item.Inserted,
                 NumberOfPages = item.NumberOfPages,
                 Title = item.Title,
                 AuthorID = item.AuthorID/*DataStructureInfo AssignSimpleProperty Bookstore.Book*/
+            };
+        }
+    }
+
+    /*DataStructureInfo QueryableClassAttributes Bookstore.BookInfo*/
+    public class Bookstore_BookInfo : global::Bookstore.BookInfo, IQueryableEntity<Bookstore.BookInfo>, System.IEquatable<Bookstore_BookInfo>/*DataStructureInfo QueryableClassInterace Bookstore.BookInfo*/
+    {
+        /*DataStructureQueryable PropertyAttribute Bookstore.BookInfo.Base*/
+        public virtual Common.Queryable.Bookstore_Book Base { get; init; }
+
+        /*DataStructureInfo QueryableClassMembers Bookstore.BookInfo*/
+
+        public bool Equals(Bookstore_BookInfo other)
+        {
+            return other != null && other.ID == ID;
+        }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public Bookstore.BookInfo ToSimple()
+        {
+            var item = this;
+            return new Bookstore.BookInfo
+            {
+                ID = item.ID,
+                NumberOfComments = item.NumberOfComments/*DataStructureInfo AssignSimpleProperty Bookstore.BookInfo*/
             };
         }
     }
@@ -396,6 +513,53 @@ namespace Common.Queryable
         }
     }
 
+    /*DataStructureInfo QueryableClassAttributes Bookstore.ExpectedBookRating*/
+    public class Bookstore_ExpectedBookRating : global::Bookstore.ExpectedBookRating, IQueryableEntity<Bookstore.ExpectedBookRating>, System.IEquatable<Bookstore_ExpectedBookRating>/*DataStructureInfo QueryableClassInterace Bookstore.ExpectedBookRating*/
+    {
+        /*DataStructureQueryable PropertyAttribute Bookstore.ExpectedBookRating.Base*/
+        public virtual Common.Queryable.Bookstore_Book Base { get; init; }
+
+        /*DataStructureInfo QueryableClassMembers Bookstore.ExpectedBookRating*/
+
+        public bool Equals(Bookstore_ExpectedBookRating other)
+        {
+            return other != null && other.ID == ID;
+        }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public Bookstore.ExpectedBookRating ToSimple()
+        {
+            var item = this;
+            return new Bookstore.ExpectedBookRating
+            {
+                ID = item.ID,
+                Rating = item.Rating/*DataStructureInfo AssignSimpleProperty Bookstore.ExpectedBookRating*/
+            };
+        }
+    }
+
+    /*DataStructureInfo QueryableClassAttributes Bookstore.ExternalCustomer*/
+    public class Bookstore_ExternalCustomer : global::Bookstore.ExternalCustomer, IQueryableEntity<Bookstore.ExternalCustomer>, System.IEquatable<Bookstore_ExternalCustomer>/*DataStructureInfo QueryableClassInterace Bookstore.ExternalCustomer*/
+    {
+        /*DataStructureInfo QueryableClassMembers Bookstore.ExternalCustomer*/
+
+        public bool Equals(Bookstore_ExternalCustomer other)
+        {
+            return other != null && other.ID == ID;
+        }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public Bookstore.ExternalCustomer ToSimple()
+        {
+            var item = this;
+            return new Bookstore.ExternalCustomer
+            {
+                ID = item.ID,
+                Name = item.Name/*DataStructureInfo AssignSimpleProperty Bookstore.ExternalCustomer*/
+            };
+        }
+    }
+
     /*DataStructureInfo QueryableClassAttributes Bookstore.ForeignBook*/
     public class Bookstore_ForeignBook : global::Bookstore.ForeignBook, IQueryableEntity<Bookstore.ForeignBook>, System.IEquatable<Bookstore_ForeignBook>/*DataStructureInfo QueryableClassInterace Bookstore.ForeignBook*/
     {
@@ -445,7 +609,33 @@ namespace Common.Queryable
             return new Bookstore.Manager
             {
                 ID = item.ID,
+                Benefits = item.Benefits,
                 Bonuses = item.Bonuses/*DataStructureInfo AssignSimpleProperty Bookstore.Manager*/
+            };
+        }
+    }
+
+    /*DataStructureInfo QueryableClassAttributes Bookstore.NumberOfTopicsCalculation*/
+    public class Bookstore_NumberOfTopicsCalculation : global::Bookstore.NumberOfTopicsCalculation, IQueryableEntity<Bookstore.NumberOfTopicsCalculation>, System.IEquatable<Bookstore_NumberOfTopicsCalculation>/*DataStructureInfo QueryableClassInterace Bookstore.NumberOfTopicsCalculation*/
+    {
+        /*DataStructureQueryable PropertyAttribute Bookstore.NumberOfTopicsCalculation.Base*/
+        public virtual Common.Queryable.Bookstore_Book Base { get; init; }
+
+        /*DataStructureInfo QueryableClassMembers Bookstore.NumberOfTopicsCalculation*/
+
+        public bool Equals(Bookstore_NumberOfTopicsCalculation other)
+        {
+            return other != null && other.ID == ID;
+        }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public Bookstore.NumberOfTopicsCalculation ToSimple()
+        {
+            var item = this;
+            return new Bookstore.NumberOfTopicsCalculation
+            {
+                ID = item.ID,
+                NumberOfTopics = item.NumberOfTopics/*DataStructureInfo AssignSimpleProperty Bookstore.NumberOfTopicsCalculation*/
             };
         }
     }
@@ -472,6 +662,29 @@ namespace Common.Queryable
         }
     }
 
+    /*DataStructureInfo QueryableClassAttributes Bookstore.TestDeactivatable*/
+    public class Bookstore_TestDeactivatable : global::Bookstore.TestDeactivatable, IQueryableEntity<Bookstore.TestDeactivatable>, System.IEquatable<Bookstore_TestDeactivatable>/*DataStructureInfo QueryableClassInterace Bookstore.TestDeactivatable*/
+    {
+        /*DataStructureInfo QueryableClassMembers Bookstore.TestDeactivatable*/
+
+        public bool Equals(Bookstore_TestDeactivatable other)
+        {
+            return other != null && other.ID == ID;
+        }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public Bookstore.TestDeactivatable ToSimple()
+        {
+            var item = this;
+            return new Bookstore.TestDeactivatable
+            {
+                ID = item.ID,
+                Active = item.Active,
+                Name = item.Name/*DataStructureInfo AssignSimpleProperty Bookstore.TestDeactivatable*/
+            };
+        }
+    }
+
     /*DataStructureInfo QueryableClassAttributes Bookstore.Topic*/
     public class Bookstore_Topic : global::Bookstore.Topic, IQueryableEntity<Bookstore.Topic>, System.IEquatable<Bookstore_Topic>/*DataStructureInfo QueryableClassInterace Bookstore.Topic*/
     {
@@ -490,6 +703,33 @@ namespace Common.Queryable
             {
                 ID = item.ID,
                 Name = item.Name/*DataStructureInfo AssignSimpleProperty Bookstore.Topic*/
+            };
+        }
+    }
+
+    /*DataStructureInfo QueryableClassAttributes Bookstore.BooksAuthorsAndTopicsGrid*/
+    public class Bookstore_BooksAuthorsAndTopicsGrid : global::Bookstore.BooksAuthorsAndTopicsGrid, IQueryableEntity<Bookstore.BooksAuthorsAndTopicsGrid>, System.IEquatable<Bookstore_BooksAuthorsAndTopicsGrid>/*DataStructureInfo QueryableClassInterace Bookstore.BooksAuthorsAndTopicsGrid*/
+    {
+        /*DataStructureQueryable PropertyAttribute Bookstore.BooksAuthorsAndTopicsGrid.Base*/
+        public virtual Common.Queryable.Bookstore_Book Base { get; init; }
+
+        /*DataStructureInfo QueryableClassMembers Bookstore.BooksAuthorsAndTopicsGrid*/
+
+        public bool Equals(Bookstore_BooksAuthorsAndTopicsGrid other)
+        {
+            return other != null && other.ID == ID;
+        }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public Bookstore.BooksAuthorsAndTopicsGrid ToSimple()
+        {
+            var item = this;
+            return new Bookstore.BooksAuthorsAndTopicsGrid
+            {
+                ID = item.ID,
+                AuthorName = item.AuthorName,
+                BookName = item.BookName,
+                Extension_NumberOfTopicsCalculationNumberOfTopics = item.Extension_NumberOfTopicsCalculationNumberOfTopics/*DataStructureInfo AssignSimpleProperty Bookstore.BooksAuthorsAndTopicsGrid*/
             };
         }
     }

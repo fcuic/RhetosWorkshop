@@ -2,19 +2,25 @@ Module Bookstore
 {
    Entity Book
    {
-      ShortString Code { AutoCode; }
+      ShortString Code { AutoCode; DefaultValue 'item => "book+++"'; }
       ShortString Title;
       Integer NumberOfPages;
+      DateTime Inserted { CreationTime; }
+      DateTime Changed { ModificationTimeOf Bookstore.Book.Title; }
+
       Reference Author Bookstore.Person;
       ItemFilter CommonMisspelling 'book => book.Title.Contains("curiousity")';
       InvalidData CommonMisspelling 'It is not allowed to enter misspelled word "curiousity".';
 
-      Logging;
+      Logging { AllProperties; }
    }
 
    Entity Person
     {
         ShortString Name;
+
+        ItemFilter ContainsLockConstraint 'item => item.Name.Contains("lock")';
+        Lock ContainsLockConstraint '[Test] Name Contains Lock Constraint';
     }
 
     Entity Comment
@@ -27,8 +33,8 @@ Module Bookstore
     {   
         Extends Bookstore.Book;
 
-        Integer AgeFrom;
-        Integer AgeTo;
+        Integer AgeFrom { DefaultValue 'item => (int)3'; }
+        Integer AgeTo { DefaultValue 'item => (int)15'; }
         IntegerRange AgeFrom AgeTo; // A simple validation.
     }
 
@@ -59,13 +65,19 @@ Module Bookstore
     {
         ShortString Name { Required; }
         Integer VatNumber { Unique; }
+
+        Logging
+        {
+            Log Bookstore.Employee.Name;
+        }
     }
 
     Entity Manager
     {
         Extends Bookstore.Employee;
 
-        LongString Bonuses; 
+        LongString Bonuses;
+        ShortString Benefits { DenyUserEdit; }
     }
 
     Entity EducationRecord
@@ -90,4 +102,109 @@ Module Bookstore
         UniqueMultiple 'Employee Department';
     }
 
+    Entity TestDeactivatable
+    {
+        Deactivatable;
+        ShortString Name;
+    }
+
+    //#region Queries
+
+    SqlQueryable BookInfo
+	"
+		SELECT
+            b.ID,
+            NumberOfComments = COUNT(c.ID)
+        FROM
+            Bookstore.Book b
+            LEFT JOIN Bookstore.Comment c ON c.BookID = b.ID
+        GROUP BY
+            b.ID
+	"
+	{
+		Extends Bookstore.Book;
+		Integer NumberOfComments;
+
+		AutodetectSqlDependencies;
+	}
+
+    SqlQueryable NumberOfTopicsCalculation
+    "
+    SELECT
+    b.ID,
+    NumberOfTopics = COUNT(c.ID)
+    FROM
+    Bookstore.Book b
+    LEFT JOIN Bookstore.Comment c ON c.BookID = b.ID
+    GROUP BY
+    b.ID
+    "
+    {
+        Extends Bookstore.Book;
+        Integer NumberOfTopics;
+    }
+
+    Computed ExpectedBookRating
+    '
+    repository =>
+        {
+            var books = repository.Bookstore.Book.Query()
+                .Select(b =>
+                    new
+                    {
+                        b.ID,
+                        b.Title,
+                        IsForeign = b.Extension_ForeignBook.ID != null
+                    })
+                .ToList();
+
+            var ratings = new List<ExpectedBookRating>();
+            foreach (var book in books)
+            {
+                decimal rating = 0;
+
+                if (book.Title?.IndexOf("super", StringComparison.InvariantCultureIgnoreCase) >= 0)
+                    rating += 100;
+
+                if (book.Title?.IndexOf("great", StringComparison.InvariantCultureIgnoreCase) >= 0)
+                    rating += 50;
+
+                if (book.IsForeign)
+                    rating *= 1.2m;
+
+                ratings.Add(new ExpectedBookRating { ID = book.ID, Rating = rating });
+            }
+
+            return ratings.ToArray();
+        }'
+    {
+        Extends Bookstore.Book;
+        Decimal Rating;
+    }
+
+    Computed ExternalCustomer
+    '
+    repository =>
+        {
+            // Gets a list of users from another web API and returns it as a Rhetos data structure.
+            var httpClient = new System.Net.Http.HttpClient();
+            var usersJson = httpClient.GetStringAsync("https://jsonplaceholder.typicode.com/users").Result;
+            var users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<System.Dynamic.ExpandoObject>>(usersJson);
+            var names = users.Select((dynamic user) => user.name);
+            return names.Select(name => new ExternalCustomer { Name = name }).ToArray();
+        }
+    '
+    {
+        ShortString Name;
+    }
+
+    Browse BooksAuthorsAndTopicsGrid Bookstore.Book
+	{
+		Take BookName 'Title';
+		Take 'Author.Name';
+		Take 'Extension_NumberOfTopicsCalculation.NumberOfTopics';
+	}
+
+
+    //#endregion
 }

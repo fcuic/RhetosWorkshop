@@ -20,10 +20,21 @@ namespace System.Linq
             return query.Select(item => new Bookstore.Book
             {
                 ID = item.ID,
+                Changed = item.Changed,
                 Code = item.Code,
+                Inserted = item.Inserted,
                 NumberOfPages = item.NumberOfPages,
                 Title = item.Title,
                 AuthorID = item.AuthorID/*DataStructureInfo AssignSimpleProperty Bookstore.Book*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Bookstore.BookInfo> ToSimple(this IQueryable<Common.Queryable.Bookstore_BookInfo> query)
+        {
+            return query.Select(item => new Bookstore.BookInfo
+            {
+                ID = item.ID,
+                NumberOfComments = item.NumberOfComments/*DataStructureInfo AssignSimpleProperty Bookstore.BookInfo*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -98,6 +109,24 @@ namespace System.Linq
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Bookstore.ExpectedBookRating> ToSimple(this IQueryable<Common.Queryable.Bookstore_ExpectedBookRating> query)
+        {
+            return query.Select(item => new Bookstore.ExpectedBookRating
+            {
+                ID = item.ID,
+                Rating = item.Rating/*DataStructureInfo AssignSimpleProperty Bookstore.ExpectedBookRating*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Bookstore.ExternalCustomer> ToSimple(this IQueryable<Common.Queryable.Bookstore_ExternalCustomer> query)
+        {
+            return query.Select(item => new Bookstore.ExternalCustomer
+            {
+                ID = item.ID,
+                Name = item.Name/*DataStructureInfo AssignSimpleProperty Bookstore.ExternalCustomer*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
         public static IQueryable<Bookstore.ForeignBook> ToSimple(this IQueryable<Common.Queryable.Bookstore_ForeignBook> query)
         {
             return query.Select(item => new Bookstore.ForeignBook
@@ -113,7 +142,17 @@ namespace System.Linq
             return query.Select(item => new Bookstore.Manager
             {
                 ID = item.ID,
+                Benefits = item.Benefits,
                 Bonuses = item.Bonuses/*DataStructureInfo AssignSimpleProperty Bookstore.Manager*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Bookstore.NumberOfTopicsCalculation> ToSimple(this IQueryable<Common.Queryable.Bookstore_NumberOfTopicsCalculation> query)
+        {
+            return query.Select(item => new Bookstore.NumberOfTopicsCalculation
+            {
+                ID = item.ID,
+                NumberOfTopics = item.NumberOfTopics/*DataStructureInfo AssignSimpleProperty Bookstore.NumberOfTopicsCalculation*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -123,6 +162,16 @@ namespace System.Linq
             {
                 ID = item.ID,
                 Name = item.Name/*DataStructureInfo AssignSimpleProperty Bookstore.Person*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Bookstore.TestDeactivatable> ToSimple(this IQueryable<Common.Queryable.Bookstore_TestDeactivatable> query)
+        {
+            return query.Select(item => new Bookstore.TestDeactivatable
+            {
+                ID = item.ID,
+                Active = item.Active,
+                Name = item.Name/*DataStructureInfo AssignSimpleProperty Bookstore.TestDeactivatable*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -328,6 +377,39 @@ namespace System.Linq
                 ClaimID = item.ClaimID,
                 IsAuthorized = item.IsAuthorized,
                 RoleID = item.RoleID/*DataStructureInfo AssignSimpleProperty Common.RolePermission*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Queries.BookInfoThroughExternalFile> ToSimple(this IQueryable<Common.Queryable.Queries_BookInfoThroughExternalFile> query)
+        {
+            return query.Select(item => new Queries.BookInfoThroughExternalFile
+            {
+                ID = item.ID,
+                NumberOfComments = item.NumberOfComments/*DataStructureInfo AssignSimpleProperty Queries.BookInfoThroughExternalFile*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Bookstore.BooksAuthorsAndTopicsGrid> ToSimple(this IQueryable<Common.Queryable.Bookstore_BooksAuthorsAndTopicsGrid> query)
+        {
+            return query.Select(item => new Bookstore.BooksAuthorsAndTopicsGrid
+            {
+                ID = item.ID,
+                AuthorName = item.AuthorName,
+                BookName = item.BookName,
+                Extension_NumberOfTopicsCalculationNumberOfTopics = item.Extension_NumberOfTopicsCalculationNumberOfTopics/*DataStructureInfo AssignSimpleProperty Bookstore.BooksAuthorsAndTopicsGrid*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Queries.BookGrid> ToSimple(this IQueryable<Common.Queryable.Queries_BookGrid> query)
+        {
+            return query.Select(item => new Queries.BookGrid
+            {
+                ID = item.ID,
+                AuthorName = item.AuthorName,
+                Code = item.Code,
+                NameOfTranslator = item.NameOfTranslator,
+                NumberOfComments = item.NumberOfComments,
+                Title = item.Title/*DataStructureInfo AssignSimpleProperty Queries.BookGrid*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>

@@ -5,10 +5,20 @@
     <EntityTypeMapping TypeName="Rhetos.Bookstore_Book">
       <MappingFragment StoreEntitySet="Bookstore_Book">
         <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="Changed" ColumnName="Changed" />
         <ScalarProperty Name="Code" ColumnName="Code" />
+        <ScalarProperty Name="Inserted" ColumnName="Inserted" />
         <ScalarProperty Name="NumberOfPages" ColumnName="NumberOfPages" />
         <ScalarProperty Name="Title" ColumnName="Title" />
         <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
+  <EntitySetMapping Name="Bookstore_BookInfo">
+    <EntityTypeMapping TypeName="Rhetos.Bookstore_BookInfo">
+      <MappingFragment StoreEntitySet="Bookstore_BookInfo">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="NumberOfComments" ColumnName="NumberOfComments" />
       </MappingFragment>
     </EntityTypeMapping>
   </EntitySetMapping>
@@ -89,7 +99,16 @@
     <EntityTypeMapping TypeName="Rhetos.Bookstore_Manager">
       <MappingFragment StoreEntitySet="Bookstore_Manager">
         <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="Benefits" ColumnName="Benefits" />
         <ScalarProperty Name="Bonuses" ColumnName="Bonuses" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
+  <EntitySetMapping Name="Bookstore_NumberOfTopicsCalculation">
+    <EntityTypeMapping TypeName="Rhetos.Bookstore_NumberOfTopicsCalculation">
+      <MappingFragment StoreEntitySet="Bookstore_NumberOfTopicsCalculation">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="NumberOfTopics" ColumnName="NumberOfTopics" />
       </MappingFragment>
     </EntityTypeMapping>
   </EntitySetMapping>
@@ -97,6 +116,15 @@
     <EntityTypeMapping TypeName="Rhetos.Bookstore_Person">
       <MappingFragment StoreEntitySet="Bookstore_Person">
         <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="Name" ColumnName="Name" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
+  <EntitySetMapping Name="Bookstore_TestDeactivatable">
+    <EntityTypeMapping TypeName="Rhetos.Bookstore_TestDeactivatable">
+      <MappingFragment StoreEntitySet="Bookstore_TestDeactivatable">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="Active" ColumnName="Active" />
         <ScalarProperty Name="Name" ColumnName="Name" />
       </MappingFragment>
     </EntityTypeMapping>
@@ -286,6 +314,14 @@
         <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
         <ScalarProperty Name="IsAuthorized" ColumnName="IsAuthorized" />
         <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
+  <EntitySetMapping Name="Queries_BookInfoThroughExternalFile">
+    <EntityTypeMapping TypeName="Rhetos.Queries_BookInfoThroughExternalFile">
+      <MappingFragment StoreEntitySet="Queries_BookInfoThroughExternalFile">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="NumberOfComments" ColumnName="NumberOfComments" />
       </MappingFragment>
     </EntityTypeMapping>
   </EntitySetMapping>

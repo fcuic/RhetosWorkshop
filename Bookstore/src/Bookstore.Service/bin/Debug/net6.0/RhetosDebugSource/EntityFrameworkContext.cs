@@ -41,6 +41,7 @@ namespace Common
         }
 
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Book> Bookstore_Book { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.Bookstore_BookInfo> Bookstore_BookInfo { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_BookTopic> Bookstore_BookTopic { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_ChildrensBook> Bookstore_ChildrensBook { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Comment> Bookstore_Comment { get; set; }
@@ -50,7 +51,9 @@ namespace Common
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_EmployeeDepartments> Bookstore_EmployeeDepartments { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_ForeignBook> Bookstore_ForeignBook { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Manager> Bookstore_Manager { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.Bookstore_NumberOfTopicsCalculation> Bookstore_NumberOfTopicsCalculation { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Person> Bookstore_Person { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.Bookstore_TestDeactivatable> Bookstore_TestDeactivatable { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Topic> Bookstore_Topic { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_AutoCodeCache> Common_AutoCodeCache { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_Claim> Common_Claim { get; set; }
@@ -68,6 +71,7 @@ namespace Common
         public System.Data.Entity.DbSet<Common.Queryable.Common_Role> Common_Role { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_RoleInheritsRole> Common_RoleInheritsRole { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_RolePermission> Common_RolePermission { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.Queries_BookInfoThroughExternalFile> Queries_BookInfoThroughExternalFile { get; set; }
         /*EntityFrameworkContextMembers*/
     }
 

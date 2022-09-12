@@ -27,6 +27,7 @@ namespace Common
             _mappings.Add(typeof(Bookstore.ForeignBook), new Bookstore_ForeignBook_Mapper());
             _mappings.Add(typeof(Bookstore.Manager), new Bookstore_Manager_Mapper());
             _mappings.Add(typeof(Bookstore.Person), new Bookstore_Person_Mapper());
+            _mappings.Add(typeof(Bookstore.TestDeactivatable), new Bookstore_TestDeactivatable_Mapper());
             _mappings.Add(typeof(Bookstore.Topic), new Bookstore_Topic_Mapper());
             _mappings.Add(typeof(Common.AutoCodeCache), new Common_AutoCodeCache_Mapper());
             _mappings.Add(typeof(Common.Claim), new Common_Claim_Mapper());
@@ -62,7 +63,9 @@ namespace Common
             return new PersistenceStorageObjectParameter[]
             {
                 new PersistenceStorageObjectParameter("ID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = entity.ID }),
+                new PersistenceStorageObjectParameter("Changed", new SqlParameter("", System.Data.SqlDbType.DateTime2) { Value = ((object)entity.Changed) ?? DBNull.Value, Scale = 3 }),
                 new PersistenceStorageObjectParameter("Code", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Code) ?? DBNull.Value }),
+                new PersistenceStorageObjectParameter("Inserted", new SqlParameter("", System.Data.SqlDbType.DateTime2) { Value = ((object)entity.Inserted) ?? DBNull.Value, Scale = 3 }),
                 new PersistenceStorageObjectParameter("NumberOfPages", new SqlParameter("", System.Data.SqlDbType.Int) { Value = ((object)entity.NumberOfPages) ?? DBNull.Value }),
                 new PersistenceStorageObjectParameter("Title", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Title) ?? DBNull.Value }),
                 new PersistenceStorageObjectParameter("AuthorID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = ((object)entity.AuthorID) ?? DBNull.Value }),
@@ -308,6 +311,7 @@ namespace Common
             return new PersistenceStorageObjectParameter[]
             {
                 new PersistenceStorageObjectParameter("ID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = entity.ID }),
+                new PersistenceStorageObjectParameter("Benefits", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Benefits) ?? DBNull.Value }),
                 new PersistenceStorageObjectParameter("Bonuses", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Bonuses) ?? DBNull.Value }),
                 /*DataStructureInfo PersistenceStorageMapperPropertyMapping Bookstore.Manager*/
             };
@@ -349,6 +353,33 @@ namespace Common
     	public string GetTableName()
         {
             return "Bookstore.Person";
+        }
+    }
+
+    public class Bookstore_TestDeactivatable_Mapper : IPersistenceStorageObjectMapper
+    {
+        public PersistenceStorageObjectParameter[] GetParameters(IEntity genericEntity)
+        {
+            var entity = (Bookstore.TestDeactivatable)genericEntity;
+            return new PersistenceStorageObjectParameter[]
+            {
+                new PersistenceStorageObjectParameter("ID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = entity.ID }),
+                new PersistenceStorageObjectParameter("Active", new SqlParameter("", System.Data.SqlDbType.Bit) { Value = ((object)entity.Active) ?? DBNull.Value }),
+                new PersistenceStorageObjectParameter("Name", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Name) ?? DBNull.Value }),
+                /*DataStructureInfo PersistenceStorageMapperPropertyMapping Bookstore.TestDeactivatable*/
+            };
+        }
+    
+    	public IEnumerable<Guid> GetDependencies(IEntity genericEntity)
+        {
+            var entity = (Bookstore.TestDeactivatable)genericEntity;
+            /*DataStructureInfo PersistenceStorageMapperDependencyResolution Bookstore.TestDeactivatable*/
+            yield break;
+        }
+    
+    	public string GetTableName()
+        {
+            return "Bookstore.TestDeactivatable";
         }
     }
 

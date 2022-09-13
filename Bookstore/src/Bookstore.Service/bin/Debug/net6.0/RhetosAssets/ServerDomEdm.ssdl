@@ -315,6 +315,16 @@
     <Property Name="IsAuthorized" Type="bit" Nullable="true" />
     <Property Name="RoleID" Type="uniqueidentifier" customannotation:Index="{ Name: IX_RoleID, Order: 0 }" Nullable="true" />
   </EntityType>
+  <EntityType Name="HardcodedExample_Genre">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsFiction" Type="bit" Nullable="true" />
+    <Property Name="Label" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
   <EntityType Name="Queries_BookInfoThroughExternalFile">
     <Key>
       <PropertyRef Name="ID" />
@@ -655,6 +665,7 @@
     <EntitySet Name="Common_Role" EntityType="Self.Common_Role" Schema="Common" Table="Role" />
     <EntitySet Name="Common_RoleInheritsRole" EntityType="Self.Common_RoleInheritsRole" Schema="Common" Table="RoleInheritsRole" />
     <EntitySet Name="Common_RolePermission" EntityType="Self.Common_RolePermission" Schema="Common" Table="RolePermission" />
+    <EntitySet Name="HardcodedExample_Genre" EntityType="Self.HardcodedExample_Genre" Schema="HardcodedExample" Table="Genre" />
     <EntitySet Name="Queries_BookInfoThroughExternalFile" EntityType="Self.Queries_BookInfoThroughExternalFile" Schema="Queries" Table="BookInfoThroughExternalFile" />
   <AssociationSet Name="Bookstore_BookInfo_Base" Association="Self.Bookstore_BookInfo_Base">
     <End Role="Bookstore_Book" EntitySet="Bookstore_Book" />

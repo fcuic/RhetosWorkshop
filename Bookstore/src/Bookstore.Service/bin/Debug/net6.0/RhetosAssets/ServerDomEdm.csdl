@@ -394,6 +394,16 @@
     <NavigationProperty Name="Claim" Relationship="Self.Common_RolePermission_Claim" FromRole="Common_RolePermission_Claim_Source" ToRole="Common_RolePermission_Claim_Target" />
     <NavigationProperty Name="Role" Relationship="Self.Common_RolePermission_Role" FromRole="Common_RolePermission_Role_Source" ToRole="Common_RolePermission_Role_Target" />
   </EntityType>
+  <EntityType Name="HardcodedExample_Genre" customannotation:ClrType="Common.Queryable.HardcodedExample_Genre, Bookstore.Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsFiction" Type="Boolean" />
+    <Property Name="Label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="Queries_BookInfoThroughExternalFile" customannotation:ClrType="Common.Queryable.Queries_BookInfoThroughExternalFile, Bookstore.Service">
     <Key>
       <PropertyRef Name="ID" />
@@ -735,6 +745,7 @@
     <EntitySet Name="Common_Role" EntityType="Self.Common_Role" />
     <EntitySet Name="Common_RoleInheritsRole" EntityType="Self.Common_RoleInheritsRole" />
     <EntitySet Name="Common_RolePermission" EntityType="Self.Common_RolePermission" />
+    <EntitySet Name="HardcodedExample_Genre" EntityType="Self.HardcodedExample_Genre" />
     <EntitySet Name="Queries_BookInfoThroughExternalFile" EntityType="Self.Queries_BookInfoThroughExternalFile" />
 	<AssociationSet Name="Bookstore_BookInfo_Base" Association="Self.Bookstore_BookInfo_Base">
 		<End Role="Bookstore_BookInfo_Base_Source" EntitySet="Bookstore_BookInfo" />

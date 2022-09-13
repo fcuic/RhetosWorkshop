@@ -59,6 +59,9 @@ namespace Bookstore.Repositories
         private ForeignBook_Repository _ForeignBook_Repository;
         public ForeignBook_Repository ForeignBook { get { return _ForeignBook_Repository ?? (_ForeignBook_Repository = (ForeignBook_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Bookstore.ForeignBook")); } }
 
+        private InsertBooks_Repository _InsertBooks_Repository;
+        public InsertBooks_Repository InsertBooks { get { return _InsertBooks_Repository ?? (_InsertBooks_Repository = (InsertBooks_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Bookstore.InsertBooks")); } }
+
         private Manager_Repository _Manager_Repository;
         public Manager_Repository Manager { get { return _Manager_Repository ?? (_Manager_Repository = (Manager_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Bookstore.Manager")); } }
 
@@ -101,8 +104,11 @@ namespace Bookstore.Repositories
         {
             return new KeyValuePair<string, Type>[]
             {
+                new KeyValuePair<string, Type>(@"ComplexSearch", typeof(ComplexSearch)),
                 new KeyValuePair<string, Type>(@"Bookstore.CommonMisspelling", typeof(Bookstore.CommonMisspelling)),
+                new KeyValuePair<string, Type>(@"Bookstore.LongBooks", typeof(Bookstore.LongBooks)),
                 new KeyValuePair<string, Type>(@"Bookstore.SystemRequiredCode", typeof(Bookstore.SystemRequiredCode)),
+                new KeyValuePair<string, Type>(@"ComposableFilter", typeof(ComposableFilter)),
                 /*DataStructureInfo ReadParameterTypes Bookstore.Book*/
             };
         }
@@ -315,6 +321,31 @@ namespace Bookstore.Repositories
             /*DefaultValuesInfo AfterDefaultValues Bookstore.Book*/
         }
 
+        public global::Bookstore.Book[] Load(ComplexSearch filter_Parameter)
+        {
+            Func<Common.DomRepository, ComplexSearch/*FilterByInfo AdditionalParametersType Bookstore.Book.ComplexSearch*/, Bookstore.Book[]> filter_Function =
+                (repository, parameter) =>
+      {
+          var query = repository.Bookstore.Book.Query(item => item.NumberOfPages >= parameter.MinimumPages);
+          if(parameter.ForeignBooksOnly == true)
+          {
+              query = query.Where(item => item.Extension_ForeignBook.ID != null);
+          }
+          Book[] books = query.ToSimple().ToArray();
+
+          if(parameter.MaskTitles == true)
+          {
+              foreach(var book in books.Where(b => !string.IsNullOrEmpty(b.Title)))
+              {
+                  book.Title = book.Title.First() + "***" + book.Title.Last();
+              }                
+          }
+          return books;
+      };
+
+            return filter_Function(_domRepository, filter_Parameter/*FilterByInfo AdditionalParametersArgument Bookstore.Book.ComplexSearch*/);
+        }
+
         public IEnumerable<InvalidDataMessage> GetErrorMessage_CommonMisspelling(IEnumerable<Guid> invalidData_Ids)
         {
             IDictionary<string, object> metadata = new Dictionary<string, object>();
@@ -350,9 +381,26 @@ namespace Bookstore.Repositories
             return source.Where(book => book.Title.Contains("curiousity"));
         }
 
+        public IQueryable<Common.Queryable.Bookstore_Book> Filter(IQueryable<Common.Queryable.Bookstore_Book> source, Bookstore.LongBooks parameter)
+        {/*QueryFilterExpressionInfo BeforeFilter Bookstore.Book.'Bookstore.LongBooks'*/
+            return source.Where(item => item.NumberOfPages >= 500);
+        }
+
         public IQueryable<Common.Queryable.Bookstore_Book> Filter(IQueryable<Common.Queryable.Bookstore_Book> source, Bookstore.SystemRequiredCode parameter)
         {/*QueryFilterExpressionInfo BeforeFilter Bookstore.Book.'Bookstore.SystemRequiredCode'*/
             return source.Where(item => item.Code == null);
+        }
+
+        public IQueryable<Common.Queryable.Bookstore_Book> Filter(IQueryable<Common.Queryable.Bookstore_Book> query, ComposableFilter parameter)
+        {/*ComposableFilterByInfo BeforeFilter Bookstore.Book.ComposableFilter*/
+            // Suppressing additional expression arguments in optimized ComposableFilterBy format (configuration option CommonConcepts:ComposableFilterByOptimizeLambda)
+            // /*ComposableFilterByInfo AdditionalParametersArgument Bookstore.Book.ComposableFilter*/
+            // /*ComposableFilterByInfo AdditionalParametersType Bookstore.Book.ComposableFilter*/
+            
+            var filtered = query.Where(item => item.NumberOfPages >= parameter.MinimumPages);
+                if (parameter.ForeignBooksOnly == true)
+                    filtered = filtered.Where(item => item.Extension_ForeignBook.ID != null);
+                return filtered;
         }
 
         /*DataStructureInfo RepositoryMembers Bookstore.Book*/
@@ -1423,6 +1471,54 @@ namespace Bookstore.Repositories
         }
 
         /*DataStructureInfo RepositoryMembers Bookstore.ForeignBook*/
+    }
+
+    /*DataStructureInfo RepositoryAttributes Bookstore.InsertBooks*/
+    public partial class InsertBooks_Repository : /*DataStructureInfo OverrideBaseType Bookstore.InsertBooks*/ global::Common.RepositoryBase
+        , IActionRepository/*DataStructureInfo RepositoryInterface Bookstore.InsertBooks*/
+    {
+        /*DataStructureInfo RepositoryPrivateMembers Bookstore.InsertBooks*/
+
+        public InsertBooks_Repository(Common.DomRepository domRepository, Common.ExecutionContext executionContext/*DataStructureInfo RepositoryConstructorArguments Bookstore.InsertBooks*/)
+        {
+            _domRepository = domRepository;
+            _executionContext = executionContext;
+            /*DataStructureInfo RepositoryConstructorCode Bookstore.InsertBooks*/
+        }
+
+        public void Execute(Bookstore.InsertBooks actionParameter)
+        {
+            Action<Bookstore.InsertBooks, Common.DomRepository, IUserInfo/*DataStructureInfo AdditionalParametersType Bookstore.InsertBooks*/> action_Object = (parameter, repository, userInfo) =>
+        {
+            for(int i = 0; i < parameter.NumberOfBooks; i++)
+            {
+                string newTitle = parameter.Title + "-" + (i+1);
+                var newBook = new Bookstore.Book { Code = "+++", Title = newTitle };
+                repository.Bookstore.Book.Insert(newBook);
+            }
+        };
+
+            bool allEffectsCompleted = false;
+            try
+            {
+                /*ActionInfo BeforeAction Bookstore.InsertBooks*/
+                action_Object(actionParameter, _domRepository, _executionContext.UserInfo/*DataStructureInfo AdditionalParametersArgument Bookstore.InsertBooks*/);
+                /*ActionInfo AfterAction Bookstore.InsertBooks*/
+                allEffectsCompleted = true;
+            }
+            finally
+            {
+                if (!allEffectsCompleted)
+                    _executionContext.PersistenceTransaction.DiscardOnDispose();
+            }
+        }
+
+        void IActionRepository.Execute(object actionParameter)
+        {
+            Execute((Bookstore.InsertBooks) actionParameter);
+        }
+
+        /*DataStructureInfo RepositoryMembers Bookstore.InsertBooks*/
     }
 
     /*DataStructureInfo RepositoryAttributes Bookstore.Manager*/

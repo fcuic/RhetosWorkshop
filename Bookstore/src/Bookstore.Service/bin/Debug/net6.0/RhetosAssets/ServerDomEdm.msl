@@ -317,6 +317,17 @@
       </MappingFragment>
     </EntityTypeMapping>
   </EntitySetMapping>
+  <EntitySetMapping Name="HardcodedExample_Genre">
+    <EntityTypeMapping TypeName="Rhetos.HardcodedExample_Genre">
+      <MappingFragment StoreEntitySet="HardcodedExample_Genre">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="Description" ColumnName="Description" />
+        <ScalarProperty Name="IsFiction" ColumnName="IsFiction" />
+        <ScalarProperty Name="Label" ColumnName="Label" />
+        <ScalarProperty Name="Name" ColumnName="Name" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
   <EntitySetMapping Name="Queries_BookInfoThroughExternalFile">
     <EntityTypeMapping TypeName="Rhetos.Queries_BookInfoThroughExternalFile">
       <MappingFragment StoreEntitySet="Queries_BookInfoThroughExternalFile">

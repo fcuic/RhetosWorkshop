@@ -380,6 +380,18 @@ namespace System.Linq
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<HardcodedExample.Genre> ToSimple(this IQueryable<Common.Queryable.HardcodedExample_Genre> query)
+        {
+            return query.Select(item => new HardcodedExample.Genre
+            {
+                ID = item.ID,
+                Description = item.Description,
+                IsFiction = item.IsFiction,
+                Label = item.Label,
+                Name = item.Name/*DataStructureInfo AssignSimpleProperty HardcodedExample.Genre*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
         public static IQueryable<Queries.BookInfoThroughExternalFile> ToSimple(this IQueryable<Common.Queryable.Queries_BookInfoThroughExternalFile> query)
         {
             return query.Select(item => new Queries.BookInfoThroughExternalFile

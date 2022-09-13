@@ -9379,6 +9379,10 @@
           "InPackagePath": "DslScripts\\BooksFlat.rhe"
         },
         {
+          "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\HardcodedExample.rhe",
+          "InPackagePath": "DslScripts\\HardcodedExample.rhe"
+        },
+        {
           "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\Query.rhe",
           "InPackagePath": "DslScripts\\Query.rhe"
         },
@@ -9389,6 +9393,10 @@
         {
           "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\SQL\\NumberOfTopics.sql",
           "InPackagePath": "DslScripts\\SQL\\NumberOfTopics.sql"
+        },
+        {
+          "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\SQL\\SqlView.sql",
+          "InPackagePath": "DslScripts\\SQL\\SqlView.sql"
         }
       ]
     }

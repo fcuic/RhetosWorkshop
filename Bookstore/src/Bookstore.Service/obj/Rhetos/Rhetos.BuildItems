@@ -1,5 +1,7 @@
 DslScripts\Books.rhe
 DslScripts\BooksFlat.rhe
+DslScripts\HardcodedExample.rhe
 DslScripts\Query.rhe
 DslScripts\SQL\BookInfo.sql
 DslScripts\SQL\NumberOfTopics.sql
+DslScripts\SQL\SqlView.sql

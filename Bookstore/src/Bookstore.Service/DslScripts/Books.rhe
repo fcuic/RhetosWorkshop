@@ -9,10 +9,51 @@ Module Bookstore
       DateTime Changed { ModificationTimeOf Bookstore.Book.Title; }
 
       Reference Author Bookstore.Person;
+      ItemFilter LongBooks 'item => item.NumberOfPages >= 500'; 
+      ComposableFilterBy ComposableFilter '(query, repository, parameter) =>
+            {
+                var filtered = query.Where(item => item.NumberOfPages >= parameter.MinimumPages);
+                if (parameter.ForeignBooksOnly == true)
+                    filtered = filtered.Where(item => item.Extension_ForeignBook.ID != null);
+                return filtered;
+            }';
+
+      FilterBy ComplexSearch 
+      '(repository, parameter) =>
+      {
+          var query = repository.Bookstore.Book.Query(item => item.NumberOfPages >= parameter.MinimumPages);
+          if(parameter.ForeignBooksOnly == true)
+          {
+              query = query.Where(item => item.Extension_ForeignBook.ID != null);
+          }
+          Book[] books = query.ToSimple().ToArray();
+
+          if(parameter.MaskTitles == true)
+          {
+              foreach(var book in books.Where(b => !string.IsNullOrEmpty(b.Title)))
+              {
+                  book.Title = book.Title.First() + "***" + book.Title.Last();
+              }                
+          }
+          return books;
+      }';
       ItemFilter CommonMisspelling 'book => book.Title.Contains("curiousity")';
       InvalidData CommonMisspelling 'It is not allowed to enter misspelled word "curiousity".';
 
       Logging { AllProperties; }
+   }
+
+   Parameter ComplexSearch
+   {
+       Integer MinimumPages;
+       Bool ForeignBooksOnly;
+       Bool MaskTitles;
+   }
+
+   Parameter ComposableFilter
+   {
+     Integer MinimumPages;
+     Bool ForeignBooksOnly;
    }
 
    Entity Person
@@ -205,6 +246,24 @@ Module Bookstore
 		Take 'Extension_NumberOfTopicsCalculation.NumberOfTopics';
 	}
 
+    //#endregion
+
+    //#region
+
+    Action InsertBooks
+        '(parameter, repository, userInfo) =>
+        {
+            for(int i = 0; i < parameter.NumberOfBooks; i++)
+            {
+                string newTitle = parameter.Title + "-" + (i+1);
+                var newBook = new Bookstore.Book { Code = "+++", Title = newTitle };
+                repository.Bookstore.Book.Insert(newBook);
+            }
+        }'
+        {
+            Integer NumberOfBooks;
+            ShortString Title;
+        }
 
     //#endregion
 }

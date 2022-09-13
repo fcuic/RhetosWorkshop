@@ -82,6 +82,28 @@ namespace Bookstore
         /*DataStructureInfo ClassBody Bookstore.CommonMisspelling*/
     }
 
+    /*DataStructureInfo ClassAttributes Bookstore.ComplexSearch*/
+    public class ComplexSearch/*DataStructureInfo ClassInterace Bookstore.ComplexSearch*/
+    {
+        /*PropertyInfo Attribute Bookstore.ComplexSearch.ForeignBooksOnly*/
+        public bool? ForeignBooksOnly { get; set; }
+        /*PropertyInfo Attribute Bookstore.ComplexSearch.MaskTitles*/
+        public bool? MaskTitles { get; set; }
+        /*PropertyInfo Attribute Bookstore.ComplexSearch.MinimumPages*/
+        public int? MinimumPages { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.ComplexSearch*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.ComposableFilter*/
+    public class ComposableFilter/*DataStructureInfo ClassInterace Bookstore.ComposableFilter*/
+    {
+        /*PropertyInfo Attribute Bookstore.ComposableFilter.ForeignBooksOnly*/
+        public bool? ForeignBooksOnly { get; set; }
+        /*PropertyInfo Attribute Bookstore.ComposableFilter.MinimumPages*/
+        public int? MinimumPages { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.ComposableFilter*/
+    }
+
     /*DataStructureInfo ClassAttributes Bookstore.ContainsLockConstraint*/
     public class ContainsLockConstraint/*DataStructureInfo ClassInterace Bookstore.ContainsLockConstraint*/
     {
@@ -154,6 +176,22 @@ namespace Bookstore
         /*PropertyInfo Attribute Bookstore.ForeignBook.TranslatorID*/
         public Guid? TranslatorID { get; set; }
         /*DataStructureInfo ClassBody Bookstore.ForeignBook*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.InsertBooks*/
+    public class InsertBooks/*DataStructureInfo ClassInterace Bookstore.InsertBooks*/
+    {
+        /*PropertyInfo Attribute Bookstore.InsertBooks.NumberOfBooks*/
+        public int? NumberOfBooks { get; set; }
+        /*PropertyInfo Attribute Bookstore.InsertBooks.Title*/
+        public string Title { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.InsertBooks*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.LongBooks*/
+    public class LongBooks/*DataStructureInfo ClassInterace Bookstore.LongBooks*/
+    {
+        /*DataStructureInfo ClassBody Bookstore.LongBooks*/
     }
 
     /*DataStructureInfo ClassAttributes Bookstore.Manager*/

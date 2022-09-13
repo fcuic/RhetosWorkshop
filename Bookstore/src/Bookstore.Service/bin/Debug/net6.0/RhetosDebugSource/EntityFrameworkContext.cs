@@ -71,6 +71,7 @@ namespace Common
         public System.Data.Entity.DbSet<Common.Queryable.Common_Role> Common_Role { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_RoleInheritsRole> Common_RoleInheritsRole { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_RolePermission> Common_RolePermission { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.HardcodedExample_Genre> HardcodedExample_Genre { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Queries_BookInfoThroughExternalFile> Queries_BookInfoThroughExternalFile { get; set; }
         /*EntityFrameworkContextMembers*/
     }

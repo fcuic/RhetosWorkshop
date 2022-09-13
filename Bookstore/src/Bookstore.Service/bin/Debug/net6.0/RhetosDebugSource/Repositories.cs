@@ -29,6 +29,9 @@ namespace Common
         private Common.Repositories.ModuleRepository _Common;
         public Common.Repositories.ModuleRepository Common { get { return _Common ?? (_Common = new Common.Repositories.ModuleRepository(_repositories)); } }
 
+        private HardcodedExample.Repositories.ModuleRepository _HardcodedExample;
+        public HardcodedExample.Repositories.ModuleRepository HardcodedExample { get { return _HardcodedExample ?? (_HardcodedExample = new HardcodedExample.Repositories.ModuleRepository(_repositories)); } }
+
         private Queries.Repositories.ModuleRepository _Queries;
         public Queries.Repositories.ModuleRepository Queries { get { return _Queries ?? (_Queries = new Queries.Repositories.ModuleRepository(_repositories)); } }
 
@@ -91,6 +94,7 @@ namespace Common
             { "Common.Role", Common.Repositories.Role_Repository.GetReadParameterTypes },
             { "Common.RoleInheritsRole", Common.Repositories.RoleInheritsRole_Repository.GetReadParameterTypes },
             { "Common.RolePermission", Common.Repositories.RolePermission_Repository.GetReadParameterTypes },
+            { "HardcodedExample.Genre", HardcodedExample.Repositories.Genre_Repository.GetReadParameterTypes },
             { "Queries.BookInfoThroughExternalFile", Queries.Repositories.BookInfoThroughExternalFile_Repository.GetReadParameterTypes },
             { "Bookstore.BooksAuthorsAndTopicsGrid", Bookstore.Repositories.BooksAuthorsAndTopicsGrid_Repository.GetReadParameterTypes },
             { "Queries.BookGrid", Queries.Repositories.BookGrid_Repository.GetReadParameterTypes },
@@ -219,6 +223,8 @@ namespace Common
             builder.RegisterType<Bookstore.Repositories.ExpectedBookRating_Repository>().Keyed<IRepository>("Bookstore.ExpectedBookRating").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.ExternalCustomer_Repository>().Keyed<IRepository>("Bookstore.ExternalCustomer").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.ForeignBook_Repository>().Keyed<IRepository>("Bookstore.ForeignBook").InstancePerLifetimeScope();
+            builder.RegisterType<Bookstore.Repositories.InsertBooks_Repository>().Keyed<IRepository>("Bookstore.InsertBooks").InstancePerLifetimeScope();
+            builder.RegisterType<Bookstore.Repositories.InsertBooks_Repository>().Keyed<IActionRepository>("Bookstore.InsertBooks").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.Manager_Repository>().Keyed<IRepository>("Bookstore.Manager").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.NumberOfTopicsCalculation_Repository>().Keyed<IRepository>("Bookstore.NumberOfTopicsCalculation").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.Person_Repository>().Keyed<IRepository>("Bookstore.Person").InstancePerLifetimeScope();
@@ -246,6 +252,7 @@ namespace Common
             builder.RegisterType<Common.Repositories.RolePermission_Repository>().Keyed<IRepository>("Common.RolePermission").InstancePerLifetimeScope();
             builder.RegisterType<Common.Repositories.SetLock_Repository>().Keyed<IRepository>("Common.SetLock").InstancePerLifetimeScope();
             builder.RegisterType<Common.Repositories.SetLock_Repository>().Keyed<IActionRepository>("Common.SetLock").InstancePerLifetimeScope();
+            builder.RegisterType<HardcodedExample.Repositories.Genre_Repository>().Keyed<IRepository>("HardcodedExample.Genre").InstancePerLifetimeScope();
             builder.RegisterType<Queries.Repositories.BookInfoThroughExternalFile_Repository>().Keyed<IRepository>("Queries.BookInfoThroughExternalFile").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.BooksAuthorsAndTopicsGrid_Repository>().Keyed<IRepository>("Bookstore.BooksAuthorsAndTopicsGrid").InstancePerLifetimeScope();
             builder.RegisterType<Queries.Repositories.BookGrid_Repository>().Keyed<IRepository>("Queries.BookGrid").InstancePerLifetimeScope();

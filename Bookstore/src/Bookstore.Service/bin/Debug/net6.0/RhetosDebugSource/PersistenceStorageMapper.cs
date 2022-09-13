@@ -42,6 +42,7 @@ namespace Common
             _mappings.Add(typeof(Common.Role), new Common_Role_Mapper());
             _mappings.Add(typeof(Common.RoleInheritsRole), new Common_RoleInheritsRole_Mapper());
             _mappings.Add(typeof(Common.RolePermission), new Common_RolePermission_Mapper());
+            _mappings.Add(typeof(HardcodedExample.Genre), new HardcodedExample_Genre_Mapper());
             /*PersistenceStorageMappingRegistration*/
         }
 
@@ -775,6 +776,35 @@ namespace Common
     	public string GetTableName()
         {
             return "Common.RolePermission";
+        }
+    }
+
+    public class HardcodedExample_Genre_Mapper : IPersistenceStorageObjectMapper
+    {
+        public PersistenceStorageObjectParameter[] GetParameters(IEntity genericEntity)
+        {
+            var entity = (HardcodedExample.Genre)genericEntity;
+            return new PersistenceStorageObjectParameter[]
+            {
+                new PersistenceStorageObjectParameter("ID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = entity.ID }),
+                new PersistenceStorageObjectParameter("Description", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Description) ?? DBNull.Value }),
+                new PersistenceStorageObjectParameter("IsFiction", new SqlParameter("", System.Data.SqlDbType.Bit) { Value = ((object)entity.IsFiction) ?? DBNull.Value }),
+                new PersistenceStorageObjectParameter("Label", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Label) ?? DBNull.Value }),
+                new PersistenceStorageObjectParameter("Name", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Name) ?? DBNull.Value }),
+                /*DataStructureInfo PersistenceStorageMapperPropertyMapping HardcodedExample.Genre*/
+            };
+        }
+    
+    	public IEnumerable<Guid> GetDependencies(IEntity genericEntity)
+        {
+            var entity = (HardcodedExample.Genre)genericEntity;
+            /*DataStructureInfo PersistenceStorageMapperDependencyResolution HardcodedExample.Genre*/
+            yield break;
+        }
+    
+    	public string GetTableName()
+        {
+            return "HardcodedExample.Genre";
         }
     }
 

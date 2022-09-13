@@ -1,0 +1,23 @@
+Module Queries
+{
+	Browse BookGrid Bookstore.Book
+	{
+		Take Code;
+		Take Title;
+		Take 'Author.Name';
+		Take NameOfTranslator 'Extension_ForeignBook.Translator.Name';
+		Take NumberOfComments 'Extension_BookInfo.NumberOfComments';
+	}
+
+	SqlQueryable BookInfoThroughExternalFile <SQL\BookInfo.sql>
+	{
+		Extends Bookstore.Book;
+		Integer NumberOfComments;
+
+		AutodetectSqlDependencies;
+	}
+
+	
+	
+}
+

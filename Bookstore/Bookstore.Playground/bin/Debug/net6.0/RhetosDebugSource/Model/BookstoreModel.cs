@@ -27,8 +27,8 @@ namespace Bookstore
         public DateTime? Changed { get; set; }
         /*PropertyInfo Attribute Bookstore.Book.Code*/
         public string Code { get; set; }
-        /*PropertyInfo Attribute Bookstore.Book.Inserted*/
-        public DateTime? Inserted { get; set; }
+        /*PropertyInfo Attribute Bookstore.Book.CreatedAt*/
+        public DateTime? CreatedAt { get; set; }
         /*PropertyInfo Attribute Bookstore.Book.NumberOfPages*/
         public int? NumberOfPages { get; set; }
         /*PropertyInfo Attribute Bookstore.Book.Title*/
@@ -220,6 +220,32 @@ namespace Bookstore
         /*DataStructureInfo ClassBody Bookstore.Person*/
     }
 
+    /*DataStructureInfo ClassAttributes Bookstore.Review*/
+    public class Review : EntityBase<Bookstore.Review>/*Next DataStructureInfo ClassInterace Bookstore.Review*/
+    {
+        /*PropertyInfo Attribute Bookstore.Review.BookID*/
+        public Guid? BookID { get; set; }
+        /*PropertyInfo Attribute Bookstore.Review.LastModifiedTime*/
+        public DateTime? LastModifiedTime { get; set; }
+        /*PropertyInfo Attribute Bookstore.Review.ReviewScore*/
+        public decimal? ReviewScore { get; set; }
+        /*PropertyInfo Attribute Bookstore.Review.Text*/
+        public string Text { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.Review*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.ReviewScore_MaxValueFilter*/
+    public class ReviewScore_MaxValueFilter/*DataStructureInfo ClassInterace Bookstore.ReviewScore_MaxValueFilter*/
+    {
+        /*DataStructureInfo ClassBody Bookstore.ReviewScore_MaxValueFilter*/
+    }
+
+    /*DataStructureInfo ClassAttributes Bookstore.ReviewScore_MinValueFilter*/
+    public class ReviewScore_MinValueFilter/*DataStructureInfo ClassInterace Bookstore.ReviewScore_MinValueFilter*/
+    {
+        /*DataStructureInfo ClassBody Bookstore.ReviewScore_MinValueFilter*/
+    }
+
     /*DataStructureInfo ClassAttributes Bookstore.SystemRequiredActive*/
     public class SystemRequiredActive/*DataStructureInfo ClassInterace Bookstore.SystemRequiredActive*/
     {
@@ -332,7 +358,7 @@ namespace Common.Queryable
                 ID = item.ID,
                 Changed = item.Changed,
                 Code = item.Code,
-                Inserted = item.Inserted,
+                CreatedAt = item.CreatedAt,
                 NumberOfPages = item.NumberOfPages,
                 Title = item.Title,
                 AuthorID = item.AuthorID/*DataStructureInfo AssignSimpleProperty Bookstore.Book*/
@@ -696,6 +722,34 @@ namespace Common.Queryable
             {
                 ID = item.ID,
                 Name = item.Name/*DataStructureInfo AssignSimpleProperty Bookstore.Person*/
+            };
+        }
+    }
+
+    /*DataStructureInfo QueryableClassAttributes Bookstore.Review*/
+    public class Bookstore_Review : global::Bookstore.Review, IQueryableEntity<Bookstore.Review>, System.IEquatable<Bookstore_Review>/*DataStructureInfo QueryableClassInterace Bookstore.Review*/
+    {
+        /*DataStructureQueryable PropertyAttribute Bookstore.Review.Book*/
+        public virtual Common.Queryable.Bookstore_Book Book { get; init; }
+
+        /*DataStructureInfo QueryableClassMembers Bookstore.Review*/
+
+        public bool Equals(Bookstore_Review other)
+        {
+            return other != null && other.ID == ID;
+        }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public Bookstore.Review ToSimple()
+        {
+            var item = this;
+            return new Bookstore.Review
+            {
+                ID = item.ID,
+                BookID = item.BookID,
+                LastModifiedTime = item.LastModifiedTime,
+                ReviewScore = item.ReviewScore,
+                Text = item.Text/*DataStructureInfo AssignSimpleProperty Bookstore.Review*/
             };
         }
     }

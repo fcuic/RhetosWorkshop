@@ -71,6 +71,9 @@ namespace Bookstore.Repositories
         private Person_Repository _Person_Repository;
         public Person_Repository Person { get { return _Person_Repository ?? (_Person_Repository = (Person_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Bookstore.Person")); } }
 
+        private Review_Repository _Review_Repository;
+        public Review_Repository Review { get { return _Review_Repository ?? (_Review_Repository = (Review_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Bookstore.Review")); } }
+
         private TestDeactivatable_Repository _TestDeactivatable_Repository;
         public TestDeactivatable_Repository TestDeactivatable { get { return _TestDeactivatable_Repository ?? (_TestDeactivatable_Repository = (TestDeactivatable_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Bookstore.TestDeactivatable")); } }
 
@@ -120,6 +123,19 @@ namespace Bookstore.Repositories
 
             /*DataStructureInfo WritableOrm ClearContext Bookstore.Book*/
 
+            if (checkUserPermissions)
+            {
+                var invalidItem = insertedNew.Where(newItem => newItem.CreatedAt != null).FirstOrDefault();
+
+                if (invalidItem != null)
+                    throw new Rhetos.UserException(
+                        "It is not allowed to directly enter {0} property of {1}.",
+                        new[] { _localizer["CreatedAt"], _localizer["Bookstore.Book"] },
+                        "DataStructure:Bookstore.Book,ID:" + invalidItem.ID + ",Property:CreatedAt",
+                        null);
+            
+            }
+
             /*DataStructureInfo WritableOrm ArgumentValidation Bookstore.Book*/
 
             InitializeDefaultValues(insertedNew);
@@ -128,8 +144,8 @@ namespace Bookstore.Repositories
                 var now = SqlUtility.GetDatabaseTime(_executionContext.SqlExecuter);
 
                 foreach (var newItem in insertedNew)
-                    if(newItem.Inserted == null)
-                        newItem.Inserted = now;
+                    if(newItem.CreatedAt == null)
+                        newItem.CreatedAt = now;
             }
             var updatedIdsList = updatedNew.Select(item => item.ID).ToList();
             var deletedIdsList = deletedIds.Select(item => item.ID).ToList();
@@ -187,6 +203,26 @@ namespace Bookstore.Repositories
                 _executionContext.SqlExecuter, "Bookstore.Book", "Code",
                 insertedNew.Select(item => AutoCodeItem.Create(item, item.Code/*AutoCodePropertyInfo Grouping Bookstore.Book.Code*/)).ToList(),
                 (item, newCode) => item.Code = newCode/*AutoCodePropertyInfo GroupColumnMetadata Bookstore.Book.Code*/);
+
+            if (checkUserPermissions)
+            {
+                var changes = updatedNew.Zip(updated, (newItem, oldItem) => new { newItem, oldItem });
+                foreach (var change in changes)
+                    if (change.newItem.CreatedAt == null && change.oldItem.CreatedAt != null)
+                        change.newItem.CreatedAt = change.oldItem.CreatedAt;
+                var invalidItem = changes
+                    .Where(change => change.newItem.CreatedAt != null && !change.newItem.CreatedAt.Equals(change.oldItem.CreatedAt) || change.newItem.CreatedAt == null && change.oldItem.CreatedAt != null)
+                    .Select(change => change.newItem)
+                    .FirstOrDefault();
+
+                if (invalidItem != null)
+                    throw new Rhetos.UserException(
+                        "It is not allowed to directly enter {0} property of {1}.",
+                        new[] { _localizer["CreatedAt"], _localizer["Bookstore.Book"] },
+                        "DataStructure:Bookstore.Book,ID:" + invalidItem.ID + ",Property:CreatedAt",
+                        null);
+            
+            }
 
             if (deletedIds.Count() > 0)
             {
@@ -258,6 +294,8 @@ namespace Bookstore.Repositories
                         ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Bookstore.ForeignBook,Property:ID,Referenced:Bookstore.Book";
                     if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Bookstore.Person", @"ID", @"FK_Book_Person_AuthorID"))
                         ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Bookstore.Book,Property:AuthorID,Referenced:Bookstore.Person";
+                    if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Bookstore.Review", @"BookID", @"FK_Review_Book_BookID"))
+                        ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Bookstore.Review,Property:BookID,Referenced:Bookstore.Book";
                     if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Bookstore.Book", @"IX_Book_Code"))
                         ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Bookstore.Book,Property:Code";
                     /*DataStructureInfo WritableOrm OnDatabaseError Bookstore.Book*/
@@ -1776,6 +1814,200 @@ namespace Bookstore.Repositories
         }
 
         /*DataStructureInfo RepositoryMembers Bookstore.Person*/
+    }
+
+    /*DataStructureInfo RepositoryAttributes Bookstore.Review*/
+    public partial class Review_Repository : /*DataStructureInfo OverrideBaseType Bookstore.Review*/ Common.OrmRepositoryBase<Common.Queryable.Bookstore_Review, Bookstore.Review> // Common.QueryableRepositoryBase<Common.Queryable.Bookstore_Review, Bookstore.Review> // Common.ReadableRepositoryBase<Bookstore.Review> // global::Common.RepositoryBase
+        , IWritableRepository<Bookstore.Review>, IValidateRepository/*DataStructureInfo RepositoryInterface Bookstore.Review*/
+    {
+        private readonly Rhetos.Utilities.ILocalizer<Bookstore.Review> _localizer;
+        private readonly Rhetos.Utilities.ISqlUtility _sqlUtility;
+        /*DataStructureInfo RepositoryPrivateMembers Bookstore.Review*/
+
+        public Review_Repository(Common.DomRepository domRepository, Common.ExecutionContext executionContext, Rhetos.Utilities.ILocalizer<Bookstore.Review> _localizer, Rhetos.Utilities.ISqlUtility _sqlUtility/*DataStructureInfo RepositoryConstructorArguments Bookstore.Review*/)
+        {
+            _domRepository = domRepository;
+            _executionContext = executionContext;
+            this._localizer = _localizer;
+            this._sqlUtility = _sqlUtility;
+            /*DataStructureInfo RepositoryConstructorCode Bookstore.Review*/
+        }
+
+        public static KeyValuePair<string, Type>[] GetReadParameterTypes()
+        {
+            return new KeyValuePair<string, Type>[]
+            {
+                new KeyValuePair<string, Type>(@"Bookstore.ReviewScore_MaxValueFilter", typeof(Bookstore.ReviewScore_MaxValueFilter)),
+                new KeyValuePair<string, Type>(@"Bookstore.ReviewScore_MinValueFilter", typeof(Bookstore.ReviewScore_MinValueFilter)),
+                /*DataStructureInfo ReadParameterTypes Bookstore.Review*/
+            };
+        }
+        
+        public virtual void Save(IEnumerable<Bookstore.Review> insertedNew, IEnumerable<Bookstore.Review> updatedNew, IEnumerable<Bookstore.Review> deletedIds, bool checkUserPermissions = false)
+        {
+            if (!DomHelper.InitializeSaveMethodItems(ref insertedNew, ref updatedNew, ref deletedIds))
+                return;
+
+            /*DataStructureInfo WritableOrm ClearContext Bookstore.Review*/
+
+            /*DataStructureInfo WritableOrm ArgumentValidation Bookstore.Review*/
+
+            var updatedIdsList = updatedNew.Select(item => item.ID).ToList();
+            var deletedIdsList = deletedIds.Select(item => item.ID).ToList();
+            var updatedOld = Filter(Query(), updatedIdsList).Select(item => new { item.ID,
+                BookTitle = item.Book.Title,
+                ReviewScore = item.ReviewScore/*LoadOldItemsInfo SelectProperties Bookstore.Review*/ }).ToList();
+            var deletedOld = Filter(Query(), deletedIdsList).Select(item => new { item.ID,
+                BookTitle = item.Book.Title,
+                ReviewScore = item.ReviewScore/*LoadOldItemsInfo SelectProperties Bookstore.Review*/ }).ToList();
+            Rhetos.Utilities.Graph.SortByGivenOrder(updatedOld, updatedIdsList, item => item.ID);
+            Rhetos.Utilities.Graph.SortByGivenOrder(deletedOld, deletedIdsList, item => item.ID);
+
+            { // DefaultTextFromScore
+                foreach(var item in insertedNew)
+           {
+               if(string.IsNullOrEmpty(item.Text) && item.ReviewScore != null)
+               {
+                   item.Text = (item.ReviewScore.Value >= 8) ? "The Book has high quality" : "Book is OK or bad"; 
+               }
+           }
+            }
+
+            { // UpdateTime
+                if(updatedNew.Any())
+           {
+               foreach(var updatedReview in updatedNew)
+               {
+                   updatedReview.LastModifiedTime = DateTime.Now;
+               }
+           }
+            }
+
+            /*DataStructureInfo WritableOrm Initialization Bookstore.Review*/
+
+            // Using old data, including lazy loading of navigation properties:
+
+            IEnumerable<Common.Queryable.Bookstore_Review> deleted = DomHelper.LoadOldDataWithNavigationProperties(deletedIds, this);
+            IEnumerable<Common.Queryable.Bookstore_Review> updated = DomHelper.LoadOldDataWithNavigationProperties(updatedNew, this);
+
+            /*DataStructureInfo WritableOrm OldDataLoaded Bookstore.Review*/
+
+            {
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.BookID == null /*RequiredPropertyInfo OrCondition Bookstore.Review.Book*/);
+                if (invalid != null)
+                    throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
+                        new[] { _localizer["Bookstore.Review"], _localizer["Book"] },
+                        "DataStructure:Bookstore.Review,ID:" + invalid.ID.ToString() + ",Property:BookID", null);
+            }
+            {
+                var invalid = insertedNew.Concat(updatedNew).FirstOrDefault(item => item.ReviewScore == null /*RequiredPropertyInfo OrCondition Bookstore.Review.ReviewScore*/);
+                if (invalid != null)
+                    throw new Rhetos.UserException("It is not allowed to enter {0} because the required property {1} is not set.",
+                        new[] { _localizer["Bookstore.Review"], _localizer["ReviewScore"] },
+                        "DataStructure:Bookstore.Review,ID:" + invalid.ID.ToString() + ",Property:ReviewScore", null);
+            }
+            /*DataStructureInfo WritableOrm ProcessedOldData Bookstore.Review*/
+
+            {
+                DomHelper.WriteToDatabase(insertedNew, updatedNew, deletedIds, _executionContext.PersistenceStorage, checkUserPermissions, _sqlUtility,
+                    out Exception saveException, out Rhetos.RhetosException interpretedException);
+
+                if (saveException != null)
+                {
+                    if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Bookstore.Book", @"ID", @"FK_Review_Book_BookID"))
+                        ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Bookstore.Review,Property:BookID,Referenced:Bookstore.Book";
+                    /*DataStructureInfo WritableOrm OnDatabaseError Bookstore.Review*/
+                    DomHelper.ThrowInterpretedException(checkUserPermissions, saveException, interpretedException, _sqlUtility, "Bookstore.Review");
+                }
+            }
+
+            deleted = null;
+            updated = this.Query(updatedNew.Select(item => item.ID));
+            IEnumerable<Common.Queryable.Bookstore_Review> inserted = this.Query(insertedNew.Select(item => item.ID));
+
+            bool allEffectsCompleted = false;
+            try
+            {
+                /*DataStructureInfo WritableOrm OnSaveTag1 Bookstore.Review*/
+
+                /*DataStructureInfo WritableOrm OnSaveTag2 Bookstore.Review*/
+
+                Rhetos.Dom.DefaultConcepts.InvalidDataMessage.ValidateOnSave(insertedNew, updatedNew, this, "Bookstore.Review");
+
+                /*DataStructureInfo WritableOrm AfterSave Bookstore.Review*/
+
+                allEffectsCompleted = true;
+            }
+            finally
+            {
+                if (!allEffectsCompleted)
+                    _executionContext.PersistenceTransaction.DiscardOnDispose();
+            }
+        }
+
+        public IEnumerable<Rhetos.Dom.DefaultConcepts.InvalidDataMessage> Validate(IList<Guid> ids, bool onSave)
+        {
+            if (onSave)
+            {
+                var errorIds = this.Filter(this.Query(ids), new Bookstore.ReviewScore_MaxValueFilter()).Select(item => item.ID).ToArray();
+                if (errorIds.Count() > 0)
+                    foreach (var error in GetErrorMessage_ReviewScore_MaxValueFilter(errorIds))
+                        yield return error;
+            }
+            if (onSave)
+            {
+                var errorIds = this.Filter(this.Query(ids), new Bookstore.ReviewScore_MinValueFilter()).Select(item => item.ID).ToArray();
+                if (errorIds.Count() > 0)
+                    foreach (var error in GetErrorMessage_ReviewScore_MinValueFilter(errorIds))
+                        yield return error;
+            }
+            /*DataStructureInfo WritableOrm OnSaveValidate Bookstore.Review*/
+            yield break;
+        }
+
+        public IEnumerable<InvalidDataMessage> GetErrorMessage_ReviewScore_MaxValueFilter(IEnumerable<Guid> invalidData_Ids)
+        {
+            IDictionary<string, object> metadata = new Dictionary<string, object>();
+            metadata["Validation"] = @"Bookstore.ReviewScore_MaxValueFilter";
+            metadata[@"Property"] = @"ReviewScore";
+            /*InvalidDataInfo ErrorMetadata Bookstore.Review.'Bookstore.ReviewScore_MaxValueFilter'*/
+            /*InvalidDataInfo CustomValidationResult Bookstore.Review.'Bookstore.ReviewScore_MaxValueFilter'*/
+            return invalidData_Ids.Select(id => new InvalidDataMessage
+            {
+                ID = id,
+                Message = @"Maximum value of {0} is {1}.",
+                MessageParameters = new object[] { @"ReviewScore", @"10" },
+                Metadata = metadata
+            });
+        }
+
+        public IEnumerable<InvalidDataMessage> GetErrorMessage_ReviewScore_MinValueFilter(IEnumerable<Guid> invalidData_Ids)
+        {
+            IDictionary<string, object> metadata = new Dictionary<string, object>();
+            metadata["Validation"] = @"Bookstore.ReviewScore_MinValueFilter";
+            metadata[@"Property"] = @"ReviewScore";
+            /*InvalidDataInfo ErrorMetadata Bookstore.Review.'Bookstore.ReviewScore_MinValueFilter'*/
+            /*InvalidDataInfo CustomValidationResult Bookstore.Review.'Bookstore.ReviewScore_MinValueFilter'*/
+            return invalidData_Ids.Select(id => new InvalidDataMessage
+            {
+                ID = id,
+                Message = @"Minimum value of {0} is {1}.",
+                MessageParameters = new object[] { @"ReviewScore", @"1" },
+                Metadata = metadata
+            });
+        }
+
+        public IQueryable<Common.Queryable.Bookstore_Review> Filter(IQueryable<Common.Queryable.Bookstore_Review> items, Bookstore.ReviewScore_MaxValueFilter parameter)
+        {/*QueryFilterExpressionInfo BeforeFilter Bookstore.Review.'Bookstore.ReviewScore_MaxValueFilter'*/
+            decimal limit = 10M; return items.Where(item => item.ReviewScore != null && item.ReviewScore > limit);
+        }
+
+        public IQueryable<Common.Queryable.Bookstore_Review> Filter(IQueryable<Common.Queryable.Bookstore_Review> items, Bookstore.ReviewScore_MinValueFilter parameter)
+        {/*QueryFilterExpressionInfo BeforeFilter Bookstore.Review.'Bookstore.ReviewScore_MinValueFilter'*/
+            decimal limit = 1M; return items.Where(item => item.ReviewScore != null && item.ReviewScore < limit);
+        }
+
+        /*DataStructureInfo RepositoryMembers Bookstore.Review*/
     }
 
     /*DataStructureInfo RepositoryAttributes Bookstore.TestDeactivatable*/

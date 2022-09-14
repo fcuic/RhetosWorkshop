@@ -27,6 +27,7 @@ namespace Common
             _mappings.Add(typeof(Bookstore.ForeignBook), new Bookstore_ForeignBook_Mapper());
             _mappings.Add(typeof(Bookstore.Manager), new Bookstore_Manager_Mapper());
             _mappings.Add(typeof(Bookstore.Person), new Bookstore_Person_Mapper());
+            _mappings.Add(typeof(Bookstore.Review), new Bookstore_Review_Mapper());
             _mappings.Add(typeof(Bookstore.TestDeactivatable), new Bookstore_TestDeactivatable_Mapper());
             _mappings.Add(typeof(Bookstore.Topic), new Bookstore_Topic_Mapper());
             _mappings.Add(typeof(Common.AutoCodeCache), new Common_AutoCodeCache_Mapper());
@@ -42,6 +43,7 @@ namespace Common
             _mappings.Add(typeof(Common.Role), new Common_Role_Mapper());
             _mappings.Add(typeof(Common.RoleInheritsRole), new Common_RoleInheritsRole_Mapper());
             _mappings.Add(typeof(Common.RolePermission), new Common_RolePermission_Mapper());
+            _mappings.Add(typeof(ConceptsDemo.TestEntity), new ConceptsDemo_TestEntity_Mapper());
             _mappings.Add(typeof(HardcodedExample.Genre), new HardcodedExample_Genre_Mapper());
             /*PersistenceStorageMappingRegistration*/
         }
@@ -66,7 +68,7 @@ namespace Common
                 new PersistenceStorageObjectParameter("ID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = entity.ID }),
                 new PersistenceStorageObjectParameter("Changed", new SqlParameter("", System.Data.SqlDbType.DateTime2) { Value = ((object)entity.Changed) ?? DBNull.Value, Scale = 3 }),
                 new PersistenceStorageObjectParameter("Code", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Code) ?? DBNull.Value }),
-                new PersistenceStorageObjectParameter("Inserted", new SqlParameter("", System.Data.SqlDbType.DateTime2) { Value = ((object)entity.Inserted) ?? DBNull.Value, Scale = 3 }),
+                new PersistenceStorageObjectParameter("CreatedAt", new SqlParameter("", System.Data.SqlDbType.DateTime2) { Value = ((object)entity.CreatedAt) ?? DBNull.Value, Scale = 3 }),
                 new PersistenceStorageObjectParameter("NumberOfPages", new SqlParameter("", System.Data.SqlDbType.Int) { Value = ((object)entity.NumberOfPages) ?? DBNull.Value }),
                 new PersistenceStorageObjectParameter("Title", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Title) ?? DBNull.Value }),
                 new PersistenceStorageObjectParameter("AuthorID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = ((object)entity.AuthorID) ?? DBNull.Value }),
@@ -354,6 +356,35 @@ namespace Common
     	public string GetTableName()
         {
             return "Bookstore.Person";
+        }
+    }
+
+    public class Bookstore_Review_Mapper : IPersistenceStorageObjectMapper
+    {
+        public PersistenceStorageObjectParameter[] GetParameters(IEntity genericEntity)
+        {
+            var entity = (Bookstore.Review)genericEntity;
+            return new PersistenceStorageObjectParameter[]
+            {
+                new PersistenceStorageObjectParameter("ID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = entity.ID }),
+                new PersistenceStorageObjectParameter("BookID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = ((object)entity.BookID) ?? DBNull.Value }),
+                new PersistenceStorageObjectParameter("LastModifiedTime", new SqlParameter("", System.Data.SqlDbType.Date) { Value = ((object)entity.LastModifiedTime) ?? DBNull.Value }),
+                new PersistenceStorageObjectParameter("ReviewScore", new SqlParameter("", System.Data.SqlDbType.Decimal) { Value = ((object)entity.ReviewScore) ?? DBNull.Value, Precision = 28, Scale = 10 }),
+                new PersistenceStorageObjectParameter("Text", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Text) ?? DBNull.Value }),
+                /*DataStructureInfo PersistenceStorageMapperPropertyMapping Bookstore.Review*/
+            };
+        }
+    
+    	public IEnumerable<Guid> GetDependencies(IEntity genericEntity)
+        {
+            var entity = (Bookstore.Review)genericEntity;
+            /*DataStructureInfo PersistenceStorageMapperDependencyResolution Bookstore.Review*/
+            yield break;
+        }
+    
+    	public string GetTableName()
+        {
+            return "Bookstore.Review";
         }
     }
 
@@ -776,6 +807,33 @@ namespace Common
     	public string GetTableName()
         {
             return "Common.RolePermission";
+        }
+    }
+
+    public class ConceptsDemo_TestEntity_Mapper : IPersistenceStorageObjectMapper
+    {
+        public PersistenceStorageObjectParameter[] GetParameters(IEntity genericEntity)
+        {
+            var entity = (ConceptsDemo.TestEntity)genericEntity;
+            return new PersistenceStorageObjectParameter[]
+            {
+                new PersistenceStorageObjectParameter("ID", new SqlParameter("", System.Data.SqlDbType.UniqueIdentifier) { Value = entity.ID }),
+                new PersistenceStorageObjectParameter("Code", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Code) ?? DBNull.Value }),
+                new PersistenceStorageObjectParameter("Name", new SqlParameter("", System.Data.SqlDbType.NVarChar) { Value = ((object)entity.Name) ?? DBNull.Value }),
+                /*DataStructureInfo PersistenceStorageMapperPropertyMapping ConceptsDemo.TestEntity*/
+            };
+        }
+    
+    	public IEnumerable<Guid> GetDependencies(IEntity genericEntity)
+        {
+            var entity = (ConceptsDemo.TestEntity)genericEntity;
+            /*DataStructureInfo PersistenceStorageMapperDependencyResolution ConceptsDemo.TestEntity*/
+            yield break;
+        }
+    
+    	public string GetTableName()
+        {
+            return "ConceptsDemo.TestEntity";
         }
     }
 

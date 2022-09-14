@@ -5,7 +5,6 @@ Module Bookstore
       ShortString Code { AutoCode; DefaultValue 'item => "book+++"'; }
       ShortString Title;
       Integer NumberOfPages;
-      DateTime Inserted { CreationTime; }
       DateTime Changed { ModificationTimeOf Bookstore.Book.Title; }
 
       Reference Author Bookstore.Person;
@@ -39,8 +38,7 @@ Module Bookstore
       }';
       ItemFilter CommonMisspelling 'book => book.Title.Contains("curiousity")';
       InvalidData CommonMisspelling 'It is not allowed to enter misspelled word "curiousity".';
-
-      Logging { AllProperties; }
+      MonitoredRecord;
    }
 
    Parameter ComplexSearch
@@ -56,9 +54,48 @@ Module Bookstore
      Bool ForeignBooksOnly;
    }
 
+   Entity Review 
+   {
+       Reference Book {Required;}
+       Decimal ReviewScore { Required; MinValue 1; MaxValue 10; }
+       LongString Text;
+       Date LastModifiedTime;
+
+       SaveMethod
+       {
+           Initialization DefaultTextFromScore
+           '
+           foreach(var item in insertedNew)
+           {
+               if(string.IsNullOrEmpty(item.Text) && item.ReviewScore != null)
+               {
+                   item.Text = (item.ReviewScore.Value >= 8) ? "The Book has high quality" : "Book is OK or bad"; 
+               }
+           }
+           ';
+
+           Initialization UpdateTime
+           '
+           if(updatedNew.Any())
+           {
+               foreach(var updatedReview in updatedNew)
+               {
+                   updatedReview.LastModifiedTime = DateTime.Now;
+               }
+           }';
+
+           LoadOldItems
+           {
+               Take ReviewScore;
+               Take 'Book.Title';
+           }
+       }
+   }
+
    Entity Person
     {
         ShortString Name;
+
 
         ItemFilter ContainsLockConstraint 'item => item.Name.Contains("lock")';
         Lock ContainsLockConstraint '[Test] Name Contains Lock Constraint';

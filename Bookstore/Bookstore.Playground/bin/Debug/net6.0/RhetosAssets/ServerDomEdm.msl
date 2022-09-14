@@ -7,7 +7,7 @@
         <ScalarProperty Name="ID" ColumnName="ID" />
         <ScalarProperty Name="Changed" ColumnName="Changed" />
         <ScalarProperty Name="Code" ColumnName="Code" />
-        <ScalarProperty Name="Inserted" ColumnName="Inserted" />
+        <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
         <ScalarProperty Name="NumberOfPages" ColumnName="NumberOfPages" />
         <ScalarProperty Name="Title" ColumnName="Title" />
         <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
@@ -117,6 +117,17 @@
       <MappingFragment StoreEntitySet="Bookstore_Person">
         <ScalarProperty Name="ID" ColumnName="ID" />
         <ScalarProperty Name="Name" ColumnName="Name" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
+  <EntitySetMapping Name="Bookstore_Review">
+    <EntityTypeMapping TypeName="Rhetos.Bookstore_Review">
+      <MappingFragment StoreEntitySet="Bookstore_Review">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="BookID" ColumnName="BookID" />
+        <ScalarProperty Name="LastModifiedTime" ColumnName="LastModifiedTime" />
+        <ScalarProperty Name="ReviewScore" ColumnName="ReviewScore" />
+        <ScalarProperty Name="Text" ColumnName="Text" />
       </MappingFragment>
     </EntityTypeMapping>
   </EntitySetMapping>
@@ -314,6 +325,15 @@
         <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
         <ScalarProperty Name="IsAuthorized" ColumnName="IsAuthorized" />
         <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
+  <EntitySetMapping Name="ConceptsDemo_TestEntity">
+    <EntityTypeMapping TypeName="Rhetos.ConceptsDemo_TestEntity">
+      <MappingFragment StoreEntitySet="ConceptsDemo_TestEntity">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="Code" ColumnName="Code" />
+        <ScalarProperty Name="Name" ColumnName="Name" />
       </MappingFragment>
     </EntityTypeMapping>
   </EntitySetMapping>

@@ -9292,6 +9292,22 @@
           ]
         },
         {
+          "Id": "Bookstore.RhetosExtensions",
+          "Version": "1.0.0.0",
+          "Dependencies": [
+            {
+              "Id": "Rhetos",
+              "VersionsRange": "5.2.0"
+            },
+            {
+              "Id": "Rhetos.CommonConcepts",
+              "VersionsRange": "5.2.0"
+            }
+          ],
+          "Folder": "C:\\RhetosWorkshop\\Bookstore\\Bookstore.RhetosExtensions",
+          "ContentFiles": []
+        },
+        {
           "Id": "Rhetos.RestGenerator",
           "Version": "5.0.0.0",
           "Dependencies": [
@@ -9386,6 +9402,10 @@
             {
               "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\BooksFlat.rhe",
               "InPackagePath": "DslScripts\\BooksFlat.rhe"
+            },
+            {
+              "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\Demo.rhe",
+              "InPackagePath": "DslScripts\\Demo.rhe"
             },
             {
               "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\HardcodedExample.rhe",
@@ -9509,7 +9529,8 @@
       "C:\\Users\\FilipCuic\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\lib\\net6.0\\System.Text.Encoding.CodePages.dll",
       "C:\\Users\\FilipCuic\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\lib\\net6.0\\System.Text.Encodings.Web.dll",
       "C:\\Users\\FilipCuic\\.nuget\\packages\\system.text.json\\6.0.0\\lib\\net6.0\\System.Text.Json.dll",
-      "C:\\Users\\FilipCuic\\.nuget\\packages\\system.windows.extensions\\6.0.0\\lib\\net6.0\\System.Windows.Extensions.dll"
+      "C:\\Users\\FilipCuic\\.nuget\\packages\\system.windows.extensions\\6.0.0\\lib\\net6.0\\System.Windows.Extensions.dll",
+      "C:\\RhetosWorkshop\\Bookstore\\Bookstore.RhetosExtensions\\bin\\Debug\\net6.0\\Bookstore.RhetosExtensions.dll"
     ]
   }
 }

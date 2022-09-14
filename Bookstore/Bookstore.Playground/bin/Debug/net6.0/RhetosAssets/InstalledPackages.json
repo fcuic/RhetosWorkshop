@@ -9283,6 +9283,22 @@
       ]
     },
     {
+      "Id": "Bookstore.RhetosExtensions",
+      "Version": "1.0.0.0",
+      "Dependencies": [
+        {
+          "Id": "Rhetos",
+          "VersionsRange": "5.2.0"
+        },
+        {
+          "Id": "Rhetos.CommonConcepts",
+          "VersionsRange": "5.2.0"
+        }
+      ],
+      "Folder": "C:\\RhetosWorkshop\\Bookstore\\Bookstore.RhetosExtensions",
+      "ContentFiles": []
+    },
+    {
       "Id": "Rhetos.RestGenerator",
       "Version": "5.0.0.0",
       "Dependencies": [
@@ -9379,6 +9395,10 @@
           "InPackagePath": "DslScripts\\BooksFlat.rhe"
         },
         {
+          "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\Demo.rhe",
+          "InPackagePath": "DslScripts\\Demo.rhe"
+        },
+        {
           "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\HardcodedExample.rhe",
           "InPackagePath": "DslScripts\\HardcodedExample.rhe"
         },
@@ -9393,6 +9413,10 @@
         {
           "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\SQL\\NumberOfTopics.sql",
           "InPackagePath": "DslScripts\\SQL\\NumberOfTopics.sql"
+        },
+        {
+          "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\SQL\\SqlView.sql",
+          "InPackagePath": "DslScripts\\SQL\\SqlView.sql"
         }
       ]
     }

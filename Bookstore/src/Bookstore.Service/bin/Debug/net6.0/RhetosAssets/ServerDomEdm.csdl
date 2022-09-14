@@ -86,7 +86,7 @@
     <Property Name="ID" Type="Guid" Nullable="false" />
     <Property Name="Changed" Type="DateTime" />
     <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Inserted" Type="DateTime" />
+    <Property Name="CreatedAt" Type="DateTime" />
     <Property Name="NumberOfPages" Type="Int32" />
     <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="AuthorID" Type="Guid" />
@@ -203,6 +203,17 @@
     </Key>
     <Property Name="ID" Type="Guid" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bookstore_Review" customannotation:ClrType="Common.Queryable.Bookstore_Review, Bookstore.Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="BookID" Type="Guid" />
+    <Property Name="LastModifiedTime" Type="DateTime" />
+    <Property Name="ReviewScore" Type="Decimal" Precision="28" Scale="10" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Book" Relationship="Self.Bookstore_Review_Book" FromRole="Bookstore_Review_Book_Source" ToRole="Bookstore_Review_Book_Target" />
   </EntityType>
   <EntityType Name="Bookstore_TestDeactivatable" customannotation:ClrType="Common.Queryable.Bookstore_TestDeactivatable, Bookstore.Service">
     <Key>
@@ -394,6 +405,14 @@
     <NavigationProperty Name="Claim" Relationship="Self.Common_RolePermission_Claim" FromRole="Common_RolePermission_Claim_Source" ToRole="Common_RolePermission_Claim_Target" />
     <NavigationProperty Name="Role" Relationship="Self.Common_RolePermission_Role" FromRole="Common_RolePermission_Role_Source" ToRole="Common_RolePermission_Role_Target" />
   </EntityType>
+  <EntityType Name="ConceptsDemo_TestEntity" customannotation:ClrType="Common.Queryable.ConceptsDemo_TestEntity, Bookstore.Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="HardcodedExample_Genre" customannotation:ClrType="Common.Queryable.HardcodedExample_Genre, Bookstore.Service">
     <Key>
       <PropertyRef Name="ID" />
@@ -553,6 +572,18 @@
       </Principal>
       <Dependent Role="Bookstore_ForeignBook_Translator_Source">
         <PropertyRef Name="TranslatorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Bookstore_Review_Book">
+    <End Role="Bookstore_Review_Book_Source" Type="Self.Bookstore_Review" Multiplicity="*" />
+    <End Role="Bookstore_Review_Book_Target" Type="Self.Bookstore_Book" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Bookstore_Review_Book_Target">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Bookstore_Review_Book_Source">
+        <PropertyRef Name="BookID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -727,6 +758,7 @@
     <EntitySet Name="Bookstore_Manager" EntityType="Self.Bookstore_Manager" />
     <EntitySet Name="Bookstore_NumberOfTopicsCalculation" EntityType="Self.Bookstore_NumberOfTopicsCalculation" />
     <EntitySet Name="Bookstore_Person" EntityType="Self.Bookstore_Person" />
+    <EntitySet Name="Bookstore_Review" EntityType="Self.Bookstore_Review" />
     <EntitySet Name="Bookstore_TestDeactivatable" EntityType="Self.Bookstore_TestDeactivatable" />
     <EntitySet Name="Bookstore_Topic" EntityType="Self.Bookstore_Topic" />
     <EntitySet Name="Common_AutoCodeCache" EntityType="Self.Common_AutoCodeCache" />
@@ -745,6 +777,7 @@
     <EntitySet Name="Common_Role" EntityType="Self.Common_Role" />
     <EntitySet Name="Common_RoleInheritsRole" EntityType="Self.Common_RoleInheritsRole" />
     <EntitySet Name="Common_RolePermission" EntityType="Self.Common_RolePermission" />
+    <EntitySet Name="ConceptsDemo_TestEntity" EntityType="Self.ConceptsDemo_TestEntity" />
     <EntitySet Name="HardcodedExample_Genre" EntityType="Self.HardcodedExample_Genre" />
     <EntitySet Name="Queries_BookInfoThroughExternalFile" EntityType="Self.Queries_BookInfoThroughExternalFile" />
 	<AssociationSet Name="Bookstore_BookInfo_Base" Association="Self.Bookstore_BookInfo_Base">
@@ -794,6 +827,10 @@
 	<AssociationSet Name="Bookstore_ForeignBook_Translator" Association="Self.Bookstore_ForeignBook_Translator">
 		<End Role="Bookstore_ForeignBook_Translator_Source" EntitySet="Bookstore_ForeignBook" />
 		<End Role="Bookstore_ForeignBook_Translator_Target" EntitySet="Bookstore_Person" />
+	</AssociationSet>
+	<AssociationSet Name="Bookstore_Review_Book" Association="Self.Bookstore_Review_Book">
+		<End Role="Bookstore_Review_Book_Source" EntitySet="Bookstore_Review" />
+		<End Role="Bookstore_Review_Book_Target" EntitySet="Bookstore_Book" />
 	</AssociationSet>
 	<AssociationSet Name="Bookstore_BookTopic_Topic" Association="Self.Bookstore_BookTopic_Topic">
 		<End Role="Bookstore_BookTopic_Topic_Source" EntitySet="Bookstore_BookTopic" />

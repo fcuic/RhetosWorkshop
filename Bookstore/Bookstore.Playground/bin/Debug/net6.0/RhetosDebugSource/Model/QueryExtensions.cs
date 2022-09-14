@@ -22,7 +22,7 @@ namespace System.Linq
                 ID = item.ID,
                 Changed = item.Changed,
                 Code = item.Code,
-                Inserted = item.Inserted,
+                CreatedAt = item.CreatedAt,
                 NumberOfPages = item.NumberOfPages,
                 Title = item.Title,
                 AuthorID = item.AuthorID/*DataStructureInfo AssignSimpleProperty Bookstore.Book*/
@@ -162,6 +162,18 @@ namespace System.Linq
             {
                 ID = item.ID,
                 Name = item.Name/*DataStructureInfo AssignSimpleProperty Bookstore.Person*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Bookstore.Review> ToSimple(this IQueryable<Common.Queryable.Bookstore_Review> query)
+        {
+            return query.Select(item => new Bookstore.Review
+            {
+                ID = item.ID,
+                BookID = item.BookID,
+                LastModifiedTime = item.LastModifiedTime,
+                ReviewScore = item.ReviewScore,
+                Text = item.Text/*DataStructureInfo AssignSimpleProperty Bookstore.Review*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -377,6 +389,16 @@ namespace System.Linq
                 ClaimID = item.ClaimID,
                 IsAuthorized = item.IsAuthorized,
                 RoleID = item.RoleID/*DataStructureInfo AssignSimpleProperty Common.RolePermission*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<ConceptsDemo.TestEntity> ToSimple(this IQueryable<Common.Queryable.ConceptsDemo_TestEntity> query)
+        {
+            return query.Select(item => new ConceptsDemo.TestEntity
+            {
+                ID = item.ID,
+                Code = item.Code,
+                Name = item.Name/*DataStructureInfo AssignSimpleProperty ConceptsDemo.TestEntity*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>

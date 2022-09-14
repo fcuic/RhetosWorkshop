@@ -10,6 +10,7 @@ string rhetosHostAssemblyPath = @"C:\RhetosWorkshop\Bookstore\src\Bookstore.Serv
 using (var scope = LinqPadRhetosHost.CreateScope(rhetosHostAssemblyPath))
 {
     var context = scope.Resolve<Common.ExecutionContext>();
+    context.UserInfo.UserName.Dump(); //Write the user
     var repository = context.Repository;
 
     // Query data from the `Common.Claim` table:

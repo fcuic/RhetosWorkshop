@@ -29,6 +29,9 @@ namespace Common
         private Common.Repositories.ModuleRepository _Common;
         public Common.Repositories.ModuleRepository Common { get { return _Common ?? (_Common = new Common.Repositories.ModuleRepository(_repositories)); } }
 
+        private ConceptsDemo.Repositories.ModuleRepository _ConceptsDemo;
+        public ConceptsDemo.Repositories.ModuleRepository ConceptsDemo { get { return _ConceptsDemo ?? (_ConceptsDemo = new ConceptsDemo.Repositories.ModuleRepository(_repositories)); } }
+
         private HardcodedExample.Repositories.ModuleRepository _HardcodedExample;
         public HardcodedExample.Repositories.ModuleRepository HardcodedExample { get { return _HardcodedExample ?? (_HardcodedExample = new HardcodedExample.Repositories.ModuleRepository(_repositories)); } }
 
@@ -76,6 +79,7 @@ namespace Common
             { "Bookstore.Manager", Bookstore.Repositories.Manager_Repository.GetReadParameterTypes },
             { "Bookstore.NumberOfTopicsCalculation", Bookstore.Repositories.NumberOfTopicsCalculation_Repository.GetReadParameterTypes },
             { "Bookstore.Person", Bookstore.Repositories.Person_Repository.GetReadParameterTypes },
+            { "Bookstore.Review", Bookstore.Repositories.Review_Repository.GetReadParameterTypes },
             { "Bookstore.TestDeactivatable", Bookstore.Repositories.TestDeactivatable_Repository.GetReadParameterTypes },
             { "Bookstore.Topic", Bookstore.Repositories.Topic_Repository.GetReadParameterTypes },
             { "Common.AutoCodeCache", Common.Repositories.AutoCodeCache_Repository.GetReadParameterTypes },
@@ -94,6 +98,7 @@ namespace Common
             { "Common.Role", Common.Repositories.Role_Repository.GetReadParameterTypes },
             { "Common.RoleInheritsRole", Common.Repositories.RoleInheritsRole_Repository.GetReadParameterTypes },
             { "Common.RolePermission", Common.Repositories.RolePermission_Repository.GetReadParameterTypes },
+            { "ConceptsDemo.TestEntity", ConceptsDemo.Repositories.TestEntity_Repository.GetReadParameterTypes },
             { "HardcodedExample.Genre", HardcodedExample.Repositories.Genre_Repository.GetReadParameterTypes },
             { "Queries.BookInfoThroughExternalFile", Queries.Repositories.BookInfoThroughExternalFile_Repository.GetReadParameterTypes },
             { "Bookstore.BooksAuthorsAndTopicsGrid", Bookstore.Repositories.BooksAuthorsAndTopicsGrid_Repository.GetReadParameterTypes },
@@ -228,6 +233,7 @@ namespace Common
             builder.RegisterType<Bookstore.Repositories.Manager_Repository>().Keyed<IRepository>("Bookstore.Manager").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.NumberOfTopicsCalculation_Repository>().Keyed<IRepository>("Bookstore.NumberOfTopicsCalculation").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.Person_Repository>().Keyed<IRepository>("Bookstore.Person").InstancePerLifetimeScope();
+            builder.RegisterType<Bookstore.Repositories.Review_Repository>().Keyed<IRepository>("Bookstore.Review").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.TestDeactivatable_Repository>().Keyed<IRepository>("Bookstore.TestDeactivatable").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.Topic_Repository>().Keyed<IRepository>("Bookstore.Topic").InstancePerLifetimeScope();
             builder.RegisterType<Common.Repositories.AddToLog_Repository>().Keyed<IRepository>("Common.AddToLog").InstancePerLifetimeScope();
@@ -252,6 +258,7 @@ namespace Common
             builder.RegisterType<Common.Repositories.RolePermission_Repository>().Keyed<IRepository>("Common.RolePermission").InstancePerLifetimeScope();
             builder.RegisterType<Common.Repositories.SetLock_Repository>().Keyed<IRepository>("Common.SetLock").InstancePerLifetimeScope();
             builder.RegisterType<Common.Repositories.SetLock_Repository>().Keyed<IActionRepository>("Common.SetLock").InstancePerLifetimeScope();
+            builder.RegisterType<ConceptsDemo.Repositories.TestEntity_Repository>().Keyed<IRepository>("ConceptsDemo.TestEntity").InstancePerLifetimeScope();
             builder.RegisterType<HardcodedExample.Repositories.Genre_Repository>().Keyed<IRepository>("HardcodedExample.Genre").InstancePerLifetimeScope();
             builder.RegisterType<Queries.Repositories.BookInfoThroughExternalFile_Repository>().Keyed<IRepository>("Queries.BookInfoThroughExternalFile").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.BooksAuthorsAndTopicsGrid_Repository>().Keyed<IRepository>("Bookstore.BooksAuthorsAndTopicsGrid").InstancePerLifetimeScope();

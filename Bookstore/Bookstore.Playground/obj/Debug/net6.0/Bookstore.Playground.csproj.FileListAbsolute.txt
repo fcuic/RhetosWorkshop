@@ -167,3 +167,7 @@ C:\RhetosWorkshop\Bookstore\Bookstore.Playground\obj\Debug\net6.0\refint\Booksto
 C:\RhetosWorkshop\Bookstore\Bookstore.Playground\obj\Debug\net6.0\Bookstore.Playground.pdb
 C:\RhetosWorkshop\Bookstore\Bookstore.Playground\obj\Debug\net6.0\Bookstore.Playground.genruntimeconfig.cache
 C:\RhetosWorkshop\Bookstore\Bookstore.Playground\obj\Debug\net6.0\ref\Bookstore.Playground.dll
+C:\RhetosWorkshop\Bookstore\Bookstore.Playground\bin\Debug\net6.0\Bookstore.RhetosExtensions.dll
+C:\RhetosWorkshop\Bookstore\Bookstore.Playground\bin\Debug\net6.0\Bookstore.RhetosExtensions.pdb
+C:\RhetosWorkshop\Bookstore\Bookstore.Playground\bin\Debug\net6.0\RhetosDebugSource\Model\ConceptsDemoModel.cs
+C:\RhetosWorkshop\Bookstore\Bookstore.Playground\bin\Debug\net6.0\RhetosDebugSource\Repositories\ConceptsDemoRepositories.cs

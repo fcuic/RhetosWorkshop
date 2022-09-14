@@ -1,0 +1,14 @@
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\bin\Debug\net6.0\Bookstore.RhetosExtensions.deps.json
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\bin\Debug\net6.0\Bookstore.RhetosExtensions.runtimeconfig.json
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\bin\Debug\net6.0\Bookstore.RhetosExtensions.dll
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\bin\Debug\net6.0\Bookstore.RhetosExtensions.pdb
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\Bookstore.RhetosExtensions.csproj.AssemblyReference.cache
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\Bookstore.RhetosExtensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\Bookstore.RhetosExtensions.AssemblyInfoInputs.cache
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\Bookstore.RhetosExtensions.AssemblyInfo.cs
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\Bookstore.RhetosExtensions.csproj.CoreCompileInputs.cache
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\Bookstore.RhetosExtensions.dll
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\refint\Bookstore.RhetosExtensions.dll
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\Bookstore.RhetosExtensions.pdb
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\Bookstore.RhetosExtensions.genruntimeconfig.cache
+C:\RhetosWorkshop\Bookstore\Bookstore.RhetosExtensions\obj\Debug\net6.0\ref\Bookstore.RhetosExtensions.dll

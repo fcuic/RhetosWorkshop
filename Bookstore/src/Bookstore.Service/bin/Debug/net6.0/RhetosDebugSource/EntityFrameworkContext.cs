@@ -53,6 +53,7 @@ namespace Common
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Manager> Bookstore_Manager { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_NumberOfTopicsCalculation> Bookstore_NumberOfTopicsCalculation { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Person> Bookstore_Person { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Review> Bookstore_Review { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_TestDeactivatable> Bookstore_TestDeactivatable { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Topic> Bookstore_Topic { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_AutoCodeCache> Common_AutoCodeCache { get; set; }
@@ -71,6 +72,7 @@ namespace Common
         public System.Data.Entity.DbSet<Common.Queryable.Common_Role> Common_Role { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_RoleInheritsRole> Common_RoleInheritsRole { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_RolePermission> Common_RolePermission { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.ConceptsDemo_TestEntity> ConceptsDemo_TestEntity { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.HardcodedExample_Genre> HardcodedExample_Genre { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Queries_BookInfoThroughExternalFile> Queries_BookInfoThroughExternalFile { get; set; }
         /*EntityFrameworkContextMembers*/

@@ -9283,6 +9283,22 @@
       ]
     },
     {
+      "Id": "Bookstore.RhetosExtensions",
+      "Version": "1.0.0.0",
+      "Dependencies": [
+        {
+          "Id": "Rhetos",
+          "VersionsRange": "5.2.0"
+        },
+        {
+          "Id": "Rhetos.CommonConcepts",
+          "VersionsRange": "5.2.0"
+        }
+      ],
+      "Folder": "C:\\RhetosWorkshop\\Bookstore\\Bookstore.RhetosExtensions",
+      "ContentFiles": []
+    },
+    {
       "Id": "Rhetos.RestGenerator",
       "Version": "5.0.0.0",
       "Dependencies": [
@@ -9377,6 +9393,10 @@
         {
           "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\BooksFlat.rhe",
           "InPackagePath": "DslScripts\\BooksFlat.rhe"
+        },
+        {
+          "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\Demo.rhe",
+          "InPackagePath": "DslScripts\\Demo.rhe"
         },
         {
           "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\HardcodedExample.rhe",

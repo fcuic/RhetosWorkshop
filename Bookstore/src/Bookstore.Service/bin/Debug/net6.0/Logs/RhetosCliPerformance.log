@@ -1,39 +1,38 @@
-2022-09-13 12:18:41.7487|TRACE|Performance.RuntimePluginScanner|00:00:00.2316449 Loaded plugins (569).
-2022-09-13 12:18:42.0334|TRACE|Performance.DatabaseUpdate|00:00:02.3123641 Modules and plugins registered.
-2022-09-13 12:18:42.2232|TRACE|Performance.DataMigrationScriptsFile|00:00:00.1850975 Loaded 12 scripts from generated file.
-2022-09-13 12:18:42.2395|TRACE|Performance.DatabaseModelFile|00:00:00.0156444 Load.
-2022-09-13 12:18:43.3060|TRACE|Performance.DatabaseAnalysis|00:00:00.1818219 Loaded old concept applications.
-2022-09-13 12:18:43.3060|TRACE|Performance.DatabaseAnalysis|00:00:00.0017114 Got new concept applications.
-2022-09-13 12:18:43.3121|TRACE|Performance.DatabaseAnalysis|00:00:00.0043651 Match new and old concept applications.
-2022-09-13 12:18:43.3121|TRACE|Performance.DatabaseAnalysis|00:00:00.0002094 Verify new concept applications' integrity.
-2022-09-13 12:18:43.3121|TRACE|Performance.DatabaseAnalysis|00:00:00.0081063 Removed unused concept applications.
-2022-09-13 12:18:43.3266|TRACE|Performance.DatabaseAnalysis|00:00:00.0061066 Analyzed differences in database structure.
-2022-09-13 12:18:43.3266|TRACE|Performance.DatabaseGenerator|00:00:00.2027429 Database diff analysis.
-2022-09-13 12:18:43.3266|TRACE|Performance.DatabaseGenerator|00:00:00.0021664 Log analysis results.
-2022-09-13 12:18:43.3322|TRACE|Performance.DatabaseGenerator|00:00:00.0032053 ApplyChangesToDatabase: Prepared SQL scripts for removing concept applications.
-2022-09-13 12:18:43.3322|TRACE|Performance.DatabaseGenerator|00:00:00.0030875 ApplyChangesToDatabase: Prepared SQL scripts for updating unchanged concept applications' metadata.
-2022-09-13 12:18:43.3322|TRACE|Performance.DatabaseGenerator|00:00:00.0010613 ApplyChangesToDatabase: Prepared SQL scripts for inserting concept applications.
-2022-09-13 12:18:43.3533|TRACE|Performance.DatabaseGenerator|00:00:00.0169300 ApplyChangesToDatabase: Executed 2 SQL scripts.
-2022-09-13 12:18:43.3533|TRACE|Performance.DatabaseGenerator|00:00:00.0245706 Applied changes to database.
-2022-09-13 12:18:43.3533|TRACE|Performance.DatabaseGenerator|00:00:00.0080568 Verified integrity of saved concept applications metadata.
-2022-09-13 12:18:43.3533|TRACE|Performance.DatabaseGenerator|00:00:00.2375595 UpdateDatabaseStructure
-2022-09-13 12:18:43.4039|TRACE|Performance.RuntimePluginScanner|00:00:00.0074937 Loaded plugins (569).
-2022-09-13 12:18:44.0497|TRACE|Performance.MetadataWorkspaceFileProvider|00:00:00.0255383 Checked if ProviderManifestToken is set.
-2022-09-13 12:18:44.0497|TRACE|Performance.MetadataWorkspaceFileProvider|00:00:00.0010532 Initialized ServerDomEdm.ssdl.
-2022-09-13 12:18:44.2887|TRACE|Performance.MetadataWorkspaceFileProvider|00:00:00.2379591 Load EDM files.
-2022-09-13 12:18:44.3136|TRACE|Performance.EfMappingViewsInitializer|00:00:00.2896652 Calculated hash for current model.
-2022-09-13 12:18:44.3951|TRACE|Performance.DslModelFile|00:00:00.0807227 Load.
-2022-09-13 12:18:44.4288|TRACE|Performance.DslModelFile|00:00:00.1145242 Initialize (785 concepts).
-2022-09-13 12:18:44.4392|TRACE|Performance.EfMappingViewsInitializer|00:00:00.1255268 Calculated additional hash.
-2022-09-13 12:18:44.4487|TRACE|Performance.EfMappingViewsFileStore|00:00:00.0092884 Loaded and deserialized views from 'C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\EfMappingGeneratedViews.json'.
-2022-09-13 12:18:44.4487|TRACE|Performance.ApplicationInitialization|00:00:01.0712728 New modules and plugins registered.
-2022-09-13 12:18:44.4709|TRACE|Performance.ClaimGenerator|00:00:00.0081975 Generate new claims.
-2022-09-13 12:18:44.4709|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.0000785 InsertOrUpdateOrDeleteOrDeactivate: Initialize new items (125)
-2022-09-13 12:18:44.6804|TRACE|Performance.EfMappingViewsFileStore|00:00:00.0003283 Loaded and deserialized views from 'C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\EfMappingGeneratedViews.json'.
-2022-09-13 12:18:44.8194|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.3469525 InsertOrUpdateOrDeleteOrDeactivate: Load old items (125)
-2022-09-13 12:18:44.8194|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.0015934 InsertOrUpdateOrDeleteOrDeactivate: Diff (125 new items, 125 old items, 0 to insert, 0 to update, 0 to delete)
-2022-09-13 12:18:44.9292|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.1078797 InsertOrUpdateOrDeleteOrDeactivate: Deactivate (0 to deactivate, 0 already deactivated)
-2022-09-13 12:18:44.9292|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.0045826 InsertOrUpdateOrDeleteOrDeactivate: Save (125 new items, 125 old items, 0 to insert, 0 to update, 0 to delete)
-2022-09-13 12:18:44.9292|TRACE|Performance.ClaimGenerator|00:00:00.4630286 Save claims.
-2022-09-13 12:18:44.9432|TRACE|Performance.KeepSynchronizedRecomputeOnDeploy|00:00:00.0070863 Load metadata.
-2022-09-13 12:18:44.9432|TRACE|Performance.KeepSynchronizedRecomputeOnDeploy|00:00:00.0006525 Save metadata.
+2022-09-14 09:33:13.0427|TRACE|Performance.RuntimePluginScanner|00:00:00.0254165 Loaded plugins (573).
+2022-09-14 09:33:13.1262|TRACE|Performance.DatabaseUpdate|00:00:00.2725960 Modules and plugins registered.
+2022-09-14 09:33:13.2125|TRACE|Performance.DataMigrationScriptsFile|00:00:00.0768487 Loaded 12 scripts from generated file.
+2022-09-14 09:33:13.2125|TRACE|Performance.DatabaseModelFile|00:00:00.0104847 Load.
+2022-09-14 09:33:14.0167|TRACE|Performance.DatabaseAnalysis|00:00:00.0243419 Loaded old concept applications.
+2022-09-14 09:33:14.0167|TRACE|Performance.DatabaseAnalysis|00:00:00.0022975 Got new concept applications.
+2022-09-14 09:33:14.0167|TRACE|Performance.DatabaseAnalysis|00:00:00.0037352 Match new and old concept applications.
+2022-09-14 09:33:14.0167|TRACE|Performance.DatabaseAnalysis|00:00:00.0001874 Verify new concept applications' integrity.
+2022-09-14 09:33:14.0321|TRACE|Performance.DatabaseAnalysis|00:00:00.0090186 Removed unused concept applications.
+2022-09-14 09:33:14.0321|TRACE|Performance.DatabaseAnalysis|00:00:00.0049809 Analyzed differences in database structure.
+2022-09-14 09:33:14.0321|TRACE|Performance.DatabaseGenerator|00:00:00.0448032 Database diff analysis.
+2022-09-14 09:33:14.0321|TRACE|Performance.DatabaseGenerator|00:00:00.0019788 Log analysis results.
+2022-09-14 09:33:14.0321|TRACE|Performance.DatabaseGenerator|00:00:00.0014169 ApplyChangesToDatabase: Prepared SQL scripts for removing concept applications.
+2022-09-14 09:33:14.0321|TRACE|Performance.DatabaseGenerator|00:00:00.0055778 ApplyChangesToDatabase: Prepared SQL scripts for updating unchanged concept applications' metadata.
+2022-09-14 09:33:14.0321|TRACE|Performance.DatabaseGenerator|00:00:00.0013346 ApplyChangesToDatabase: Prepared SQL scripts for inserting concept applications.
+2022-09-14 09:33:14.0321|TRACE|Performance.DatabaseGenerator|00:00:00.0001215 ApplyChangesToDatabase: Executed 0 SQL scripts.
+2022-09-14 09:33:14.0321|TRACE|Performance.DatabaseGenerator|00:00:00.0087233 Applied changes to database.
+2022-09-14 09:33:14.0593|TRACE|Performance.DatabaseGenerator|00:00:00.0115003 Verified integrity of saved concept applications metadata.
+2022-09-14 09:33:14.0593|TRACE|Performance.DatabaseGenerator|00:00:00.0670539 UpdateDatabaseStructure
+2022-09-14 09:33:14.1065|TRACE|Performance.RuntimePluginScanner|00:00:00.0089395 Loaded plugins (573).
+2022-09-14 09:33:14.2662|TRACE|Performance.MetadataWorkspaceFileProvider|00:00:00.0175057 Checked if ProviderManifestToken is set.
+2022-09-14 09:33:14.4862|TRACE|Performance.MetadataWorkspaceFileProvider|00:00:00.2200160 Load EDM files.
+2022-09-14 09:33:14.5129|TRACE|Performance.EfMappingViewsInitializer|00:00:00.2643975 Calculated hash for current model.
+2022-09-14 09:33:14.5955|TRACE|Performance.DslModelFile|00:00:00.0818525 Load.
+2022-09-14 09:33:14.6349|TRACE|Performance.DslModelFile|00:00:00.1212716 Initialize (836 concepts).
+2022-09-14 09:33:14.6467|TRACE|Performance.EfMappingViewsInitializer|00:00:00.1337711 Calculated additional hash.
+2022-09-14 09:33:14.6467|TRACE|Performance.EfMappingViewsFileStore|00:00:00.0042034 Loaded and deserialized views from 'C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\EfMappingGeneratedViews.json'.
+2022-09-14 09:33:14.6673|TRACE|Performance.ApplicationInitialization|00:00:00.5785446 New modules and plugins registered.
+2022-09-14 09:33:14.6673|TRACE|Performance.ClaimGenerator|00:00:00.0084520 Generate new claims.
+2022-09-14 09:33:14.6673|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.0000982 InsertOrUpdateOrDeleteOrDeactivate: Initialize new items (133)
+2022-09-14 09:33:14.8938|TRACE|Performance.EfMappingViewsFileStore|00:00:00.0003255 Loaded and deserialized views from 'C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\EfMappingGeneratedViews.json'.
+2022-09-14 09:33:15.0373|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.3580953 InsertOrUpdateOrDeleteOrDeactivate: Load old items (133)
+2022-09-14 09:33:15.0373|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.0017046 InsertOrUpdateOrDeleteOrDeactivate: Diff (133 new items, 133 old items, 0 to insert, 0 to update, 0 to delete)
+2022-09-14 09:33:15.0946|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.0551754 InsertOrUpdateOrDeleteOrDeactivate: Deactivate (0 to deactivate, 0 already deactivated)
+2022-09-14 09:33:15.1000|TRACE|Performance.GenericRepository(Common.Claim)|00:00:00.0048863 InsertOrUpdateOrDeleteOrDeactivate: Save (133 new items, 133 old items, 0 to insert, 0 to update, 0 to delete)
+2022-09-14 09:33:15.1000|TRACE|Performance.ClaimGenerator|00:00:00.4224258 Save claims.
+2022-09-14 09:33:15.1000|TRACE|Performance.KeepSynchronizedRecomputeOnDeploy|00:00:00.0058054 Load metadata.
+2022-09-14 09:33:15.1000|TRACE|Performance.KeepSynchronizedRecomputeOnDeploy|00:00:00.0004805 Save metadata.

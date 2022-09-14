@@ -1,0 +1,9 @@
+﻿Module ConceptsDemo
+{
+	Entity TestEntity
+	{
+		CodeTable;
+		//ShortString Code {AutoCode;}
+		//ShortString Name {Required;}
+	}
+}

@@ -1,5 +1,6 @@
 DslScripts\Books.rhe
 DslScripts\BooksFlat.rhe
+DslScripts\Demo.rhe
 DslScripts\HardcodedExample.rhe
 DslScripts\Query.rhe
 DslScripts\SQL\BookInfo.sql

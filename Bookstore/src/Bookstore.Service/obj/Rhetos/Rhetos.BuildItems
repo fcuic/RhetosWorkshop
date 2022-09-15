@@ -6,3 +6,4 @@ DslScripts\Query.rhe
 DslScripts\SQL\BookInfo.sql
 DslScripts\SQL\NumberOfTopics.sql
 DslScripts\SQL\SqlView.sql
+DataMigration\Rename.sql

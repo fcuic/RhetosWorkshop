@@ -9417,6 +9417,10 @@
         {
           "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DslScripts\\SQL\\SqlView.sql",
           "InPackagePath": "DslScripts\\SQL\\SqlView.sql"
+        },
+        {
+          "PhysicalPath": "C:\\RhetosWorkshop\\Bookstore\\src\\Bookstore.Service\\DataMigration\\Rename.sql",
+          "InPackagePath": "DataMigration\\Rename.sql"
         }
       ]
     }

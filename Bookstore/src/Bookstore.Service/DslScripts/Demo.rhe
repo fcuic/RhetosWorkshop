@@ -2,8 +2,40 @@
 {
 	Entity TestEntity
 	{
+		//Extending DSL Example
+
 		CodeTable;
 		//ShortString Code {AutoCode;}
-		//ShortString Name {Required;}
+		//ShortString Name {Required;}		
 	}
+
+	//Polymorphic Concept		
+	Polymorphic MoneyTransaction
+	{
+		DateTime EventDate;
+		Money Amount;
+	}
+
+	Entity BorrowMoney
+	{
+		ShortString FromWhom;
+		DateTime EventDate;
+		Money Amount;
+
+		Is ConceptsDemo.MoneyTransaction;// The EventDate and Amount are automatically mapped.
+	}
+
+	Entity LendMoney
+	{
+		ShortString FromWhom;
+		DateTime EventDate;
+		Money Amount;
+
+		Is ConceptsDemo.MoneyTransaction
+		{
+			Implements ConceptsDemo.MoneyTransaction.Amount '-Amount';
+			// The Amount in the MoneyTransaction related to the LendMoney record will have a negative value.
+		}
+	}
+
 }

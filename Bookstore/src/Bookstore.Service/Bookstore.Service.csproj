@@ -21,4 +21,8 @@
 	  <ProjectReference Include="..\..\Bookstore.RhetosExtensions\Bookstore.RhetosExtensions.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="DataMigration\" />
+	</ItemGroup>
+
 </Project>

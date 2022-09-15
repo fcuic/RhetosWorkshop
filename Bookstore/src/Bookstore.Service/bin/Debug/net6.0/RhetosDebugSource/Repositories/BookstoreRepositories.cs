@@ -26,6 +26,9 @@ namespace Bookstore.Repositories
         private Book_Repository _Book_Repository;
         public Book_Repository Book { get { return _Book_Repository ?? (_Book_Repository = (Book_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Bookstore.Book")); } }
 
+        private BookDescription_Repository _BookDescription_Repository;
+        public BookDescription_Repository BookDescription { get { return _BookDescription_Repository ?? (_BookDescription_Repository = (BookDescription_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Bookstore.BookDescription")); } }
+
         private BookInfo_Repository _BookInfo_Repository;
         public BookInfo_Repository BookInfo { get { return _BookInfo_Repository ?? (_BookInfo_Repository = (BookInfo_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Bookstore.BookInfo")); } }
 
@@ -442,6 +445,50 @@ namespace Bookstore.Repositories
         }
 
         /*DataStructureInfo RepositoryMembers Bookstore.Book*/
+    }
+
+    /*DataStructureInfo RepositoryAttributes Bookstore.BookDescription*/
+    public partial class BookDescription_Repository : /*DataStructureInfo OverrideBaseType Bookstore.BookDescription*/ Common.OrmRepositoryBase<Common.Queryable.Bookstore_BookDescription, Bookstore.BookDescription> // Common.QueryableRepositoryBase<Common.Queryable.Bookstore_BookDescription, Bookstore.BookDescription> // Common.ReadableRepositoryBase<Bookstore.BookDescription> // global::Common.RepositoryBase
+        /*DataStructureInfo RepositoryInterface Bookstore.BookDescription*/
+    {
+        /*DataStructureInfo RepositoryPrivateMembers Bookstore.BookDescription*/
+
+        public BookDescription_Repository(Common.DomRepository domRepository, Common.ExecutionContext executionContext/*DataStructureInfo RepositoryConstructorArguments Bookstore.BookDescription*/)
+        {
+            _domRepository = domRepository;
+            _executionContext = executionContext;
+            /*DataStructureInfo RepositoryConstructorCode Bookstore.BookDescription*/
+        }
+
+        public static KeyValuePair<string, Type>[] GetReadParameterTypes()
+        {
+            return new KeyValuePair<string, Type>[]
+            {
+                new KeyValuePair<string, Type>(@"Rhetos.Dom.DefaultConcepts.FilterSubtype", typeof(Rhetos.Dom.DefaultConcepts.FilterSubtype)),
+                /*DataStructureInfo ReadParameterTypes Bookstore.BookDescription*/
+            };
+        }
+        
+        public global::Bookstore.BookDescription[] Load(Rhetos.Dom.DefaultConcepts.FilterSubtype filter_Parameter)
+        {
+            Func<Common.DomRepository, Rhetos.Dom.DefaultConcepts.FilterSubtype/*FilterByInfo AdditionalParametersType Bookstore.BookDescription.'Rhetos.Dom.DefaultConcepts.FilterSubtype'*/, Bookstore.BookDescription[]> filter_Function =
+                (repository, parameter) =>
+                {{
+                    Expression<Func<Common.Queryable.Bookstore_BookDescription, bool>> filterExpression = null;
+                    parameter.ImplementationName = parameter.ImplementationName ?? "";
+                    if (parameter.Subtype == @"Bookstore.Book" && parameter.ImplementationName == @"")
+                        filterExpression = item => item.BookID != null;
+                    /*PolymorphicInfo SetFilterExpression Bookstore.BookDescription*/
+                    if (filterExpression == null)
+                        throw new Rhetos.ClientException(string.Format("Invalid subtype name or implementation name provided: '{0}', '{1}'.",
+                            parameter.Subtype, parameter.ImplementationName));
+                    return Filter(Query().Where(filterExpression), parameter.Ids).ToSimple().ToArray();
+                }};
+
+            return filter_Function(_domRepository, filter_Parameter/*FilterByInfo AdditionalParametersArgument Bookstore.BookDescription.'Rhetos.Dom.DefaultConcepts.FilterSubtype'*/);
+        }
+
+        /*DataStructureInfo RepositoryMembers Bookstore.BookDescription*/
     }
 
     /*DataStructureInfo RepositoryAttributes Bookstore.BookInfo*/

@@ -41,6 +41,7 @@ namespace Common
         }
 
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_Book> Bookstore_Book { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.Bookstore_BookDescription> Bookstore_BookDescription { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_BookInfo> Bookstore_BookInfo { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_BookTopic> Bookstore_BookTopic { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Bookstore_ChildrensBook> Bookstore_ChildrensBook { get; set; }
@@ -72,6 +73,9 @@ namespace Common
         public System.Data.Entity.DbSet<Common.Queryable.Common_Role> Common_Role { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_RoleInheritsRole> Common_RoleInheritsRole { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Common_RolePermission> Common_RolePermission { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.ConceptsDemo_BorrowMoney> ConceptsDemo_BorrowMoney { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.ConceptsDemo_LendMoney> ConceptsDemo_LendMoney { get; set; }
+        public System.Data.Entity.DbSet<Common.Queryable.ConceptsDemo_MoneyTransaction> ConceptsDemo_MoneyTransaction { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.ConceptsDemo_TestEntity> ConceptsDemo_TestEntity { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.HardcodedExample_Genre> HardcodedExample_Genre { get; set; }
         public System.Data.Entity.DbSet<Common.Queryable.Queries_BookInfoThroughExternalFile> Queries_BookInfoThroughExternalFile { get; set; }

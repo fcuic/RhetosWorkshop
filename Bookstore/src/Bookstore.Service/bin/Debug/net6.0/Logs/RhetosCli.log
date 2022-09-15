@@ -1155,3 +1155,876 @@ New: ...       THEN ' Code="' + REPLACE(REPLACE(REPLACE(REPLACE(ISNULL(deleted.C
 2022-09-14 09:33:14.6673|INFO|ApplicationInitialization|Initialization ClaimGenerator.
 2022-09-14 09:33:15.1000|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
 2022-09-14 09:33:15.1000|INFO|Rhetos DbUpdate|Done.
+2022-09-14 10:02:02.5643|INFO|Rhetos DbUpdate base|Started 'dotnet' process 2184.
+2022-09-14 10:02:03.0162|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 10:02:03.4103|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 10:02:06.0117|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 10:02:06.1694|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 10:02:06.4637|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 10:02:06.5309|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 9 remaining.
+2022-09-14 10:02:06.5309|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 10:02:06.5547|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 10:02:06.8937|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-14 10:02:06.8951|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 10:02:06.8951|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 10:02:07.1367|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-14 10:02:07.1482|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo ConceptsDemo.BorrowMoney/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=CC928B4A-400F-4E96-A245-BCF4E3FB7576.
+2022-09-14 10:02:07.1482|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo ConceptsDemo.LendMoney/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=5791AF7A-95DF-4C9B-B337-E7BA6D0235C9.
+2022-09-14 10:02:07.1482|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo ConceptsDemo.BorrowMoney.Amount/Rhetos.DatabaseGenerator.DefaultConcepts.MoneyPropertyDatabaseDefinition, ID=0B80CB5C-E7DD-4036-9204-B36C3505CEC1.
+2022-09-14 10:02:07.1482|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo ConceptsDemo.BorrowMoney.EventDate/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=29FDDAE3-2F08-411D-B720-54CEB8B43F08.
+2022-09-14 10:02:07.1568|TRACE|DatabaseGeneratorChanges|Creating SqlViewInfo ConceptsDemo.BorrowMoney_As_MoneyTransaction/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=FFD0B128-543F-4A09-8081-8B0515586011.
+2022-09-14 10:02:07.1568|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo ConceptsDemo.LendMoney.Amount/Rhetos.DatabaseGenerator.DefaultConcepts.MoneyPropertyDatabaseDefinition, ID=A05BDD8A-2F09-4B06-BD49-44FC31EFAC4A.
+2022-09-14 10:02:07.1568|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo ConceptsDemo.LendMoney.EventDate/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=7169B4A2-0EDD-48FC-9008-DDFD503A5B48.
+2022-09-14 10:02:07.1568|TRACE|DatabaseGeneratorChanges|Creating SqlViewInfo ConceptsDemo.LendMoney_As_MoneyTransaction/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=D5848B87-2140-4FCA-A4B8-C901A9BD35F4.
+2022-09-14 10:02:07.1568|TRACE|DatabaseGeneratorChanges|Creating SqlObjectInfo ConceptsDemo.MoneyTransaction/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=6FCB9052-D0D3-4A6A-B8A9-880FD559A5D7.
+2022-09-14 10:02:07.1568|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo ConceptsDemo.BorrowMoney.FromWhom/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=643185A5-9DB5-4531-840E-F73C36B1AC89.
+2022-09-14 10:02:07.1568|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo ConceptsDemo.LendMoney.FromWhom/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=77969EC5-47EB-4793-80A7-CEFF0147D1BD.
+2022-09-14 10:02:07.1568|INFO|DatabaseGenerator|Creating 11 database objects.
+2022-09-14 10:02:07.2192|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-14 10:02:07.2365|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-14 10:02:07.2365|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-14 10:02:07.5117|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-14 10:02:08.6213|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-14 10:02:09.2346|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-14 10:02:09.2346|INFO|Rhetos DbUpdate|Done.
+2022-09-14 11:21:34.1408|INFO|Rhetos DbUpdate base|Started 'dotnet' process 6888.
+2022-09-14 11:21:34.5954|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 11:21:35.0068|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 11:21:37.8342|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 11:21:38.0658|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 11:21:38.3619|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 11:21:38.4432|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 9 remaining.
+2022-09-14 11:21:38.4432|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 11:21:38.4697|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 11:21:38.8377|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-14 11:21:38.8377|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 11:21:38.8555|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 11:21:39.0817|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-14 11:21:39.0817|TRACE|DatabaseGeneratorChanges|Creating SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-14 11:21:39.0817|INFO|DatabaseGenerator|Creating 1 database objects.
+2022-09-14 11:21:39.1018|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-14 11:21:39.1273|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-14 11:21:39.1273|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-14 11:21:39.4880|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-14 11:21:40.6349|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-14 11:21:41.2707|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-14 11:21:41.2815|INFO|Rhetos DbUpdate|Done.
+2022-09-14 13:35:06.4448|INFO|Rhetos DbUpdate base|Started 'dotnet' process 25908.
+2022-09-14 13:35:06.8870|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 13:35:07.2922|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 13:35:09.9476|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 13:35:10.0954|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 13:35:10.2539|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 13:35:10.2880|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 9 remaining.
+2022-09-14 13:35:10.2880|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 13:35:10.3037|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 13:35:10.4696|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-14 13:35:10.4696|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 13:35:10.4799|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 13:35:10.7065|TRACE|DatabaseGeneratorChanges|Changed concept application: SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition
+Old: DECLARE @columnList NVARCHAR(MAX);\r\nSET @columnList = N', Description, Subtype = NULL, Title/*PolymorphicUnionViewInfo PolymorphicPropertyName Bookstore.BookDescription*/';\r\n\r\nDECLARE @sql NVARCHAR(MAX);\r\nSET @sql = N'CREATE VIEW Bookstore.BookDescription\r\nAS\r\nSELECT\r\n    ID = CONVERT(UNIQUEIDENTIFIER, NULL),\r\n    Description = CONVERT(NVARCHAR(256), NULL),\r\n    Subtype = CONVERT(NVARCHAR(256), NU...
+New: DECLARE @columnList NVARCHAR(MAX);\r\nSET @columnList = N', BookID = NULL, Description, Subtype = NULL, Title/*PolymorphicUnionViewInfo PolymorphicPropertyName Bookstore.BookDescription*/';\r\n\r\nDECLARE @sql NVARCHAR(MAX);\r\nSET @sql = N'CREATE VIEW Bookstore.BookDescription\r\nAS\r\nSELECT\r\n    ID = CONVERT(UNIQUEIDENTIFIER, NULL),\r\n    BookID = CONVERT(UNIQUEIDENTIFIER, NULL),\r\n    Description = CONVERT(...
+2022-09-14 13:35:10.7065|TRACE|DatabaseGeneratorChanges|Removing SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-14 13:35:10.7065|INFO|DatabaseGenerator|Removing 1 database objects.
+2022-09-14 13:35:10.7189|TRACE|DatabaseGeneratorChanges|Creating SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=6F99606D-A01F-4EB5-923C-B0F79A3A41CD.
+2022-09-14 13:35:10.7189|TRACE|DatabaseGeneratorChanges|Creating SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-14 13:35:10.7189|INFO|DatabaseGenerator|Creating 2 database objects.
+2022-09-14 13:35:10.7412|ERROR|MsSqlExecuter|Unable to execute SQL query: --Name: Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition. CREATE VIEW Bookstore.Book_As_BookDescription AS SELECT     ID,     Description = Title + SELECT Name From Bookstore.Person WHERE Bookstore.Person.ID = Bookstore.Book.AuthorID ,     Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/ FROM     Bookstore.Book /*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescripti ... (see build output for more info)
+2022-09-14 13:35:10.7412|INFO|MsSqlExecuter|Unable to execute SQL query:
+--Name: Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition.
+CREATE VIEW Bookstore.Book_As_BookDescription
+AS
+SELECT
+    ID,
+    Description = Title + SELECT Name From Bookstore.Person WHERE Bookstore.Person.ID = Bookstore.Book.AuthorID ,
+    Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/
+FROM
+    Bookstore.Book
+/*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescription*/
+2022-09-14 13:35:10.7608|ERROR|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition.': Msg 156, Level 15, State 1, Procedure Book_As_BookDescription, Line 6: Incorrect syntax near the keyword 'SELECT'. Msg 102, Level 15, State 1, Procedure Book_As_BookDescription, Line 6: Incorrect syntax near ','.  ---> System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'SELECT'. Incorrect syntax near ','.    at System.Data.Sq ... (see build output for more info)
+2022-09-14 13:35:10.7608|INFO|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition.': Msg 156, Level 15, State 1, Procedure Book_As_BookDescription, Line 6: Incorrect syntax near the keyword 'SELECT'.
+Msg 102, Level 15, State 1, Procedure Book_As_BookDescription, Line 6: Incorrect syntax near ','.
+ ---> System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'SELECT'.
+Incorrect syntax near ','.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+ClientConnectionId:f27c848e-5f08-4388-af43-65ab09bf0d95
+ErrorNumber:156,State:1,Class:15
+   --- End of inner exception stack trace ---
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, IEnumerable`1 commands, Action`1 beforeExecute, Action`1 afterExecute)
+   at Rhetos.Utilities.SqlTransactionBatches.<>c__DisplayClass8_3.<Execute>b__14(ISqlExecuter sqlExecuter)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(Action`1 sqlExecuterAction, Boolean useTransaction, IList`1 errorContext)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(IEnumerable`1 sqlScripts)
+   at Rhetos.DatabaseGenerator.DatabaseGenerator.ApplyChangesToDatabase(List`1 oldApplications, List`1 newApplications, List`1 toBeRemoved, List`1 toBeInserted)
+   at Rhetos.DatabaseGenerator.DatabaseGenerator.UpdateDatabaseStructure()
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+--- End of stack trace from previous location ---
+   at Rhetos.Utilities.ExceptionsUtility.Rethrow(Exception exception)
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+   at Rhetos.Deployment.DatabaseUpdate.UpdateDatabase()
+   at Rhetos.Program.DbUpdate(String startupAssembly, Boolean shortTransactions, Boolean skipRecompute)
+   at Rhetos.Program.<>c__DisplayClass8_2.<Run>b__7()
+   at Rhetos.Program.SafeExecuteCommand(Action action, String commandName)
+2022-09-14 13:37:03.6452|INFO|Rhetos DbUpdate base|Started 'dotnet' process 10756.
+2022-09-14 13:37:03.8618|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 13:37:03.8853|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 13:37:04.2841|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 13:37:04.4169|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 13:37:04.5696|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 13:37:04.6048|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-14 13:37:04.6048|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 13:37:04.6048|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 13:37:04.7818|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-14 13:37:04.7818|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 13:37:04.7906|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 13:37:04.8252|TRACE|DatabaseGeneratorChanges|Changed concept application: SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition
+Old: DECLARE @columnList NVARCHAR(MAX);\r\nSET @columnList = N', Description, Subtype = NULL, Title/*PolymorphicUnionViewInfo PolymorphicPropertyName Bookstore.BookDescription*/';\r\n\r\nDECLARE @sql NVARCHAR(MAX);\r\nSET @sql = N'CREATE VIEW Bookstore.BookDescription\r\nAS\r\nSELECT\r\n    ID = CONVERT(UNIQUEIDENTIFIER, NULL),\r\n    Description = CONVERT(NVARCHAR(256), NULL),\r\n    Subtype = CONVERT(NVARCHAR(256), NU...
+New: DECLARE @columnList NVARCHAR(MAX);\r\nSET @columnList = N', BookID = NULL, Description, Subtype = NULL, Title/*PolymorphicUnionViewInfo PolymorphicPropertyName Bookstore.BookDescription*/';\r\n\r\nDECLARE @sql NVARCHAR(MAX);\r\nSET @sql = N'CREATE VIEW Bookstore.BookDescription\r\nAS\r\nSELECT\r\n    ID = CONVERT(UNIQUEIDENTIFIER, NULL),\r\n    BookID = CONVERT(UNIQUEIDENTIFIER, NULL),\r\n    Description = CONVERT(...
+2022-09-14 13:37:04.8344|TRACE|DatabaseGeneratorChanges|Removing SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-14 13:37:04.8344|INFO|DatabaseGenerator|Removing 1 database objects.
+2022-09-14 13:37:04.8344|TRACE|DatabaseGeneratorChanges|Creating SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=6831A5D8-D5CF-48CE-AE52-A01470F63C7C.
+2022-09-14 13:37:04.8344|TRACE|DatabaseGeneratorChanges|Creating SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-14 13:37:04.8344|INFO|DatabaseGenerator|Creating 2 database objects.
+2022-09-14 13:37:04.8443|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-14 13:37:04.8685|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-14 13:37:04.8685|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-14 13:37:05.1804|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-14 13:37:06.3667|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-14 13:37:06.9745|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-14 13:37:06.9886|INFO|Rhetos DbUpdate|Done.
+2022-09-14 14:49:59.8862|INFO|Rhetos DbUpdate base|Started 'dotnet' process 9652.
+2022-09-14 14:50:00.3887|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 14:50:00.8122|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 14:50:03.7079|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 14:50:03.8763|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 14:50:04.1370|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 14:50:04.1909|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 9 remaining.
+2022-09-14 14:50:04.1954|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 14:50:04.1954|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 14:50:04.5360|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-14 14:50:04.5360|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 14:50:04.5360|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 14:50:04.7824|TRACE|DatabaseGeneratorChanges|Changed concept application: SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition
+Old: CREATE VIEW Bookstore.Book_As_BookDescription\r\nAS\r\nSELECT\r\n    ID,\r\n    Description = Title,\r\n    Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/\r\nFROM\r\n    Bookstore.Book\r\n/*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescription*/
+New: CREATE VIEW Bookstore.Book_As_BookDescription\r\nAS\r\nSELECT\r\n    ID,\r\n    Description = Title + Author.Name,\r\n    Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/\r\nFROM\r\n    Bookstore.Book\r\n/*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescription*/
+2022-09-14 14:50:04.7824|TRACE|DatabaseGeneratorChanges|Refresh SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C. It depends on changed concepts: SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition.
+2022-09-14 14:50:04.7824|TRACE|DatabaseGeneratorChanges|Removing SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-14 14:50:04.7824|TRACE|DatabaseGeneratorChanges|Removing SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=6831A5D8-D5CF-48CE-AE52-A01470F63C7C.
+2022-09-14 14:50:04.7824|INFO|DatabaseGenerator|Removing 2 database objects.
+2022-09-14 14:50:04.7824|TRACE|DatabaseGeneratorChanges|Creating SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=6831A5D8-D5CF-48CE-AE52-A01470F63C7C.
+2022-09-14 14:50:04.7824|TRACE|DatabaseGeneratorChanges|Creating SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-14 14:50:04.7824|INFO|DatabaseGenerator|Creating 2 database objects.
+2022-09-14 14:50:04.8207|ERROR|MsSqlExecuter|Unable to execute SQL query: --Name: Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition. CREATE VIEW Bookstore.Book_As_BookDescription AS SELECT     ID,     Description = Title + Author.Name,     Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/ FROM     Bookstore.Book /*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescription*/
+2022-09-14 14:50:04.8207|ERROR|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition.': Msg 4104, Level 16, State 1, Procedure Book_As_BookDescription, Line 6: The multi-part identifier "Author.Name" could not be bound.  ---> System.Data.SqlClient.SqlException (0x80131904): The multi-part identifier "Author.Name" could not be bound.    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrap ... (see build output for more info)
+2022-09-14 14:50:04.8349|INFO|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition.': Msg 4104, Level 16, State 1, Procedure Book_As_BookDescription, Line 6: The multi-part identifier "Author.Name" could not be bound.
+ ---> System.Data.SqlClient.SqlException (0x80131904): The multi-part identifier "Author.Name" could not be bound.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+ClientConnectionId:4cac18f3-825d-4683-87b8-ced3edb12d97
+ErrorNumber:4104,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, IEnumerable`1 commands, Action`1 beforeExecute, Action`1 afterExecute)
+   at Rhetos.Utilities.SqlTransactionBatches.<>c__DisplayClass8_3.<Execute>b__14(ISqlExecuter sqlExecuter)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(Action`1 sqlExecuterAction, Boolean useTransaction, IList`1 errorContext)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(IEnumerable`1 sqlScripts)
+   at Rhetos.DatabaseGenerator.DatabaseGenerator.ApplyChangesToDatabase(List`1 oldApplications, List`1 newApplications, List`1 toBeRemoved, List`1 toBeInserted)
+   at Rhetos.DatabaseGenerator.DatabaseGenerator.UpdateDatabaseStructure()
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+--- End of stack trace from previous location ---
+   at Rhetos.Utilities.ExceptionsUtility.Rethrow(Exception exception)
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+   at Rhetos.Deployment.DatabaseUpdate.UpdateDatabase()
+   at Rhetos.Program.DbUpdate(String startupAssembly, Boolean shortTransactions, Boolean skipRecompute)
+   at Rhetos.Program.<>c__DisplayClass8_2.<Run>b__7()
+   at Rhetos.Program.SafeExecuteCommand(Action action, String commandName)
+2022-09-14 14:52:54.5279|INFO|Rhetos DbUpdate base|Started 'dotnet' process 9168.
+2022-09-14 14:52:54.8125|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 14:52:54.8546|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 14:52:55.3315|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 14:52:55.4970|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 14:52:55.8183|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 14:52:55.8982|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-14 14:52:55.8982|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 14:52:55.8982|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 14:52:56.2800|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-14 14:52:56.2800|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 14:52:56.2957|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 14:52:56.3461|TRACE|DatabaseGeneratorChanges|Changed concept application: SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition
+Old: CREATE VIEW Bookstore.Book_As_BookDescription\r\nAS\r\nSELECT\r\n    ID,\r\n    Description = Title,\r\n    Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/\r\nFROM\r\n    Bookstore.Book\r\n/*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescription*/
+New: CREATE VIEW Bookstore.Book_As_BookDescription\r\nAS\r\nSELECT\r\n    ID,\r\n    Description = Title + SELECT Name From Bookstore.Person p where p.ID = Bookstore.Book.ID,\r\n    Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/\r\nFROM\r\n    Bookstore.Book\r\n/*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescription*/
+2022-09-14 14:52:56.3461|TRACE|DatabaseGeneratorChanges|Refresh SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C. It depends on changed concepts: SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition.
+2022-09-14 14:52:56.3461|TRACE|DatabaseGeneratorChanges|Removing SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-14 14:52:56.3461|TRACE|DatabaseGeneratorChanges|Removing SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=6831A5D8-D5CF-48CE-AE52-A01470F63C7C.
+2022-09-14 14:52:56.3461|INFO|DatabaseGenerator|Removing 2 database objects.
+2022-09-14 14:52:56.3592|TRACE|DatabaseGeneratorChanges|Creating SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=6831A5D8-D5CF-48CE-AE52-A01470F63C7C.
+2022-09-14 14:52:56.3592|TRACE|DatabaseGeneratorChanges|Creating SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-14 14:52:56.3592|INFO|DatabaseGenerator|Creating 2 database objects.
+2022-09-14 14:52:56.3592|ERROR|MsSqlExecuter|Unable to execute SQL query: --Name: Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition. CREATE VIEW Bookstore.Book_As_BookDescription AS SELECT     ID,     Description = Title + SELECT Name From Bookstore.Person p where p.ID = Bookstore.Book.ID,     Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/ FROM     Bookstore.Book /*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescription*/
+2022-09-14 14:52:56.3994|ERROR|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition.': Msg 156, Level 15, State 1, Procedure Book_As_BookDescription, Line 6: Incorrect syntax near the keyword 'SELECT'. Msg 102, Level 15, State 1, Procedure Book_As_BookDescription, Line 6: Incorrect syntax near ','.  ---> System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'SELECT'. Incorrect syntax near ','.    at System.Data.Sq ... (see build output for more info)
+2022-09-14 14:52:56.3994|INFO|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Creating SqlViewInfo Bookstore.Book_As_BookDescription/SqlViewDatabaseDefinition.': Msg 156, Level 15, State 1, Procedure Book_As_BookDescription, Line 6: Incorrect syntax near the keyword 'SELECT'.
+Msg 102, Level 15, State 1, Procedure Book_As_BookDescription, Line 6: Incorrect syntax near ','.
+ ---> System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'SELECT'.
+Incorrect syntax near ','.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+ClientConnectionId:509fa544-5ed7-4954-ac42-338e2e3b2b49
+ErrorNumber:156,State:1,Class:15
+   --- End of inner exception stack trace ---
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, IEnumerable`1 commands, Action`1 beforeExecute, Action`1 afterExecute)
+   at Rhetos.Utilities.SqlTransactionBatches.<>c__DisplayClass8_3.<Execute>b__14(ISqlExecuter sqlExecuter)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(Action`1 sqlExecuterAction, Boolean useTransaction, IList`1 errorContext)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(IEnumerable`1 sqlScripts)
+   at Rhetos.DatabaseGenerator.DatabaseGenerator.ApplyChangesToDatabase(List`1 oldApplications, List`1 newApplications, List`1 toBeRemoved, List`1 toBeInserted)
+   at Rhetos.DatabaseGenerator.DatabaseGenerator.UpdateDatabaseStructure()
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+--- End of stack trace from previous location ---
+   at Rhetos.Utilities.ExceptionsUtility.Rethrow(Exception exception)
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+   at Rhetos.Deployment.DatabaseUpdate.UpdateDatabase()
+   at Rhetos.Program.DbUpdate(String startupAssembly, Boolean shortTransactions, Boolean skipRecompute)
+   at Rhetos.Program.<>c__DisplayClass8_2.<Run>b__7()
+   at Rhetos.Program.SafeExecuteCommand(Action action, String commandName)
+2022-09-14 14:53:12.0840|INFO|Rhetos DbUpdate base|Started 'dotnet' process 1768.
+2022-09-14 14:53:12.4804|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 14:53:12.5162|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 14:53:13.1099|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 14:53:13.2445|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 14:53:13.3229|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 14:53:13.3446|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-14 14:53:13.3446|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 14:53:13.3446|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 14:53:13.7700|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-14 14:53:13.7700|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 14:53:13.7929|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 14:53:13.8493|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-14 14:53:13.8493|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-14 14:53:13.8637|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-14 14:53:13.9189|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-14 14:53:13.9189|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-14 14:53:14.1897|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-14 14:53:15.3001|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-14 14:53:15.9857|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-14 14:53:16.0046|INFO|Rhetos DbUpdate|Done.
+2022-09-14 15:06:00.5643|INFO|Rhetos DbUpdate base|Started 'dotnet' process 2828.
+2022-09-14 15:06:01.0209|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 15:06:01.4130|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 15:06:04.1748|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 15:06:04.3349|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 15:06:04.4750|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 15:06:04.5026|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 9 remaining.
+2022-09-14 15:06:04.5026|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 15:06:04.5168|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 15:06:04.6678|INFO|DataMigration|Executed 0 of 12 scripts.
+2022-09-14 15:06:04.6678|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 15:06:04.6775|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 15:06:04.8937|TRACE|DatabaseGeneratorChanges|Changed concept application: EntityLoggingInfo Bookstore.Book/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition
+Old: ...PLACE(REPLACE(REPLACE(ISNULL(CONVERT(NVARCHAR(MAX), deleted.CreatedAt, 126), ''), '&', '&amp;'), '<', '&lt;'), '>', '&gt;'), '"', '&quot;') + '"'\r\n                ELSE '' END\r\n\t\t\t+ CASE WHEN inserted.NumberOfPages <> deleted.NumberOfPages\r\n                    OR inserted.NumberOfPages IS NULL AND deleted.NumberOfPages IS NOT NULL\r\n                    OR inserted.NumberOfPages IS NOT NULL AND delet...
+New: ...PLACE(REPLACE(REPLACE(ISNULL(CONVERT(NVARCHAR(MAX), deleted.CreatedAt, 126), ''), '&', '&amp;'), '<', '&lt;'), '>', '&gt;'), '"', '&quot;') + '"'\r\n                ELSE '' END\r\n\t\t\t+ CASE WHEN inserted.Inserted <> deleted.Inserted\r\n                    OR inserted.Inserted IS NULL AND deleted.Inserted IS NOT NULL\r\n                    OR inserted.Inserted IS NOT NULL AND deleted.Inserted IS NULL\r\n    ...
+2022-09-14 15:06:04.9101|TRACE|DatabaseGeneratorChanges|Refresh DataStructureInfo Bookstore.BookInfo/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=565F1613-3903-4961-9C6C-4EE6FC5D50AB. It depends on new concepts: PropertyInfo Bookstore.Book.Inserted/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition.
+2022-09-14 15:06:04.9101|TRACE|DatabaseGeneratorChanges|Refresh DataStructureInfo Queries.BookInfoThroughExternalFile/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=D7AED503-53A1-48CB-A830-78545FD81A9B. It depends on new concepts: PropertyInfo Bookstore.Book.Inserted/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition.
+2022-09-14 15:06:04.9101|TRACE|DatabaseGeneratorChanges|Removing DataStructureInfo Queries.BookInfoThroughExternalFile/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=D7AED503-53A1-48CB-A830-78545FD81A9B.
+2022-09-14 15:06:04.9101|TRACE|DatabaseGeneratorChanges|Removing DataStructureInfo Bookstore.BookInfo/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=565F1613-3903-4961-9C6C-4EE6FC5D50AB.
+2022-09-14 15:06:04.9101|TRACE|DatabaseGeneratorChanges|Removing EntityLoggingInfo Bookstore.Book/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=7EE2DEBD-C16B-4A89-82D2-053B12447176.
+2022-09-14 15:06:04.9101|INFO|DatabaseGenerator|Removing 3 database objects.
+2022-09-14 15:06:04.9236|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo Bookstore.Book.Inserted/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=2B86FD4C-41A2-4B37-A3A9-6671C9A73659.
+2022-09-14 15:06:04.9236|TRACE|DatabaseGeneratorChanges|Creating EntityLoggingInfo Bookstore.Book/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=7EE2DEBD-C16B-4A89-82D2-053B12447176.
+2022-09-14 15:06:04.9236|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo Bookstore.BookInfo/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=565F1613-3903-4961-9C6C-4EE6FC5D50AB.
+2022-09-14 15:06:04.9236|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo Queries.BookInfoThroughExternalFile/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=D7AED503-53A1-48CB-A830-78545FD81A9B.
+2022-09-14 15:06:04.9236|INFO|DatabaseGenerator|Creating 4 database objects.
+2022-09-14 15:06:04.9732|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-14 15:06:04.9732|INFO|DatabaseCleaner|Deleted 5 columns in data migration schemas, 8 remaining.
+2022-09-14 15:06:04.9888|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-14 15:06:05.2494|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-14 15:06:06.2814|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-14 15:06:06.7716|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-14 15:06:06.7854|INFO|Rhetos DbUpdate|Done.
+2022-09-14 15:09:13.9971|INFO|Rhetos DbUpdate base|Started 'dotnet' process 13368.
+2022-09-14 15:09:14.2181|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 15:09:14.2436|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 15:09:14.8307|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 15:09:14.9678|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 15:09:15.2584|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 15:09:15.3147|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 8 remaining.
+2022-09-14 15:09:15.3147|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 15:09:15.3147|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 15:09:15.6689|INFO|DataMigration|Executing Bookstore.Service\Rename.sql (tag A707DF04-6B97-4885-ABF8-385E54489A9A)
+2022-09-14 15:09:15.7424|INFO|DataMigration|Executed 1 of 13 scripts.
+2022-09-14 15:09:15.7424|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 15:09:15.7691|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 15:09:15.8235|TRACE|DatabaseGeneratorChanges|Changed concept application: EntityLoggingInfo Bookstore.Book/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition
+Old: ...PLACE(REPLACE(REPLACE(ISNULL(CONVERT(NVARCHAR(MAX), deleted.CreatedAt, 126), ''), '&', '&amp;'), '<', '&lt;'), '>', '&gt;'), '"', '&quot;') + '"'\r\n                ELSE '' END\r\n\t\t\t+ CASE WHEN inserted.Inserted <> deleted.Inserted\r\n                    OR inserted.Inserted IS NULL AND deleted.Inserted IS NOT NULL\r\n                    OR inserted.Inserted IS NOT NULL AND deleted.Inserted IS NULL\r\n    ...
+New: ...PLACE(REPLACE(REPLACE(ISNULL(CONVERT(NVARCHAR(MAX), deleted.CreatedAt, 126), ''), '&', '&amp;'), '<', '&lt;'), '>', '&gt;'), '"', '&quot;') + '"'\r\n                ELSE '' END\r\n\t\t\t+ CASE WHEN inserted.NumberOfPages <> deleted.NumberOfPages\r\n                    OR inserted.NumberOfPages IS NULL AND deleted.NumberOfPages IS NOT NULL\r\n                    OR inserted.NumberOfPages IS NOT NULL AND delet...
+2022-09-14 15:09:15.8319|TRACE|DatabaseGeneratorChanges|Refresh DataStructureInfo Bookstore.BookInfo/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=565F1613-3903-4961-9C6C-4EE6FC5D50AB. It depends on removed concepts: PropertyInfo Bookstore.Book.Inserted/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition.
+2022-09-14 15:09:15.8319|TRACE|DatabaseGeneratorChanges|Refresh DataStructureInfo Queries.BookInfoThroughExternalFile/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=D7AED503-53A1-48CB-A830-78545FD81A9B. It depends on removed concepts: PropertyInfo Bookstore.Book.Inserted/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition.
+2022-09-14 15:09:15.8319|TRACE|DatabaseGeneratorChanges|Removing DataStructureInfo Queries.BookInfoThroughExternalFile/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=D7AED503-53A1-48CB-A830-78545FD81A9B.
+2022-09-14 15:09:15.8319|TRACE|DatabaseGeneratorChanges|Removing DataStructureInfo Bookstore.BookInfo/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=565F1613-3903-4961-9C6C-4EE6FC5D50AB.
+2022-09-14 15:09:15.8319|TRACE|DatabaseGeneratorChanges|Removing EntityLoggingInfo Bookstore.Book/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=7EE2DEBD-C16B-4A89-82D2-053B12447176.
+2022-09-14 15:09:15.8319|TRACE|DatabaseGeneratorChanges|Removing PropertyInfo Bookstore.Book.Inserted/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=2B86FD4C-41A2-4B37-A3A9-6671C9A73659.
+2022-09-14 15:09:15.8319|INFO|DatabaseGenerator|Removing 4 database objects.
+2022-09-14 15:09:15.8319|TRACE|DatabaseGeneratorChanges|Creating EntityLoggingInfo Bookstore.Book/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=7EE2DEBD-C16B-4A89-82D2-053B12447176.
+2022-09-14 15:09:15.8319|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo Bookstore.BookInfo/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=565F1613-3903-4961-9C6C-4EE6FC5D50AB.
+2022-09-14 15:09:15.8319|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo Queries.BookInfoThroughExternalFile/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=D7AED503-53A1-48CB-A830-78545FD81A9B.
+2022-09-14 15:09:15.8319|INFO|DatabaseGenerator|Creating 3 database objects.
+2022-09-14 15:09:15.8943|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-14 15:09:15.9122|INFO|DatabaseCleaner|Deleted 5 columns in data migration schemas, 9 remaining.
+2022-09-14 15:09:15.9122|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-14 15:09:15.9440|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-14 15:09:16.7788|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-14 15:09:17.2274|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-14 15:09:17.2423|INFO|Rhetos DbUpdate|Done.
+2022-09-14 15:18:27.5286|INFO|Rhetos DbUpdate base|Started 'dotnet' process 23400.
+2022-09-14 15:18:27.9680|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-14 15:18:28.3512|INFO|DatabaseUpdate|Loading plugins.
+2022-09-14 15:18:31.1450|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-14 15:18:31.2978|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-14 15:18:31.4358|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-14 15:18:31.4660|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 9 remaining.
+2022-09-14 15:18:31.4696|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-14 15:18:31.4696|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-14 15:18:31.6307|INFO|DataMigration|Executed 0 of 13 scripts.
+2022-09-14 15:18:31.6307|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-14 15:18:31.6307|INFO|DatabaseDeployment|Upgrading database.
+2022-09-14 15:18:31.8774|INFO|DatabaseGenerator|Removing 0 database objects.
+2022-09-14 15:18:31.8774|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo ConceptsDemo.E1/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=50D8131B-7784-4E0D-B00A-43DD077EA865.
+2022-09-14 15:18:31.8774|TRACE|DatabaseGeneratorChanges|Creating DataStructureInfo ConceptsDemo.E2/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=FCB6A785-BF79-41C3-AA7A-E0BFC686CEA3.
+2022-09-14 15:18:31.8774|TRACE|DatabaseGeneratorChanges|Creating PropertyInfo ConceptsDemo.E1.P/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=E46DF0B9-6944-452C-826D-BF6019B7E201.
+2022-09-14 15:18:31.8774|TRACE|DatabaseGeneratorChanges|Creating UniqueReferenceInfo ConceptsDemo.E2/Rhetos.DatabaseGenerator.DefaultConcepts.UniqueReferenceDatabaseDefinition, ID=72142425-2A60-4604-BC51-9A9E114CC7D3.
+2022-09-14 15:18:31.8774|INFO|DatabaseGenerator|Creating 4 database objects.
+2022-09-14 15:18:31.9106|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-14 15:18:31.9106|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-14 15:18:31.9251|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-14 15:18:32.2164|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-14 15:18:33.3455|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-14 15:18:34.0342|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-14 15:18:34.0493|INFO|Rhetos DbUpdate|Done.
+2022-09-15 07:39:51.0054|INFO|Rhetos DbUpdate base|Started 'dotnet' process 17900.
+2022-09-15 07:39:51.4538|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-15 07:39:51.8296|INFO|DatabaseUpdate|Loading plugins.
+2022-09-15 07:39:54.7493|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-15 07:39:54.9380|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-15 07:39:55.1407|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-15 07:39:55.1892|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 9 remaining.
+2022-09-15 07:39:55.1892|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-15 07:39:55.2040|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-15 07:39:55.3858|WARN|DataMigration|Executing script in an incorrect order Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:39:55.3858|INFO|DataMigration|Executing Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:39:55.4083|ERROR|MsSqlExecuter|Unable to execute SQL query: --Name: Bookstore.Service\MovingProperty.sql /*DATAMIGRATION AAAEA635-72B3-4F0E-A644-4FE55418DDE6*/ -- Change the script's code only if it needs to be executed again.  -- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E1'; EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'ID', 'uniqueidentifier'; EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';  -- The following lines are generated by: EXEC Rhetos.HelpDa ... (see build output for more info)
+2022-09-15 07:39:55.4083|INFO|MsSqlExecuter|Unable to execute SQL query:
+--Name: Bookstore.Service\MovingProperty.sql
+/*DATAMIGRATION AAAEA635-72B3-4F0E-A644-4FE55418DDE6*/ -- Change the script's code only if it needs to be executed again.
+
+-- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E1';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'ID', 'uniqueidentifier';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';
+
+-- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E2';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E2', 'ID', 'uniqueidentifier';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';
+
+-- ... write the data migration queries here (don't forget to use the underscore '_' in schema name) ...
+UPDATE 
+E2
+SET
+P=E1.P
+FROM
+_ConceptsDemo.E2 e2
+INNER JOIN _Demo.E1 ON E1.ID = e2.ID
+WHERE
+e2.P IS NULL; --If executed multiple times
+
+EXEC Rhetos.DataMigrationApplyMultiple 'ConceptsDemo', 'E2', 'ID, P';
+2022-09-15 07:39:55.4247|ERROR|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 208, Level 16, State 1, Line 13: Invalid object name '_Demo.E1'. DELETE FROM [_ConceptsDemo].[E1] WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);  INSERT INTO [_ConceptsDemo].[E1] (ID) SELECT ID FROM [ConceptsDemo].[E1] WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);  INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo',  ... (see build output for more info)
+2022-09-15 07:39:55.4247|INFO|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 208, Level 16, State 1, Line 13: Invalid object name '_Demo.E1'.
+DELETE FROM [_ConceptsDemo].[E1]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);
+
+INSERT INTO [_ConceptsDemo].[E1] (ID)
+SELECT ID FROM [ConceptsDemo].[E1]
+WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1')
+DELETE FROM [_ConceptsDemo].[E2]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E2]);
+
+INSERT INTO [_ConceptsDemo].[E2] (ID)
+SELECT ID FROM [ConceptsDemo].[E2]
+WHERE [ConceptsDemo].[E2].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E2]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E2')
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid object name '_Demo.E1'.
+DELETE FROM [_ConceptsDemo].[E1]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);
+
+INSERT INTO [_ConceptsDemo].[E1] (ID)
+SELECT ID FROM [ConceptsDemo].[E1]
+WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1')
+DELETE FROM [_ConceptsDemo].[E2]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E2]);
+
+INSERT INTO [_ConceptsDemo].[E2] (ID)
+SELECT ID FROM [ConceptsDemo].[E2]
+WHERE [ConceptsDemo].[E2].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E2]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E2')
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+ClientConnectionId:e0774a35-6caa-4367-8b33-70061e3bfb2d
+ErrorNumber:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, IEnumerable`1 commands, Action`1 beforeExecute, Action`1 afterExecute)
+   at Rhetos.Utilities.SqlTransactionBatches.<>c__DisplayClass8_3.<Execute>b__14(ISqlExecuter sqlExecuter)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(Action`1 sqlExecuterAction, Boolean useTransaction, IList`1 errorContext)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(IEnumerable`1 sqlScripts)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.ApplyToDatabase(List`1 toRemove, List`1 toExecute, List`1 toUpdate, Boolean logAsUndo)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.Execute()
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+   at Rhetos.Deployment.DatabaseUpdate.UpdateDatabase()
+   at Rhetos.Program.DbUpdate(String startupAssembly, Boolean shortTransactions, Boolean skipRecompute)
+   at Rhetos.Program.<>c__DisplayClass8_2.<Run>b__7()
+   at Rhetos.Program.SafeExecuteCommand(Action action, String commandName)
+2022-09-15 07:48:52.9031|INFO|Rhetos DbUpdate base|Started 'dotnet' process 2804.
+2022-09-15 07:48:53.4102|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-15 07:48:53.7559|INFO|DatabaseUpdate|Loading plugins.
+2022-09-15 07:48:56.5888|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-15 07:48:56.7320|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-15 07:48:56.9095|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-15 07:48:56.9515|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-15 07:48:56.9515|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-15 07:48:56.9724|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-15 07:48:57.1390|WARN|DataMigration|Executing script in an incorrect order Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:48:57.1390|INFO|DataMigration|Executing Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:48:57.1543|ERROR|MsSqlExecuter|Unable to execute SQL query: --Name: Bookstore.Service\MovingProperty.sql /*DATAMIGRATION AAAEA635-72B3-4F0E-A644-4FE55418DDE6*/ -- Change the script's code only if it needs to be executed again.  -- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E1'; EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'ID', 'uniqueidentifier'; EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';  -- The following lines are generated by: EXEC Rhetos.HelpDa ... (see build output for more info)
+2022-09-15 07:48:57.1543|INFO|MsSqlExecuter|Unable to execute SQL query:
+--Name: Bookstore.Service\MovingProperty.sql
+/*DATAMIGRATION AAAEA635-72B3-4F0E-A644-4FE55418DDE6*/ -- Change the script's code only if it needs to be executed again.
+
+-- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E1';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'ID', 'uniqueidentifier';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';
+
+-- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E2';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E2', 'ID', 'uniqueidentifier';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';
+
+-- ... write the data migration queries here (don't forget to use the underscore '_' in schema name) ...
+UPDATE 
+	e2
+SET
+	P=E1.P
+FROM
+	_ConceptsDemo.E2 e2
+	INNER JOIN _Demo.E1 ON E1.ID = e2.ID
+WHERE
+e2.P IS NULL; --If executed multiple times
+
+EXEC Rhetos.DataMigrationApplyMultiple 'ConceptsDemo', 'E2', 'ID, P';
+2022-09-15 07:48:57.1700|ERROR|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 208, Level 16, State 1, Line 13: Invalid object name '_Demo.E1'. DELETE FROM [_ConceptsDemo].[E1] WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);  INSERT INTO [_ConceptsDemo].[E1] (ID) SELECT ID FROM [ConceptsDemo].[E1] WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);  INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo',  ... (see build output for more info)
+2022-09-15 07:48:57.1700|INFO|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 208, Level 16, State 1, Line 13: Invalid object name '_Demo.E1'.
+DELETE FROM [_ConceptsDemo].[E1]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);
+
+INSERT INTO [_ConceptsDemo].[E1] (ID)
+SELECT ID FROM [ConceptsDemo].[E1]
+WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1')
+DELETE FROM [_ConceptsDemo].[E2]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E2]);
+
+INSERT INTO [_ConceptsDemo].[E2] (ID)
+SELECT ID FROM [ConceptsDemo].[E2]
+WHERE [ConceptsDemo].[E2].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E2]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E2')
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid object name '_Demo.E1'.
+DELETE FROM [_ConceptsDemo].[E1]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);
+
+INSERT INTO [_ConceptsDemo].[E1] (ID)
+SELECT ID FROM [ConceptsDemo].[E1]
+WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1')
+DELETE FROM [_ConceptsDemo].[E2]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E2]);
+
+INSERT INTO [_ConceptsDemo].[E2] (ID)
+SELECT ID FROM [ConceptsDemo].[E2]
+WHERE [ConceptsDemo].[E2].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E2]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E2')
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+ClientConnectionId:f45afc67-0512-4c68-99a3-8dc428cf05a3
+ErrorNumber:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, IEnumerable`1 commands, Action`1 beforeExecute, Action`1 afterExecute)
+   at Rhetos.Utilities.SqlTransactionBatches.<>c__DisplayClass8_3.<Execute>b__14(ISqlExecuter sqlExecuter)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(Action`1 sqlExecuterAction, Boolean useTransaction, IList`1 errorContext)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(IEnumerable`1 sqlScripts)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.ApplyToDatabase(List`1 toRemove, List`1 toExecute, List`1 toUpdate, Boolean logAsUndo)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.Execute()
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+   at Rhetos.Deployment.DatabaseUpdate.UpdateDatabase()
+   at Rhetos.Program.DbUpdate(String startupAssembly, Boolean shortTransactions, Boolean skipRecompute)
+   at Rhetos.Program.<>c__DisplayClass8_2.<Run>b__7()
+   at Rhetos.Program.SafeExecuteCommand(Action action, String commandName)
+2022-09-15 07:53:02.2566|INFO|Rhetos DbUpdate base|Started 'dotnet' process 20916.
+2022-09-15 07:53:02.4840|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-15 07:53:02.5133|INFO|DatabaseUpdate|Loading plugins.
+2022-09-15 07:53:02.9461|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-15 07:53:03.0625|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-15 07:53:03.2091|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-15 07:53:03.2494|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-15 07:53:03.2494|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-15 07:53:03.2584|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-15 07:53:03.4086|WARN|DataMigration|Executing script in an incorrect order Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:53:03.4086|INFO|DataMigration|Executing Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:53:03.4217|ERROR|MsSqlExecuter|Unable to execute SQL query: --Name: Bookstore.Service\MovingProperty.sql /*DATAMIGRATION AAAEA635-72B3-4F0E-A644-4FE55418DDE6*/ -- Change the script's code only if it needs to be executed again.  -- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E1'; EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'ID', 'uniqueidentifier'; EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';  -- The following lines are generated by: EXEC Rhetos.HelpDa ... (see build output for more info)
+2022-09-15 07:53:03.4217|INFO|MsSqlExecuter|Unable to execute SQL query:
+--Name: Bookstore.Service\MovingProperty.sql
+/*DATAMIGRATION AAAEA635-72B3-4F0E-A644-4FE55418DDE6*/ -- Change the script's code only if it needs to be executed again.
+
+-- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E1';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'ID', 'uniqueidentifier';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';
+
+-- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E2';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E2', 'ID', 'uniqueidentifier';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';
+
+-- ... write the data migration queries here (don't forget to use the underscore '_' in schema name) ...
+UPDATE 
+	e2
+SET
+	P=E1.P
+FROM
+	_ConceptsDemo.E2 e2
+	INNER JOIN _ConceptsDemo.E1 ON E1.ID = e2.ID
+WHERE
+	e2.P IS NULL; --If executed multiple times
+
+EXEC Rhetos.DataMigrationApplyMultiple 'ConceptsDemo', 'E2', 'ID, P';
+2022-09-15 07:53:03.4368|ERROR|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 207, Level 16, State 1, Line 13: Invalid column name 'P'. DELETE FROM [_ConceptsDemo].[E1] WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);  INSERT INTO [_ConceptsDemo].[E1] (ID) SELECT ID FROM [ConceptsDemo].[E1] WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);  INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1') D ... (see build output for more info)
+2022-09-15 07:53:03.4368|INFO|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 207, Level 16, State 1, Line 13: Invalid column name 'P'.
+DELETE FROM [_ConceptsDemo].[E1]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);
+
+INSERT INTO [_ConceptsDemo].[E1] (ID)
+SELECT ID FROM [ConceptsDemo].[E1]
+WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1')
+DELETE FROM [_ConceptsDemo].[E2]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E2]);
+
+INSERT INTO [_ConceptsDemo].[E2] (ID)
+SELECT ID FROM [ConceptsDemo].[E2]
+WHERE [ConceptsDemo].[E2].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E2]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E2')
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'P'.
+DELETE FROM [_ConceptsDemo].[E1]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);
+
+INSERT INTO [_ConceptsDemo].[E1] (ID)
+SELECT ID FROM [ConceptsDemo].[E1]
+WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1')
+DELETE FROM [_ConceptsDemo].[E2]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E2]);
+
+INSERT INTO [_ConceptsDemo].[E2] (ID)
+SELECT ID FROM [ConceptsDemo].[E2]
+WHERE [ConceptsDemo].[E2].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E2]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E2')
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+ClientConnectionId:57ae904e-61dc-4f03-a773-bd607801f682
+ErrorNumber:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, IEnumerable`1 commands, Action`1 beforeExecute, Action`1 afterExecute)
+   at Rhetos.Utilities.SqlTransactionBatches.<>c__DisplayClass8_3.<Execute>b__14(ISqlExecuter sqlExecuter)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(Action`1 sqlExecuterAction, Boolean useTransaction, IList`1 errorContext)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(IEnumerable`1 sqlScripts)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.ApplyToDatabase(List`1 toRemove, List`1 toExecute, List`1 toUpdate, Boolean logAsUndo)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.Execute()
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+   at Rhetos.Deployment.DatabaseUpdate.UpdateDatabase()
+   at Rhetos.Program.DbUpdate(String startupAssembly, Boolean shortTransactions, Boolean skipRecompute)
+   at Rhetos.Program.<>c__DisplayClass8_2.<Run>b__7()
+   at Rhetos.Program.SafeExecuteCommand(Action action, String commandName)
+2022-09-15 07:54:07.3514|INFO|Rhetos DbUpdate base|Started 'dotnet' process 21216.
+2022-09-15 07:54:07.5837|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-15 07:54:07.6094|INFO|DatabaseUpdate|Loading plugins.
+2022-09-15 07:54:08.1185|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-15 07:54:08.2561|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-15 07:54:08.3945|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-15 07:54:08.4450|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-15 07:54:08.4482|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-15 07:54:08.4482|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-15 07:54:08.6779|WARN|DataMigration|Executing script in an incorrect order Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:54:08.6779|INFO|DataMigration|Executing Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:54:08.7000|ERROR|MsSqlExecuter|Unable to execute SQL query: --Name: Bookstore.Service\MovingProperty.sql /*DATAMIGRATION AAAEA635-72B3-4F0E-A644-4FE55418DDE6*/ -- Change the script's code only if it needs to be executed again.  -- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E1'; EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'ID', 'uniqueidentifier'; EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';  -- The following lines are generated by: EXEC Rhetos.HelpDa ... (see build output for more info)
+2022-09-15 07:54:08.7000|INFO|MsSqlExecuter|Unable to execute SQL query:
+--Name: Bookstore.Service\MovingProperty.sql
+/*DATAMIGRATION AAAEA635-72B3-4F0E-A644-4FE55418DDE6*/ -- Change the script's code only if it needs to be executed again.
+
+-- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E1';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'ID', 'uniqueidentifier';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';
+
+-- The following lines are generated by: EXEC Rhetos.HelpDataMigration 'ConceptsDemo', 'E2';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E2', 'ID', 'uniqueidentifier';
+EXEC Rhetos.DataMigrationUse 'ConceptsDemo', 'E1', 'P', 'nvarchar(256)';
+
+-- ... write the data migration queries here (don't forget to use the underscore '_' in schema name) ...
+UPDATE 
+	e2
+SET
+	P = e1.P
+FROM
+	_ConceptsDemo.E2 e2
+	INNER JOIN _ConceptsDemo.E1 e1 ON e1.ID = e2.ID
+WHERE
+	e2.P IS NULL; --If executed multiple times
+
+EXEC Rhetos.DataMigrationApplyMultiple 'ConceptsDemo', 'E2', 'ID, P';
+2022-09-15 07:54:08.7207|ERROR|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 207, Level 16, State 1, Line 13: Invalid column name 'P'. DELETE FROM [_ConceptsDemo].[E1] WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);  INSERT INTO [_ConceptsDemo].[E1] (ID) SELECT ID FROM [ConceptsDemo].[E1] WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);  INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1') D ... (see build output for more info)
+2022-09-15 07:54:08.7207|INFO|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 207, Level 16, State 1, Line 13: Invalid column name 'P'.
+DELETE FROM [_ConceptsDemo].[E1]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);
+
+INSERT INTO [_ConceptsDemo].[E1] (ID)
+SELECT ID FROM [ConceptsDemo].[E1]
+WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1')
+DELETE FROM [_ConceptsDemo].[E2]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E2]);
+
+INSERT INTO [_ConceptsDemo].[E2] (ID)
+SELECT ID FROM [ConceptsDemo].[E2]
+WHERE [ConceptsDemo].[E2].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E2]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E2')
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'P'.
+DELETE FROM [_ConceptsDemo].[E1]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E1]);
+
+INSERT INTO [_ConceptsDemo].[E1] (ID)
+SELECT ID FROM [ConceptsDemo].[E1]
+WHERE [ConceptsDemo].[E1].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E1]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E1')
+DELETE FROM [_ConceptsDemo].[E2]
+WHERE ID NOT IN (SELECT ID FROM [ConceptsDemo].[E2]);
+
+INSERT INTO [_ConceptsDemo].[E2] (ID)
+SELECT ID FROM [ConceptsDemo].[E2]
+WHERE [ConceptsDemo].[E2].ID NOT IN (SELECT ID FROM [_ConceptsDemo].[E2]);
+
+INSERT INTO Rhetos.DataMigrationFreshRows (OriginalSchemaName, TableName) VALUES ('ConceptsDemo', 'E2')
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+ClientConnectionId:dd186c48-0e8c-4e81-910d-363162aa539d
+ErrorNumber:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, IEnumerable`1 commands, Action`1 beforeExecute, Action`1 afterExecute)
+   at Rhetos.Utilities.SqlTransactionBatches.<>c__DisplayClass8_3.<Execute>b__14(ISqlExecuter sqlExecuter)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(Action`1 sqlExecuterAction, Boolean useTransaction, IList`1 errorContext)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(IEnumerable`1 sqlScripts)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.ApplyToDatabase(List`1 toRemove, List`1 toExecute, List`1 toUpdate, Boolean logAsUndo)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.Execute()
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+   at Rhetos.Deployment.DatabaseUpdate.UpdateDatabase()
+   at Rhetos.Program.DbUpdate(String startupAssembly, Boolean shortTransactions, Boolean skipRecompute)
+   at Rhetos.Program.<>c__DisplayClass8_2.<Run>b__7()
+   at Rhetos.Program.SafeExecuteCommand(Action action, String commandName)
+2022-09-15 07:59:23.2465|INFO|Rhetos DbUpdate base|Started 'dotnet' process 17376.
+2022-09-15 07:59:23.5134|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-15 07:59:23.5415|INFO|DatabaseUpdate|Loading plugins.
+2022-09-15 07:59:24.0126|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-15 07:59:24.1633|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-15 07:59:24.4145|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-15 07:59:24.4770|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-15 07:59:24.4770|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-15 07:59:24.4770|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-15 07:59:24.7867|WARN|DataMigration|Executing script in an incorrect order Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:59:24.7898|INFO|DataMigration|Executing Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 07:59:24.8183|ERROR|MsSqlExecuter|Unable to execute SQL query: --Name: Bookstore.Service\MovingProperty.sql -- ... write the data migration queries here (don't forget to use the underscore '_' in schema name) ... UPDATE  	e2 SET 	P = e1.P FROM 	_ConceptsDemo.E2 e2 	INNER JOIN _ConceptsDemo.E1 e1 ON e1.ID = e2.ID WHERE 	e2.P IS NULL; --If executed multiple times  EXEC Rhetos.DataMigrationApplyMultiple 'ConceptsDemo', 'E2', 'ID, P';
+2022-09-15 07:59:24.8396|ERROR|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 207, Level 16, State 1, Line 11: Invalid column name 'P'.  ---> System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'P'.    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)  ... (see build output for more info)
+2022-09-15 07:59:24.8396|INFO|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 207, Level 16, State 1, Line 11: Invalid column name 'P'.
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'P'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+ClientConnectionId:886af945-1f41-4f84-8d87-eec6fa84ddf0
+ErrorNumber:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, IEnumerable`1 commands, Action`1 beforeExecute, Action`1 afterExecute)
+   at Rhetos.Utilities.SqlTransactionBatches.<>c__DisplayClass8_3.<Execute>b__14(ISqlExecuter sqlExecuter)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(Action`1 sqlExecuterAction, Boolean useTransaction, IList`1 errorContext)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(IEnumerable`1 sqlScripts)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.ApplyToDatabase(List`1 toRemove, List`1 toExecute, List`1 toUpdate, Boolean logAsUndo)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.Execute()
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+   at Rhetos.Deployment.DatabaseUpdate.UpdateDatabase()
+   at Rhetos.Program.DbUpdate(String startupAssembly, Boolean shortTransactions, Boolean skipRecompute)
+   at Rhetos.Program.<>c__DisplayClass8_2.<Run>b__7()
+   at Rhetos.Program.SafeExecuteCommand(Action action, String commandName)
+2022-09-15 08:07:41.5009|INFO|Rhetos DbUpdate base|Started 'dotnet' process 13316.
+2022-09-15 08:07:41.9749|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-15 08:07:42.3460|INFO|DatabaseUpdate|Loading plugins.
+2022-09-15 08:07:45.0415|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-15 08:07:45.1974|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-15 08:07:45.4583|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-15 08:07:45.5311|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-15 08:07:45.5311|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-15 08:07:45.5556|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-15 08:07:45.8851|WARN|DataMigration|Executing script in an incorrect order Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 08:07:45.8851|INFO|DataMigration|Executing Bookstore.Service\MovingProperty.sql (tag AAAEA635-72B3-4F0E-A644-4FE55418DDE6)
+2022-09-15 08:07:45.9157|ERROR|MsSqlExecuter|Unable to execute SQL query: --Name: Bookstore.Service\MovingProperty.sql -- ... write the data migration queries here (don't forget to use the underscore '_' in schema name) ... UPDATE  	e2 SET 	P = e1.P FROM 	_ConceptsDemo.E2 e2 	INNER JOIN _ConceptsDemo.E1 e1 ON e1.ID = e2.ID WHERE 	e2.P IS NULL; --If executed multiple times  EXEC Rhetos.DataMigrationApplyMultiple 'ConceptsDemo', 'E2', 'ID, P';
+2022-09-15 08:07:45.9397|ERROR|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 207, Level 16, State 1, Line 11: Invalid column name 'P'.  ---> System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'P'.    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)  ... (see build output for more info)
+2022-09-15 08:07:45.9397|INFO|Rhetos DbUpdate|Rhetos.FrameworkException: SqlException has occurred in 'Bookstore.Service\MovingProperty.sql': Msg 207, Level 16, State 1, Line 11: Invalid column name 'P'.
+ ---> System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'P'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+ClientConnectionId:96a49ed6-e8da-4f8f-8223-9ed6fd828949
+ErrorNumber:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Rhetos.Persistence.BaseSqlExecuter.ExecuteSqlRaw(String query, Object[] parameters)
+   at Rhetos.Utilities.SqlExecuterExtensions.ExecuteSql(ISqlExecuter sqlExecuter, IEnumerable`1 commands, Action`1 beforeExecute, Action`1 afterExecute)
+   at Rhetos.Utilities.SqlTransactionBatches.<>c__DisplayClass8_3.<Execute>b__14(ISqlExecuter sqlExecuter)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(Action`1 sqlExecuterAction, Boolean useTransaction, IList`1 errorContext)
+   at Rhetos.Utilities.SqlTransactionBatches.Execute(IEnumerable`1 sqlScripts)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.ApplyToDatabase(List`1 toRemove, List`1 toExecute, List`1 toUpdate, Boolean logAsUndo)
+   at Rhetos.Deployment.DataMigrationScriptsExecuter.Execute()
+   at Rhetos.Deployment.DatabaseDeployment.UpdateDatabase()
+   at Rhetos.Deployment.DatabaseUpdate.UpdateDatabase()
+   at Rhetos.Program.DbUpdate(String startupAssembly, Boolean shortTransactions, Boolean skipRecompute)
+   at Rhetos.Program.<>c__DisplayClass8_2.<Run>b__7()
+   at Rhetos.Program.SafeExecuteCommand(Action action, String commandName)
+2022-09-15 08:09:10.5434|INFO|Rhetos DbUpdate base|Started 'dotnet' process 10444.
+2022-09-15 08:09:10.7587|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-15 08:09:10.7836|INFO|DatabaseUpdate|Loading plugins.
+2022-09-15 08:09:11.3729|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-15 08:09:11.4906|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-15 08:09:11.8371|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-15 08:09:11.9117|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 9 remaining.
+2022-09-15 08:09:11.9162|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-15 08:09:11.9162|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-15 08:09:12.4207|INFO|DataMigration|Executed 0 of 13 scripts.
+2022-09-15 08:09:12.4207|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-15 08:09:12.8018|INFO|DatabaseDeployment|Upgrading database.
+2022-09-15 08:09:23.6409|INFO|Performance.MsSqlExecuter|00:00:10.8372980 SELECT ID, InfoType, ConceptInfoKey, ImplementationType, CreateQuery, RemoveQuery, ModificationOrder FROM Rhetos.AppliedConcept ORDER BY ModificationOrder
+2022-09-15 08:09:23.6552|INFO|Performance.DatabaseAnalysis|00:00:10.8521680 Loaded old concept applications.
+2022-09-15 08:09:23.6712|INFO|Performance.DatabaseGenerator|00:00:10.8738375 Database diff analysis.
+2022-09-15 08:09:23.6804|TRACE|DatabaseGeneratorChanges|Removing UniqueReferenceInfo ConceptsDemo.E2/Rhetos.DatabaseGenerator.DefaultConcepts.UniqueReferenceDatabaseDefinition, ID=72142425-2A60-4604-BC51-9A9E114CC7D3.
+2022-09-15 08:09:23.6804|TRACE|DatabaseGeneratorChanges|Removing PropertyInfo ConceptsDemo.E1.P/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=E46DF0B9-6944-452C-826D-BF6019B7E201.
+2022-09-15 08:09:23.6804|TRACE|DatabaseGeneratorChanges|Removing DataStructureInfo ConceptsDemo.E2/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=FCB6A785-BF79-41C3-AA7A-E0BFC686CEA3.
+2022-09-15 08:09:23.6804|TRACE|DatabaseGeneratorChanges|Removing DataStructureInfo ConceptsDemo.E1/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=50D8131B-7784-4E0D-B00A-43DD077EA865.
+2022-09-15 08:09:23.6804|INFO|DatabaseGenerator|Removing 4 database objects.
+2022-09-15 08:09:23.6804|INFO|DatabaseGenerator|Creating 0 database objects.
+2022-09-15 08:09:23.9297|INFO|Performance.DatabaseGenerator|00:00:11.1268361 UpdateDatabaseStructure
+2022-09-15 08:09:23.9297|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-15 08:09:23.9911|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 12 remaining.
+2022-09-15 08:09:23.9982|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-15 08:09:24.2832|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-15 08:09:25.5085|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-15 08:09:26.2929|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-15 08:09:26.2929|INFO|Rhetos DbUpdate|Done.
+2022-09-15 08:54:30.9708|INFO|Rhetos DbUpdate base|Started 'dotnet' process 8316.
+2022-09-15 08:54:31.3959|INFO|Rhetos DbUpdate|Started in C:\RhetosWorkshop\Bookstore\src\Bookstore.Service\bin\Debug\net6.0\
+2022-09-15 08:54:31.7148|INFO|DatabaseUpdate|Loading plugins.
+2022-09-15 08:54:34.0295|INFO|DatabaseDeployment|SQL connection: DataSource=(localdb)\MSSQLLocalDB, InitialCatalog=Bookstore
+2022-09-15 08:54:34.1718|INFO|DatabaseDeployment|Preparing Rhetos database.
+2022-09-15 08:54:34.3520|INFO|DatabaseDeployment|Cleaning old migration data.
+2022-09-15 08:54:34.3872|INFO|DatabaseCleaner|Deleted 0 columns in data migration schemas, 12 remaining.
+2022-09-15 08:54:34.3872|INFO|DatabaseDeployment|Executing data migration scripts.
+2022-09-15 08:54:34.4027|INFO|ConceptDataMigration|Executing 1 before-data-migration scripts.
+2022-09-15 08:54:34.5519|INFO|DataMigration|Executed 0 of 13 scripts.
+2022-09-15 08:54:34.5519|INFO|ConceptDataMigration|Executing 1 after-data-migration scripts.
+2022-09-15 08:54:34.5519|INFO|DatabaseDeployment|Upgrading database.
+2022-09-15 08:54:34.7968|TRACE|DatabaseGeneratorChanges|Changed concept application: SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition
+Old: CREATE VIEW Bookstore.Book_As_BookDescription\r\nAS\r\nSELECT\r\n    ID,\r\n    Description = Title,\r\n    Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/\r\nFROM\r\n    Bookstore.Book\r\n/*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescription*/
+New: CREATE VIEW Bookstore.Book_As_BookDescription\r\nAS\r\nSELECT\r\n    ID,\r\n    Description = Title + (Select Name from Bookstore.Person p Where p.ID = AuthorID),\r\n    Title = Title/*ExtensibleSubtypeSqlViewInfo PropertyImplementation Bookstore.Book_As_BookDescription*/\r\nFROM\r\n    Bookstore.Book\r\n/*ExtensibleSubtypeSqlViewInfo WherePart Bookstore.Book_As_BookDescription*/
+2022-09-15 08:54:34.7968|TRACE|DatabaseGeneratorChanges|Refresh SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C. It depends on changed concepts: SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition.
+2022-09-15 08:54:34.7968|TRACE|DatabaseGeneratorChanges|Removing SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-15 08:54:34.7968|TRACE|DatabaseGeneratorChanges|Removing SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=6831A5D8-D5CF-48CE-AE52-A01470F63C7C.
+2022-09-15 08:54:34.7968|INFO|DatabaseGenerator|Removing 2 database objects.
+2022-09-15 08:54:34.8132|TRACE|DatabaseGeneratorChanges|Creating SqlViewInfo Bookstore.Book_As_BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlViewDatabaseDefinition, ID=6831A5D8-D5CF-48CE-AE52-A01470F63C7C.
+2022-09-15 08:54:34.8132|TRACE|DatabaseGeneratorChanges|Creating SqlObjectInfo Bookstore.BookDescription/Rhetos.DatabaseGenerator.DefaultConcepts.SqlObjectDatabaseDefinition, ID=D1567B77-8D5A-4014-BDBD-58A603D8F24C.
+2022-09-15 08:54:34.8132|INFO|DatabaseGenerator|Creating 2 database objects.
+2022-09-15 08:54:34.8371|INFO|DatabaseDeployment|Deleting redundant migration data.
+2022-09-15 08:54:34.8533|INFO|DatabaseCleaner|Deleted 4 columns in data migration schemas, 12 remaining.
+2022-09-15 08:54:34.8533|INFO|ApplicationInitialization|Loading generated plugins.
+2022-09-15 08:54:35.1430|INFO|ApplicationInitialization|Initializing EfMappingViews.
+2022-09-15 08:54:36.0299|INFO|ApplicationInitialization|Initialization ClaimGenerator.
+2022-09-15 08:54:36.5100|INFO|ApplicationInitialization|Initialization KeepSynchronizedRecomputeOnDeploy.
+2022-09-15 08:54:36.5200|INFO|Rhetos DbUpdate|Done.

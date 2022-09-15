@@ -38,6 +38,20 @@ namespace Bookstore
         /*DataStructureInfo ClassBody Bookstore.Book*/
     }
 
+    /*DataStructureInfo ClassAttributes Bookstore.BookDescription*/
+    public class BookDescription : EntityBase<Bookstore.BookDescription>/*Next DataStructureInfo ClassInterace Bookstore.BookDescription*/
+    {
+        /*PropertyInfo Attribute Bookstore.BookDescription.BookID*/
+        public Guid? BookID { get; set; }
+        /*PropertyInfo Attribute Bookstore.BookDescription.Description*/
+        public string Description { get; set; }
+        /*PropertyInfo Attribute Bookstore.BookDescription.Subtype*/
+        public string Subtype { get; set; }
+        /*PropertyInfo Attribute Bookstore.BookDescription.Title*/
+        public string Title { get; set; }
+        /*DataStructureInfo ClassBody Bookstore.BookDescription*/
+    }
+
     /*DataStructureInfo ClassAttributes Bookstore.BookInfo*/
     public class BookInfo : EntityBase<Bookstore.BookInfo>/*Next DataStructureInfo ClassInterace Bookstore.BookInfo*/
     {
@@ -362,6 +376,34 @@ namespace Common.Queryable
                 NumberOfPages = item.NumberOfPages,
                 Title = item.Title,
                 AuthorID = item.AuthorID/*DataStructureInfo AssignSimpleProperty Bookstore.Book*/
+            };
+        }
+    }
+
+    /*DataStructureInfo QueryableClassAttributes Bookstore.BookDescription*/
+    public class Bookstore_BookDescription : global::Bookstore.BookDescription, IQueryableEntity<Bookstore.BookDescription>, System.IEquatable<Bookstore_BookDescription>/*DataStructureInfo QueryableClassInterace Bookstore.BookDescription*/
+    {
+        /*DataStructureQueryable PropertyAttribute Bookstore.BookDescription.Book*/
+        public virtual Common.Queryable.Bookstore_Book Book { get; init; }
+
+        /*DataStructureInfo QueryableClassMembers Bookstore.BookDescription*/
+
+        public bool Equals(Bookstore_BookDescription other)
+        {
+            return other != null && other.ID == ID;
+        }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public Bookstore.BookDescription ToSimple()
+        {
+            var item = this;
+            return new Bookstore.BookDescription
+            {
+                ID = item.ID,
+                BookID = item.BookID,
+                Description = item.Description,
+                Subtype = item.Subtype,
+                Title = item.Title/*DataStructureInfo AssignSimpleProperty Bookstore.BookDescription*/
             };
         }
     }

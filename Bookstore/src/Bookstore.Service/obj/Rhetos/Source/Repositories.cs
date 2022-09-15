@@ -65,6 +65,7 @@ namespace Common
         public static readonly Dictionary<string, Func<KeyValuePair<string, Type>[]>> DataStructuresReadParameterTypes = new()
         {
             { "Bookstore.Book", Bookstore.Repositories.Book_Repository.GetReadParameterTypes },
+            { "Bookstore.BookDescription", Bookstore.Repositories.BookDescription_Repository.GetReadParameterTypes },
             { "Bookstore.BookInfo", Bookstore.Repositories.BookInfo_Repository.GetReadParameterTypes },
             { "Bookstore.BookTopic", Bookstore.Repositories.BookTopic_Repository.GetReadParameterTypes },
             { "Bookstore.ChildrensBook", Bookstore.Repositories.ChildrensBook_Repository.GetReadParameterTypes },
@@ -98,6 +99,9 @@ namespace Common
             { "Common.Role", Common.Repositories.Role_Repository.GetReadParameterTypes },
             { "Common.RoleInheritsRole", Common.Repositories.RoleInheritsRole_Repository.GetReadParameterTypes },
             { "Common.RolePermission", Common.Repositories.RolePermission_Repository.GetReadParameterTypes },
+            { "ConceptsDemo.BorrowMoney", ConceptsDemo.Repositories.BorrowMoney_Repository.GetReadParameterTypes },
+            { "ConceptsDemo.LendMoney", ConceptsDemo.Repositories.LendMoney_Repository.GetReadParameterTypes },
+            { "ConceptsDemo.MoneyTransaction", ConceptsDemo.Repositories.MoneyTransaction_Repository.GetReadParameterTypes },
             { "ConceptsDemo.TestEntity", ConceptsDemo.Repositories.TestEntity_Repository.GetReadParameterTypes },
             { "HardcodedExample.Genre", HardcodedExample.Repositories.Genre_Repository.GetReadParameterTypes },
             { "Queries.BookInfoThroughExternalFile", Queries.Repositories.BookInfoThroughExternalFile_Repository.GetReadParameterTypes },
@@ -217,6 +221,7 @@ namespace Common
             
             builder.RegisterInstance(Infrastructure.CurrentKeepSynchronizedMetadata).ExternallyOwned();
             builder.RegisterType<Bookstore.Repositories.Book_Repository>().Keyed<IRepository>("Bookstore.Book").InstancePerLifetimeScope();
+            builder.RegisterType<Bookstore.Repositories.BookDescription_Repository>().Keyed<IRepository>("Bookstore.BookDescription").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.BookInfo_Repository>().Keyed<IRepository>("Bookstore.BookInfo").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.BookTopic_Repository>().Keyed<IRepository>("Bookstore.BookTopic").InstancePerLifetimeScope();
             builder.RegisterType<Bookstore.Repositories.ChildrensBook_Repository>().Keyed<IRepository>("Bookstore.ChildrensBook").InstancePerLifetimeScope();
@@ -258,6 +263,9 @@ namespace Common
             builder.RegisterType<Common.Repositories.RolePermission_Repository>().Keyed<IRepository>("Common.RolePermission").InstancePerLifetimeScope();
             builder.RegisterType<Common.Repositories.SetLock_Repository>().Keyed<IRepository>("Common.SetLock").InstancePerLifetimeScope();
             builder.RegisterType<Common.Repositories.SetLock_Repository>().Keyed<IActionRepository>("Common.SetLock").InstancePerLifetimeScope();
+            builder.RegisterType<ConceptsDemo.Repositories.BorrowMoney_Repository>().Keyed<IRepository>("ConceptsDemo.BorrowMoney").InstancePerLifetimeScope();
+            builder.RegisterType<ConceptsDemo.Repositories.LendMoney_Repository>().Keyed<IRepository>("ConceptsDemo.LendMoney").InstancePerLifetimeScope();
+            builder.RegisterType<ConceptsDemo.Repositories.MoneyTransaction_Repository>().Keyed<IRepository>("ConceptsDemo.MoneyTransaction").InstancePerLifetimeScope();
             builder.RegisterType<ConceptsDemo.Repositories.TestEntity_Repository>().Keyed<IRepository>("ConceptsDemo.TestEntity").InstancePerLifetimeScope();
             builder.RegisterType<HardcodedExample.Repositories.Genre_Repository>().Keyed<IRepository>("HardcodedExample.Genre").InstancePerLifetimeScope();
             builder.RegisterType<Queries.Repositories.BookInfoThroughExternalFile_Repository>().Keyed<IRepository>("Queries.BookInfoThroughExternalFile").InstancePerLifetimeScope();

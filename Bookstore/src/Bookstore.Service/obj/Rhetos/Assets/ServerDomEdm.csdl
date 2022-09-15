@@ -97,6 +97,17 @@
     <NavigationProperty Name="Author" Relationship="Self.Bookstore_Book_Author" FromRole="Bookstore_Book_Author_Source" ToRole="Bookstore_Book_Author_Target" />
     <NavigationProperty Name="Extension_Queries_BookInfoThroughExternalFile" Relationship="Self.Queries_BookInfoThroughExternalFile_Base" FromRole="Queries_BookInfoThroughExternalFile_Base_Target" ToRole="Queries_BookInfoThroughExternalFile_Base_Source" />
   </EntityType>
+  <EntityType Name="Bookstore_BookDescription" customannotation:ClrType="Common.Queryable.Bookstore_BookDescription, Bookstore.Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="BookID" Type="Guid" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Subtype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Book" Relationship="Self.Bookstore_BookDescription_Book" FromRole="Bookstore_BookDescription_Book_Source" ToRole="Bookstore_BookDescription_Book_Target" />
+  </EntityType>
   <EntityType Name="Bookstore_BookInfo" customannotation:ClrType="Common.Queryable.Bookstore_BookInfo, Bookstore.Service">
     <Key>
       <PropertyRef Name="ID" />
@@ -405,6 +416,37 @@
     <NavigationProperty Name="Claim" Relationship="Self.Common_RolePermission_Claim" FromRole="Common_RolePermission_Claim_Source" ToRole="Common_RolePermission_Claim_Target" />
     <NavigationProperty Name="Role" Relationship="Self.Common_RolePermission_Role" FromRole="Common_RolePermission_Role_Source" ToRole="Common_RolePermission_Role_Target" />
   </EntityType>
+  <EntityType Name="ConceptsDemo_BorrowMoney" customannotation:ClrType="Common.Queryable.ConceptsDemo_BorrowMoney, Bookstore.Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="EventDate" Type="DateTime" />
+    <Property Name="FromWhom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="ConceptsDemo_LendMoney" customannotation:ClrType="Common.Queryable.ConceptsDemo_LendMoney, Bookstore.Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="EventDate" Type="DateTime" />
+    <Property Name="FromWhom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="ConceptsDemo_MoneyTransaction" customannotation:ClrType="Common.Queryable.ConceptsDemo_MoneyTransaction, Bookstore.Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="BorrowMoneyID" Type="Guid" />
+    <Property Name="EventDate" Type="DateTime" />
+    <Property Name="LendMoneyID" Type="Guid" />
+    <Property Name="Subtype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="BorrowMoney" Relationship="Self.ConceptsDemo_MoneyTransaction_BorrowMoney" FromRole="ConceptsDemo_MoneyTransaction_BorrowMoney_Source" ToRole="ConceptsDemo_MoneyTransaction_BorrowMoney_Target" />
+    <NavigationProperty Name="LendMoney" Relationship="Self.ConceptsDemo_MoneyTransaction_LendMoney" FromRole="ConceptsDemo_MoneyTransaction_LendMoney_Source" ToRole="ConceptsDemo_MoneyTransaction_LendMoney_Target" />
+  </EntityType>
   <EntityType Name="ConceptsDemo_TestEntity" customannotation:ClrType="Common.Queryable.ConceptsDemo_TestEntity, Bookstore.Service">
     <Key>
       <PropertyRef Name="ID" />
@@ -431,6 +473,18 @@
     <Property Name="NumberOfComments" Type="Int32" />
     <NavigationProperty Name="Base" Relationship="Self.Queries_BookInfoThroughExternalFile_Base" FromRole="Queries_BookInfoThroughExternalFile_Base_Source" ToRole="Queries_BookInfoThroughExternalFile_Base_Target" />
   </EntityType>
+  <Association Name="Bookstore_BookDescription_Book">
+    <End Role="Bookstore_BookDescription_Book_Source" Type="Self.Bookstore_BookDescription" Multiplicity="*" />
+    <End Role="Bookstore_BookDescription_Book_Target" Type="Self.Bookstore_Book" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Bookstore_BookDescription_Book_Target">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Bookstore_BookDescription_Book_Source">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Bookstore_BookInfo_Base">
     <End Role="Bookstore_BookInfo_Base_Source" Type="Self.Bookstore_BookInfo" Multiplicity="0..1" />
     <End Role="Bookstore_BookInfo_Base_Target" Type="Self.Bookstore_Book" Multiplicity="1" />
@@ -731,6 +785,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ConceptsDemo_MoneyTransaction_BorrowMoney">
+    <End Role="ConceptsDemo_MoneyTransaction_BorrowMoney_Source" Type="Self.ConceptsDemo_MoneyTransaction" Multiplicity="*" />
+    <End Role="ConceptsDemo_MoneyTransaction_BorrowMoney_Target" Type="Self.ConceptsDemo_BorrowMoney" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ConceptsDemo_MoneyTransaction_BorrowMoney_Target">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ConceptsDemo_MoneyTransaction_BorrowMoney_Source">
+        <PropertyRef Name="BorrowMoneyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ConceptsDemo_MoneyTransaction_LendMoney">
+    <End Role="ConceptsDemo_MoneyTransaction_LendMoney_Source" Type="Self.ConceptsDemo_MoneyTransaction" Multiplicity="*" />
+    <End Role="ConceptsDemo_MoneyTransaction_LendMoney_Target" Type="Self.ConceptsDemo_LendMoney" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ConceptsDemo_MoneyTransaction_LendMoney_Target">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ConceptsDemo_MoneyTransaction_LendMoney_Source">
+        <PropertyRef Name="LendMoneyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Queries_BookInfoThroughExternalFile_Base">
     <End Role="Queries_BookInfoThroughExternalFile_Base_Source" Type="Self.Queries_BookInfoThroughExternalFile" Multiplicity="0..1" />
     <End Role="Queries_BookInfoThroughExternalFile_Base_Target" Type="Self.Bookstore_Book" Multiplicity="1" />
@@ -746,6 +824,7 @@
   <EntityContainer Name="EntityFrameworkContext" customannotation:UseClrTypes="true">
     
     <EntitySet Name="Bookstore_Book" EntityType="Self.Bookstore_Book" />
+    <EntitySet Name="Bookstore_BookDescription" EntityType="Self.Bookstore_BookDescription" />
     <EntitySet Name="Bookstore_BookInfo" EntityType="Self.Bookstore_BookInfo" />
     <EntitySet Name="Bookstore_BookTopic" EntityType="Self.Bookstore_BookTopic" />
     <EntitySet Name="Bookstore_ChildrensBook" EntityType="Self.Bookstore_ChildrensBook" />
@@ -777,9 +856,16 @@
     <EntitySet Name="Common_Role" EntityType="Self.Common_Role" />
     <EntitySet Name="Common_RoleInheritsRole" EntityType="Self.Common_RoleInheritsRole" />
     <EntitySet Name="Common_RolePermission" EntityType="Self.Common_RolePermission" />
+    <EntitySet Name="ConceptsDemo_BorrowMoney" EntityType="Self.ConceptsDemo_BorrowMoney" />
+    <EntitySet Name="ConceptsDemo_LendMoney" EntityType="Self.ConceptsDemo_LendMoney" />
+    <EntitySet Name="ConceptsDemo_MoneyTransaction" EntityType="Self.ConceptsDemo_MoneyTransaction" />
     <EntitySet Name="ConceptsDemo_TestEntity" EntityType="Self.ConceptsDemo_TestEntity" />
     <EntitySet Name="HardcodedExample_Genre" EntityType="Self.HardcodedExample_Genre" />
     <EntitySet Name="Queries_BookInfoThroughExternalFile" EntityType="Self.Queries_BookInfoThroughExternalFile" />
+	<AssociationSet Name="Bookstore_BookDescription_Book" Association="Self.Bookstore_BookDescription_Book">
+		<End Role="Bookstore_BookDescription_Book_Source" EntitySet="Bookstore_BookDescription" />
+		<End Role="Bookstore_BookDescription_Book_Target" EntitySet="Bookstore_Book" />
+	</AssociationSet>
 	<AssociationSet Name="Bookstore_BookInfo_Base" Association="Self.Bookstore_BookInfo_Base">
 		<End Role="Bookstore_BookInfo_Base_Source" EntitySet="Bookstore_BookInfo" />
 		<End Role="Bookstore_BookInfo_Base_Target" EntitySet="Bookstore_Book" />
@@ -879,6 +965,14 @@
 	<AssociationSet Name="Common_RolePermission_Role" Association="Self.Common_RolePermission_Role">
 		<End Role="Common_RolePermission_Role_Source" EntitySet="Common_RolePermission" />
 		<End Role="Common_RolePermission_Role_Target" EntitySet="Common_Role" />
+	</AssociationSet>
+	<AssociationSet Name="ConceptsDemo_MoneyTransaction_BorrowMoney" Association="Self.ConceptsDemo_MoneyTransaction_BorrowMoney">
+		<End Role="ConceptsDemo_MoneyTransaction_BorrowMoney_Source" EntitySet="ConceptsDemo_MoneyTransaction" />
+		<End Role="ConceptsDemo_MoneyTransaction_BorrowMoney_Target" EntitySet="ConceptsDemo_BorrowMoney" />
+	</AssociationSet>
+	<AssociationSet Name="ConceptsDemo_MoneyTransaction_LendMoney" Association="Self.ConceptsDemo_MoneyTransaction_LendMoney">
+		<End Role="ConceptsDemo_MoneyTransaction_LendMoney_Source" EntitySet="ConceptsDemo_MoneyTransaction" />
+		<End Role="ConceptsDemo_MoneyTransaction_LendMoney_Target" EntitySet="ConceptsDemo_LendMoney" />
 	</AssociationSet>
 	<AssociationSet Name="Queries_BookInfoThroughExternalFile_Base" Association="Self.Queries_BookInfoThroughExternalFile_Base">
 		<End Role="Queries_BookInfoThroughExternalFile_Base_Source" EntitySet="Queries_BookInfoThroughExternalFile" />

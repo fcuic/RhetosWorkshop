@@ -14,6 +14,17 @@
       </MappingFragment>
     </EntityTypeMapping>
   </EntitySetMapping>
+  <EntitySetMapping Name="Bookstore_BookDescription">
+    <EntityTypeMapping TypeName="Rhetos.Bookstore_BookDescription">
+      <MappingFragment StoreEntitySet="Bookstore_BookDescription">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="BookID" ColumnName="BookID" />
+        <ScalarProperty Name="Description" ColumnName="Description" />
+        <ScalarProperty Name="Subtype" ColumnName="Subtype" />
+        <ScalarProperty Name="Title" ColumnName="Title" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
   <EntitySetMapping Name="Bookstore_BookInfo">
     <EntityTypeMapping TypeName="Rhetos.Bookstore_BookInfo">
       <MappingFragment StoreEntitySet="Bookstore_BookInfo">
@@ -325,6 +336,38 @@
         <ScalarProperty Name="ClaimID" ColumnName="ClaimID" />
         <ScalarProperty Name="IsAuthorized" ColumnName="IsAuthorized" />
         <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
+  <EntitySetMapping Name="ConceptsDemo_BorrowMoney">
+    <EntityTypeMapping TypeName="Rhetos.ConceptsDemo_BorrowMoney">
+      <MappingFragment StoreEntitySet="ConceptsDemo_BorrowMoney">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+        <ScalarProperty Name="FromWhom" ColumnName="FromWhom" />
+        <ScalarProperty Name="Amount" ColumnName="Amount" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
+  <EntitySetMapping Name="ConceptsDemo_LendMoney">
+    <EntityTypeMapping TypeName="Rhetos.ConceptsDemo_LendMoney">
+      <MappingFragment StoreEntitySet="ConceptsDemo_LendMoney">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+        <ScalarProperty Name="FromWhom" ColumnName="FromWhom" />
+        <ScalarProperty Name="Amount" ColumnName="Amount" />
+      </MappingFragment>
+    </EntityTypeMapping>
+  </EntitySetMapping>
+  <EntitySetMapping Name="ConceptsDemo_MoneyTransaction">
+    <EntityTypeMapping TypeName="Rhetos.ConceptsDemo_MoneyTransaction">
+      <MappingFragment StoreEntitySet="ConceptsDemo_MoneyTransaction">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+        <ScalarProperty Name="BorrowMoneyID" ColumnName="BorrowMoneyID" />
+        <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+        <ScalarProperty Name="LendMoneyID" ColumnName="LendMoneyID" />
+        <ScalarProperty Name="Subtype" ColumnName="Subtype" />
+        <ScalarProperty Name="Amount" ColumnName="Amount" />
       </MappingFragment>
     </EntityTypeMapping>
   </EntitySetMapping>

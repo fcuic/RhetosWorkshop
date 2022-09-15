@@ -29,6 +29,18 @@ namespace System.Linq
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Bookstore.BookDescription> ToSimple(this IQueryable<Common.Queryable.Bookstore_BookDescription> query)
+        {
+            return query.Select(item => new Bookstore.BookDescription
+            {
+                ID = item.ID,
+                BookID = item.BookID,
+                Description = item.Description,
+                Subtype = item.Subtype,
+                Title = item.Title/*DataStructureInfo AssignSimpleProperty Bookstore.BookDescription*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
         public static IQueryable<Bookstore.BookInfo> ToSimple(this IQueryable<Common.Queryable.Bookstore_BookInfo> query)
         {
             return query.Select(item => new Bookstore.BookInfo
@@ -389,6 +401,41 @@ namespace System.Linq
                 ClaimID = item.ClaimID,
                 IsAuthorized = item.IsAuthorized,
                 RoleID = item.RoleID/*DataStructureInfo AssignSimpleProperty Common.RolePermission*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<ConceptsDemo.BorrowMoney> ToSimple(this IQueryable<Common.Queryable.ConceptsDemo_BorrowMoney> query)
+        {
+            return query.Select(item => new ConceptsDemo.BorrowMoney
+            {
+                ID = item.ID,
+                EventDate = item.EventDate,
+                FromWhom = item.FromWhom,
+                Amount = item.Amount/*DataStructureInfo AssignSimpleProperty ConceptsDemo.BorrowMoney*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<ConceptsDemo.LendMoney> ToSimple(this IQueryable<Common.Queryable.ConceptsDemo_LendMoney> query)
+        {
+            return query.Select(item => new ConceptsDemo.LendMoney
+            {
+                ID = item.ID,
+                EventDate = item.EventDate,
+                FromWhom = item.FromWhom,
+                Amount = item.Amount/*DataStructureInfo AssignSimpleProperty ConceptsDemo.LendMoney*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<ConceptsDemo.MoneyTransaction> ToSimple(this IQueryable<Common.Queryable.ConceptsDemo_MoneyTransaction> query)
+        {
+            return query.Select(item => new ConceptsDemo.MoneyTransaction
+            {
+                ID = item.ID,
+                BorrowMoneyID = item.BorrowMoneyID,
+                EventDate = item.EventDate,
+                LendMoneyID = item.LendMoneyID,
+                Subtype = item.Subtype,
+                Amount = item.Amount/*DataStructureInfo AssignSimpleProperty ConceptsDemo.MoneyTransaction*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>

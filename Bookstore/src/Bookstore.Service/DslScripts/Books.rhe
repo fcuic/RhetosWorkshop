@@ -6,6 +6,7 @@ Module Bookstore
       ShortString Title;
       Integer NumberOfPages;
       DateTime Changed { ModificationTimeOf Bookstore.Book.Title; }
+      //DateTime Inserted;
 
       Reference Author Bookstore.Person;
       ItemFilter LongBooks 'item => item.NumberOfPages >= 500'; 
@@ -39,6 +40,18 @@ Module Bookstore
       ItemFilter CommonMisspelling 'book => book.Title.Contains("curiousity")';
       InvalidData CommonMisspelling 'It is not allowed to enter misspelled word "curiousity".';
       MonitoredRecord;
+
+      Is Bookstore.BookDescription
+      {
+          Implements Bookstore.BookDescription.Description
+         "Title + (Select Name from Bookstore.Person p Where p.ID = AuthorID)";
+      }
+   }
+
+   Polymorphic BookDescription   
+   {
+       ShortString Title;
+       ShortString Description;
    }
 
    Parameter ComplexSearch
